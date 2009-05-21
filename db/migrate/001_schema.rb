@@ -8,9 +8,10 @@ class Schema < ActiveRecord::Migration
       t.timestamps
     end
 
-        create_table :tickets do |t|
+    create_table :tickets do |t|
       t.references :status, :null => false 
       t.references :category, :null => false
+      t.references :priority, :null => false
       t.text :body, :null => false
       t.timestamps
     end
