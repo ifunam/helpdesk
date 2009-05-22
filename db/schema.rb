@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 1) do
   create_table "tickets", :force => true do |t|
     t.integer  "status_id",   :null => false
     t.integer  "category_id", :null => false
+    t.integer  "priority_id", :null => false
     t.text     "body",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

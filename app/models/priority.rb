@@ -3,6 +3,6 @@ class Priority < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_numericality_of :id, :allow_nil => true, :greater_than => 0, :only_integer => true
 
-  has_many : tickets
+  has_many :tickets
 
 end
