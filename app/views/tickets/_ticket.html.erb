@@ -1,0 +1,30 @@
+<div class="ticket">
+  <p>
+    <%= content_tag(:span, content_tag(:strong, "Creado: ", :class => "note"), :class => "tk_note") %>
+    <%= ticket.created_at_before_type_cast %>
+  </p>
+  <p>
+    <%= content_tag(:span,content_tag(:strong,"Categoria :", :class => "note"), :class => "tk_note") %>
+    <%= Category.find(ticket.category_id).name %>
+  </p>
+  <p>
+    <%= content_tag(:span,content_tag(:strong,"Status :", :class => "note"), :class => "tk_note") %>
+    <%= Status.find(ticket.status_id).name %>
+  </p>
+  <p>
+    <%= content_tag(:span,content_tag(:strong,"Descripcion :", :class => "note"), :class => "tk_note") %>
+    <%= ticket.body %>
+  </p>
+  
+  <span class="button">
+    <%= button_to "Detalles"  %>
+  </span>
+  <span class="button">
+    <%= button_to "Cancelar" %>
+  </span>
+
+  ----------------
+<br>
+</div>
+
+
