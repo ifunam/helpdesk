@@ -1,30 +1,46 @@
 <div class="ticket">
   <p>
-    <%= content_tag(:span, content_tag(:strong, "Creado: ", :class => "note"), :class => "tk_note") %>
-    <%= ticket.created_at_before_type_cast %>
+    <div class="tk_note">
+      <div class ="note">
+      Creado :
+      </div>
+      <%= ticket.created_at_before_type_cast %>
+    </div>
   </p>
   <p>
-    <%= content_tag(:span,content_tag(:strong,"Categoria :", :class => "note"), :class => "tk_note") %>
-    <%= Category.find(ticket.category_id).name %>
+    <div class="tk_note">
+      <div class ="note">
+        Categoria :
+      </div>
+      <%= Category.find(ticket.category_id).name %>
+    </div>
   </p>
   <p>
-    <%= content_tag(:span,content_tag(:strong,"Status :", :class => "note"), :class => "tk_note") %>
-    <%= Status.find(ticket.status_id).name %>
+    <div class="tk_note">
+      <div class ="note">
+        Status :
+      </div>
+      <%= Status.find(ticket.status_id).name %>
+    </div>
   </p>
   <p>
-    <%= content_tag(:span,content_tag(:strong,"Descripcion :", :class => "note"), :class => "tk_note") %>
-    <%= ticket.body %>
+    <div class="tk_note">
+      <div class ="note">
+        Descripcion :
+      </div>
+      <%= ticket.body %>
+    </div>
   </p>
   
-  <span class="button">
-    <%= button_to "Detalles"  %>
-  </span>
-  <span class="button">
-    <%= button_to "Cancelar" %>
-  </span>
-
+  <div class="button">
+    <%= button_to "Detalles", {:action => 'show_ticket', :id => ticket.id }, :method => :show  %>
+  </div>
+  <div class="button">
+    <%= button_to "Cancelar", { :action => 'destroy', :id => ticket.id }, :method => :destroy, :confirm => "estas seguro?" %>
+  </div>
+  
   ----------------
-<br>
+  <br>
 </div>
 
 

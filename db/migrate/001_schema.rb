@@ -70,15 +70,17 @@ class Schema < ActiveRecord::Migration
       'Otro'].each do |name|
         Category.create(:name => name)
       end
-
-['Alta', 'Normal', 'Baja'].each do |name|
-        Priority.create(:name => name)
+    
+    ['Alta', 'Normal', 'Baja'].each do |name|
+      Priority.create(:name => name)
     end
-
-['En proceso', 'Cerrado', 'Cancelado', 'Duplicado','Pendiente'].each do |name|
-        Status.create(:name => name)
+    
+    ['En proceso', 'Cerrado', 'Cancelado', 'Duplicado','Pendiente'].each do |name|
+      Status.create(:name => name)
     end
-
+    #A normal user
+    User.create(:login => "carlos",:password => "carlos", :email => "protozoario9@hotmail.com")
+    
   end
 
   def self.down

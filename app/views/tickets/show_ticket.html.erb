@@ -1,0 +1,61 @@
+<div class="ticket">
+  <p>
+    <div class="date">
+      <div class ="note">
+      Creado :
+      </div>
+      <%= @ticket.created_at_before_type_cast %>
+    </div>
+  </p>
+  <p>
+    <div class="category">
+      <div class ="note">
+        Categoria :
+      </div>
+      <%= Category.find(@ticket.category_id).name %>
+    </div>
+  </p>
+  <p>
+    <div class="status">
+      <div class ="note">
+        Status :
+      </div>
+      <%= Status.find(@ticket.status_id).name %>
+    </div>
+  </p>
+  <p>
+    <div class="description">
+      <div class ="note">
+        Descripcion :
+      </div>
+      <%= @ticket.body %>
+    </div>
+  </p>
+
+
+
+<%= content_tag(:h4,"Comentarios") %>
+
+<%= render :partial => 'comment', :collection => @comments %>
+
+  
+<%= error_messages_for :comment %>
+<div class="cm_form">
+<% form_for :comment, :url => {:action => 'create_comment', :id => @ticket.id} do |comment_form| %>
+   <div class="cm_note">
+     <div class="note">
+       Agregar Comentario
+     </div>
+   </div>
+   <br>
+   <%= comment_form.text_area :body %>
+   <br>
+   <div class="button">
+     <%= submit_tag "Enviar" %>
+   </div>
+<% end %>
+
+</div>
+<div class="link">
+  <%= link_to "Regresar", :action => 'index' %>
+</div>
