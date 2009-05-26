@@ -4,8 +4,9 @@ class Ticket < ActiveRecord::Base
   belongs_to :category
   belongs_to :status
   belongs_to :priority
-  has_many :user_tickets
-  has_many :users, :through => :user_tickets
+  belongs_to :user
+  #has_many :user_tickets
+  #has_many :users, :through => :user_tickets
   
   
   has_many :comments

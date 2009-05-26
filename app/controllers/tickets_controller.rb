@@ -1,8 +1,8 @@
 class TicketsController < ApplicationController
 
   def index
-    @tickets = Ticket.all( :order => "created_at DESC" ) 
-    session[:id]=User.find(1).id
+    @tickets = Ticket.all(:conditions => {:user_id => session[:id]}, :order => "created_at DESC") 
+    session[:id]=User.find(1).id #to do: mover a session_controller
   end
 
   def new
@@ -10,9 +10,7 @@ class TicketsController < ApplicationController
   end
   
   def create
-    @ticket = Ticket.new(params[:ticket])
-    @ticket.status_id = 1
-    @ticket.priority_id = 1
+    @ticket = Ticket.new(params[:ticket].merge(:status_id => 1,:priority_id => 1,:user_id => session[:id]))
     if @ticket.save 
       redirect_to :action => 'index'
     else

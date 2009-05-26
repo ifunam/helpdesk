@@ -1,0 +1,19 @@
+proceso:
+  id: 1
+  name: "En proceso"
+
+Cerrado:
+  id: 2
+  name: "Cerrado"
+
+Cancelado:
+  id: 3
+  name: "Cancelado"
+
+Duplicado:
+  id: 4
+  name: "Duplicado"
+
+Pendiente:
+  id: 5
+  name: "Pendiente"

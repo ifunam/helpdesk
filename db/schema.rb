@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 1) do
     t.datetime "updated_at"
   end
 
+  create_table "fenix_data", :force => true do |t|
+    t.string   "full_name"
+    t.string   "adscription"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "priorities", :force => true do |t|
     t.text     "name",       :null => false
     t.datetime "created_at"
@@ -41,6 +49,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.integer  "status_id",   :null => false
     t.integer  "category_id", :null => false
     t.integer  "priority_id", :null => false
+    t.integer  "user_id",     :null => false
     t.text     "body",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -49,13 +58,6 @@ ActiveRecord::Schema.define(:version => 1) do
   create_table "user_categories", :force => true do |t|
     t.integer  "user_id",     :null => false
     t.integer  "category_id", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_tickets", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.integer  "ticket_id",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

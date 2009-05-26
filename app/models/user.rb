@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :user_categories
   has_many :categories, :through => :user_categories
-
-  has_many :user_tickets
-  has_many :tickets, :through => :user_tickets
-
+  has_many :tickets
+  #has_many :user_tickets
+  #has_many :tickets, :through => :user_tickets
 end

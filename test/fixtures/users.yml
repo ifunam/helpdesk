@@ -1,0 +1,11 @@
+carlos:
+  id: 1
+  login: "carlos"
+  password: "carlos"
+  email: "protozoario9@hotmail.com"
+
+nato:
+  id: 2
+  login: "nato"
+  password: "nato"
+  email: "algo@correo.com"
