@@ -14,18 +14,5 @@ class User < ActiveRecord::Base
 
 
 
-  class << self
-    def authenticate(l,pw)
-      @user = User.find_by_login(l)
-      !@user.nil? and @user.password == pw ###== encrypt(pw + @user.salt.to_s)
-      end
-    
-    
-    def encrypt(string)
-      Digest::SHA512.hexdigest(string)
-    end
-  end
-
-
 
 end

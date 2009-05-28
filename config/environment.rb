@@ -1,3 +1,4 @@
+require "ruby-debug"
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
@@ -38,4 +39,19 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+   :address => "smtp.live.com" ,
+   :port  => 25,
+   #:domain => "domain.of.sender.net" ,
+    
+   :authentication => "plain",
+   :user_name => "protozoario9@hotmail.com" ,
+   :password => "carlos123.."
+   
+  }
+
+
+  config.active_record.observers = :ticket_observer 
 end
