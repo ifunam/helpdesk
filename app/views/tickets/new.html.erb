@@ -1,7 +1,10 @@
-<%= content_tag(:h3,"Nueva Solicitude de Soporte") %>
+<h3>Nueva Solicitude de Soporte </h3>
+
 <div id="new_ticket">
   <% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
-  <%= error_messages_for :ticket %>
+  <div class="error">
+    <%= error_messages_for 'ticket' %>
+  </div>
   <% form_for :ticket, @ticket, :url => { :action => 'create' } do |f| %>
      <%= content_tag(:span,content_tag(:strong,"Categoria :", :class => "note"), :class => "tk_note") %>
      <br>                                                     

@@ -1,46 +1,30 @@
-<div class="ticket">
-  <p>
-    <div class="tk_note">
-      <div class ="note">
-      Creado :
-      </div>
-      <%= ticket.created_at_before_type_cast %>
-    </div>
-  </p>
-  <p>
-    <div class="tk_note">
-      <div class ="note">
-        Categoria :
-      </div>
-      <%= Category.find(ticket.category_id).name %>
-    </div>
-  </p>
-  <p>
-    <div class="tk_note">
-      <div class ="note">
-        Status :
-      </div>
-      <%= Status.find(ticket.status_id).name %>
-    </div>
-  </p>
-  <p>
-    <div class="tk_note">
-      <div class ="note">
-        Descripcion :
-      </div>
-      <%= ticket.body %>
-    </div>
-  </p>
-  
-  <div class="button">
-    <%= button_to "Detalles", {:action => 'show_ticket', :id => ticket.id }, :method => :show  %>
+<div class="ticket_row">
+  <div class="ticket_id">
+    <%= ticket.id%>
   </div>
-  <div class="button">
-    <%= button_to "Cancelar", { :action => 'destroy', :id => ticket.id }, :method => :destroy, :confirm => "estas seguro?" %>
+  <div class="ticket_category">
+    <%= Category.find(ticket.category_id).name %>
   </div>
-  
-  ----------------
-  <br>
+  <div class="ticket_status">
+    <%= Status.find(ticket.status_id).name %>
+  </div>
+  <div class="ticket_description">
+    <%= ticket.body.slice(0, 20) %>...
+  </div>
+  <div class="ticket_date">
+    <%= ticket.created_at_before_type_cast %>
+  </div>
 </div>
+  
+<div class="ticket_actions">
+  <div class="link_details">
+    <%= link_to ( image_tag("icon_details.jpg", :title => "Detalles"),{:action => 'show_ticket', :id => ticket.id}) %>
+  </div>
+  <div class="link_cancel">
+    <%= link_to ( image_tag("icon_cancel_order.jpg", :title => "Cancelar solicitud"),{:action => 'destroy', :id => ticket.id},:method => 'destroy', :confirm => "Estas seguro?"  ) %>
+  </div>
+</div>  
+
+
 
 

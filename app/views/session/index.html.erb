@@ -1,7 +1,7 @@
 <div id="sign_in">
   <br>
   Ingresa tu nombre de usuario y contraseña:
-  <% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
+  
   <%= error_messages_for 'user' %>
   <% form_for :user, @user, :url => { :action => "signup" } do |f| %>
   <p >
@@ -16,5 +16,5 @@
     <%= submit_tag "Ingresar" %>
   </p>
   <% end %>
+<% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
 </div>
-</body>

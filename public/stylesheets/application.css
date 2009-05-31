@@ -1,0 +1,164 @@
+body { 
+   padding: 0 0 18px 0;  
+   background: #fff url('../images/bg.jpg')  repeat-x;  
+/*  font: 0.8em/2 "arial",sans-serif;   */
+/*   color: #333;   */
+/*    text-align: center;   */
+}
+
+
+/* Stylesheet for layaouts */
+
+
+
+
+
+
+/* layout ---------------------------------------------------------------------- */
+#layout { 
+  width:800px; 
+  margin:0 auto; 
+  text-align:left; 
+}
+ 
+  
+#header { position:relative; 
+            background: #2a9ac3 url('../images/header.jpg') no-repeat;
+        }
+#logo {
+      font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
+      position: relative; 
+      overflow: hidden; 
+      height: 132px;
+      font-size:260%;
+      margin: 0;
+      color : white;
+      line-height: 120px;
+      text-align: left;
+  }
+
+ 
+/*login and menu*/
+
+#sign_in{
+    width: 500px;
+    #border-width: 2em;
+    #border-color: blue;
+    font: bold 14px;
+    margin-top: 100px;
+    margin-left: 500px;
+    font-size: 12px;
+
+    
+}
+.td_text {
+    margin-left: 30em;
+    display: table-cell;
+    width: 100px;
+    vertical-align: top;
+    padding: 2px;
+    }
+
+.td_textbox{
+    display:table-cell;
+    padding: 2px;
+    
+    
+}
+
+
+
+
+.tickets {
+    font-size: 12px;
+    margin: auto;
+    width: 1000px;
+    display: table;
+}
+
+.ticket_row {
+    margin: auto;
+    background-color: #B0C4DE;
+    display: table;
+     height: 1px;
+     width: 920px;
+}
+
+.ticket_row_two{
+    margin: auto;
+    background-color: #0000FF;
+    display: table;
+    height: 1px;
+     width: 920px;
+}
+
+.ticket_actions{
+    width: 90px;
+    position: relative;
+    left: 980px;
+    bottom: 23px;
+}
+.ticket_header {
+    width: 920px;
+    margin: auto;
+    background-color: #4682B4;
+    display: table;
+}
+
+.ticket_id {
+    width: 70px;
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+}
+
+.ticket_category {
+    width: 200px;
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.ticket_status {
+    width: 200px;
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.ticket_description {
+    width: 224px;
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.ticket_date {
+    width: 220px;
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.link_details {
+    width: 30px;
+#    height: 100px;
+    display: inline-block;
+
+}
+
+.link_cancel {
+    width: 30px;
+    display: inline-block;
+}
+
+
+
+#add {
+    padding-left: 800px;
+}

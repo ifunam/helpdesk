@@ -14,7 +14,7 @@ class TicketsController < ApplicationController
     if @ticket.save 
       redirect_to :action => 'index'
     else
-      redirect_to :action => 'error'
+      redirect_to :action => 'new'
     end
     
   end
