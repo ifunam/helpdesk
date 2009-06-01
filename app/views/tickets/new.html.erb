@@ -1,24 +1,30 @@
-<h3>Nueva Solicitude de Soporte </h3>
-
 <div id="new_ticket">
+  <h3>Solicitude de Soporte </h3>
+  <h4>Secretaria tecnica de computo<h4>
+      <br>
+
+
   <% if flash[:notice] %><div class="notice"><%= flash[:notice] %></div><% end %>
   <div class="error">
     <%= error_messages_for 'ticket' %>
   </div>
   <% form_for :ticket, @ticket, :url => { :action => 'create' } do |f| %>
-     <%= content_tag(:span,content_tag(:strong,"Categoria :", :class => "note"), :class => "tk_note") %>
-     <br>                                                     
-     <span class="tk_category">
+     
+     <div id="category">
+       Categoria:
+     </div>
+     <div id="category_field">
        <%= f.select(:category_id, Category.all(:order => 'name ASC').collect { |record| [record.name, record.id] })%>
-     </span>
-
-     <br>
-     <%= content_tag(:span,content_tag(:strong,"Descripcion :", :class => "note"), :class => "tk_note") %>
-     <br>
-     <%= f.text_area :body %>
+     </div>
+     <div id="description">
+       Descripcion:
+     </div>
+     <div id="description_field">
+     <%= f.text_field :body %>
+     </div>
      <br>
      <div class="button">
-       <%= submit_tag "Enviar" %>
+       <%= submit_tag "Nueva Solicitud" %>
      </div>
   <% end %>
 </div>

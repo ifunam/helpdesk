@@ -1,59 +1,61 @@
-<div class="ticket">
-  <p>
-    <div class="date">
-      <div class ="note">
-      Creado :
-      </div>
-      <%= @ticket.created_at_before_type_cast %>
-    </div>
-  </p>
-  <p>
-    <div class="category">
-      <div class ="note">
-        Categoria :
-      </div>
-      <%= Category.find(@ticket.category_id).name %>
-    </div>
-  </p>
-  <p>
-    <div class="status">
-      <div class ="note">
-        Status :
-      </div>
-      <%= Status.find(@ticket.status_id).name %>
-    </div>
-  </p>
-  <p>
-    <div class="description">
-      <div class ="note">
-        Descripcion :
-      </div>
-      <%= @ticket.body %>
-    </div>
-  </p>
-
-
-
-<%= content_tag(:h4,"Comentarios") %>
-
-<%= render :partial => 'comment', :collection => @comments %>
-
+<div id="ticket_view">
   
-<%= error_messages_for :comment %>
-<div class="cm_form">
-<% form_for :comment, :url => {:action => 'create_comment', :id => @ticket.id} do |comment_form| %>
-   <div class="cm_note">
-     <div class="note">
-       Agregar Comentario
-     </div>
-   </div>
-   <br>
-   <%= comment_form.text_area :body %>
-   <br>
-   <div class="button">
-     <%= submit_tag "Enviar" %>
-   </div>
-<% end %>
+  <div id="ticket_information">
+    <div class="ticket_header"> 
+      <div class="ticket_date" id="ticket_date_show">
+        <%= @ticket.created_at_before_type_cast %>
+      </div>
+      
+      <div class="ticket_id" id="ticket_id_show">
+        # <%= @ticket.id %>
+      </div>
+    </div>
+    
+    <div id="ticket_category_status">
+      <div class="ticket_category" id="ticket_category_show">
+        <%= Category.find(@ticket.category_id).name %>
+      </div>
+      <div class="ticket_status"  id="ticket_status_show">
+        <%= Status.find(@ticket.status_id).name %>
+      </div>
+    </div>  
+    
+    
+    <div>
+      <%= @ticket.body %>  
+    </div>  
+  </div>
+  
+
+
+
+<div id="comments">
+  <%= content_tag(:h4,"Comentarios") %>
+  
+  <%= render :partial => 'comment', :collection => @comments %>
+  
+  
+  
+  <div class="cm_form">
+    <%= error_messages_for :comment %>
+    <% form_for :comment, :url => {:action => 'create_comment', :id => @ticket.id} do |comment_form| %>
+    <div class="cm_note">
+      <div class="note">
+        Agregar Comentario
+      </div>
+    </div>
+    <br>
+    <%= comment_form.text_area :body %>
+    <br>
+    <div class="button">
+      <%= submit_tag "Enviar" %>
+    </div>
+    <% end %>
+  </div>
+  
+
+</div>
+
 
 </div>
 <div class="link">

@@ -98,6 +98,8 @@ body {
     left: 980px;
     bottom: 23px;
 }
+
+
 .ticket_header {
     width: 920px;
     margin: auto;
@@ -107,49 +109,88 @@ body {
 
 .ticket_id {
     width: 70px;
-    border: 1px solid black;
+    #border: 1px solid black;
     display: inline-block;
+    text-align: center;
+}
+
+#ticket_id {
+    width: 70px;
+    border: 1px solid black;
+    border-right: none;
+    #display: inline-block;
     text-align: center;
 }
 
 .ticket_category {
     width: 200px;
-    border: 1px solid black;
+    #border: 1px solid black;
     border-left: none;
     display: inline-block;
     text-align: center;
+}
+
+#ticket_category{
+    width: 200px;
+    border: 1px solid black;
+    #display: inline-block;
 }
 
 .ticket_status {
     width: 200px;
-    border: 1px solid black;
-    border-left: none;
+    #border: 1px solid black;
+    #border-left: none;
     display: inline-block;
     text-align: center;
 }
-
+#ticket_status {
+    width: 200px;
+    border: 1px solid black;
+    border-left: none;
+    #display: inline-block;
+    text-align: center;
+}
 
 .ticket_description {
     width: 224px;
+    #border: 1px solid black;
+    #border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+#ticket_description {
+    width: 224px;
     border: 1px solid black;
     border-left: none;
-    display: inline-block;
+    #display: inline-block;
     text-align: center;
 }
 
 .ticket_date {
     width: 220px;
+ #   border: 1px solid black;
+ #   border-left: none;
+    display: inline-block;
+    text-align: center;
+}
+
+#ticket_date {
+    width: 220px;
     border: 1px solid black;
     border-left: none;
-    display: inline-block;
+    #display: inline-block;
     text-align: center;
 }
 
 .link_details {
     width: 30px;
-#    height: 100px;
     display: inline-block;
+}
 
+a { text-decoration: none;}
+
+a:hover { 
+    text-decoration: underline; 
 }
 
 .link_cancel {
@@ -158,7 +199,92 @@ body {
 }
 
 
+#add{
+    padding-left: 900px;
+    background: #FFFFFF url(icon_add_order.jpg);
+}
 
-#add {
-    padding-left: 800px;
+#new_ticket{
+    margin-top: 50px;
+    #margin-left: 50px;
+    display: table;
+    font-size: 12px;
+}
+
+#category{
+    display: inline;
+}
+
+#category_field{
+    display: inline;
+    padding: 2px;
+    #border-bottom: 1px solid silver;
+    height: 10px;
+}
+
+#description{
+    display: inline-block;
+}
+
+#description_field{
+    display: inline-block;
+}
+
+.button{
+    width: 90px;
+    position: relative;
+    left: 850px;
+    bottom: 25px;
+}
+
+
+
+
+/* Ticket view */
+
+#ticket_view{ 
+     border: dotted; 
+     margin: 0 auto 0 auto;  
+     margin-top: 50px; 
+     width: 920px;
+     display: table; #inline-block; 
+}
+   
+#ticket_category_status{
+    border: dashed;
+    display: block;
+    text-align: left;
+}
+
+#ticket_category_show {
+    text-align: inherit;
+    display: block;
+    border: ridge;
+}
+
+#ticket_status_show {
+    text-align: inherit;
+    display: block;
+    border: ridge;
+}
+
+#ticket_date_show{
+    text-align: left;
+
+}
+
+#ticket_id_show{
+    position: relative;
+    left: 625px;
+    border: dotted;
+    text-align: right;
+}
+
+
+#comments{
+    width: 920px;
+    margin: 0 auto 0 auto;
+    margin-top: 150px; 
+    border: groove;
+    display: block;
 }

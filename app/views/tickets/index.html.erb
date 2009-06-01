@@ -4,8 +4,14 @@
   <%= render :partial => 'ticket_header' %>
   <br>
   <%= render :partial => 'ticket', :collection => @tickets %>
-  <div id="add">
-   <!--  <%=  link_to (image_tag("icon_add_order.jpg",:title => "Nueva solicitud de soporte"),:action => 'new' ) %> -->
-    <%= link_to 'Nueva Solicitud', :action => 'new'%>
-  </div>
+  
+
+ <!--  <div id="add"> -->
+<!--     <%=  link_to (image_tag("icon_add_order.jpg",:title => "Nueva solicitud de soporte"),:action => 'new' ) %> -->
+<!-- </div>   -->  
+
+   <%= link_to 'Nueva Solicitud', { :action => 'new'}, { :id => "add"} %>
+  
+  
+
 </div>
