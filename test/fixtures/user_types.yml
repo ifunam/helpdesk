@@ -1,0 +1,11 @@
+user:
+  id: 1
+  name: "user"
+
+admin:
+  id: 2
+  name: "admin"
+
+anyone:
+  id: 3
+  name: anyone

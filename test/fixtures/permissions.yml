@@ -1,0 +1,46 @@
+new:
+  id: 1
+  name: "Nueva Solicitud"
+  user_type_id: 1
+  action: "new"
+  view: "new"
+  title: "Nueva solicitud de soporte"
+
+show:
+  id: 2
+  name: "Detalles"
+  user_type_id: 3
+  action: "show_ticket"
+  view: "index"
+  title: "Mostrar solicitud"
+
+cancel:
+  id: 3
+  name: "Cancelar"
+  user_type_id: 1
+  action: "cancel"
+  method: "cancel"
+  view: "index"
+  icon: "icon_cancel_order.jpg"
+  title: "Cancelar solicitud"
+  id_tag: "link_cancel"
+  message: "Estas seguro de cancelar esta solicitud?"
+
+finish:
+  id: 4
+  name: "Finalizar"
+  user_type_id: 2
+  action: "finish"
+  view: "index"
+  icon: "icon_ready.jpg"
+  id_tag: "link_finish"
+  title: "Finalizar solicitud"
+
+comment:
+  id: 5
+  name: "Comentar"
+  user_type_id: 3
+  action: "comment"
+  view: "show"
+  title: "Agregar comentario"
+  message: "Haz ofrecido el soporte. Terminar solicitud?"
