@@ -8,7 +8,8 @@ class SessionController < ApplicationController
 
      if User.authenticate(params[:user][:login],params[:user][:password])
        flash[:notice] = 'Bienvenido(a)!'
-       session[:user] = User.find_by_login(params[:user][:login]).id
+       session[:id] = User.find_by_login(params[:user][:login]).id
+       session[:type]= User.find(session[:id]).is_admin? ? 2 : 1
        options = { :controller => :tickets }
   
      else
@@ -23,6 +24,8 @@ class SessionController < ApplicationController
   end
 
   def signout
+    reset_session
+    render :action => :signout
   end
 
 end

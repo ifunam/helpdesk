@@ -6,17 +6,16 @@ class Notifier < ActionMailer::Base
     @recipients = User.find(ticket.user_id).email
     @from      = 'noreply@fisica.unam.mx'
     @sent_on  =  Time.now
-    
     @body      = {:ticket => ticket}
     @content_type = "text/html"
     
   end
   
-  # def order_request_for_admin(ticket)
-#     @subject  =  '[HD]Nueva solicitud de soporte'
-#     @recipients = User.find(session[:id]).email
-#     @from      = 'noreply@fisica.unam.mx'
-#     @sent_on  =  Time.now
+ # def order_request_for_admin(ticket)
+ #    @subject  =  '[HD]Nueva solicitud de soporte'
+ #    @recipients = find_admin(ticket)#User.find(session[:id]).email
+ #    @from      = 'noreply@fisica.unam.mx'
+ #    @sent_on  =  Time.now
     
 #     @body      = {:ticket => ticket}
 #     @content_type ="text/html"
@@ -51,4 +50,14 @@ class Notifier < ActionMailer::Base
 #     @body   =   {:ticket => ticket}
 #   end
 
+
+  
+  def find_user(ticket)
+    User.find(ticket.user_id).email
+  end
+
+  def find_admin(ticket)
+    user_id=UserCategory.find(:first, :conditions => {:category_id => ticket.category_id}).user_id
+    User.find(user_id).email
+  end
 end

@@ -26,6 +26,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_admin?
+    self.is_admin
+  end
+
+  def find_tickets
+    if !is_admin?
+      Ticket.all(:conditions => {:user_id => self.id}, :order => "created_at DESC") 
+    else
+      category=UserCategory.find(:first,:conditions => {:user_id => self.id}).category_id
+      Ticket.all(:conditions => {:category_id => category} , :order => "created_at DESC" )
+    end
+  end
+
 
 
 end

@@ -1,30 +1,40 @@
+
+
+<div class="icon_order">
+    <%= image_tag("icon_order.jpg") %>
+  </div>
 <div class="ticket_row">
-  <div class="ticket_id">
-    <%= ticket.id%>
-  </div>
-  <div class="ticket_category">
-    <%= Category.find(ticket.category_id).name %>
-  </div>
-  <div class="ticket_status">
-    <%= Status.find(ticket.status_id).name %>
-  </div>
-  <div class="ticket_description">
-    <%= ticket.body.slice(0, 20) %>...
-  </div>
-  <div class="ticket_date">
-    <%= ticket.created_at_before_type_cast %>
-  </div>
-</div>
   
-<div class="ticket_actions">
-  <div class="link_details">
-    <%= link_to ( image_tag("icon_details.jpg", :title => "Detalles"),{:action => 'show_ticket', :id => ticket.id}) %>
+  <div class="ticket_row_panel">
+    <div class="ticket_category">
+      <%= Category.find(ticket.category_id).name %>
+    </div>
+    <div class="ticket_status">
+      <%= Status.find(ticket.status_id).name %>
+    </div>
+    <div class="ticket_body1">
+      <%= ticket.body.slice(0, 20) %>...
+    </div>
+    <div class="ticket_date">
+      <%= ticket.created_at_before_type_cast %>
+    </div>
   </div>
-  <div class="link_cancel">
-    <%= link_to ( image_tag("icon_cancel_order.jpg", :title => "Cancelar solicitud"),{:action => 'destroy', :id => ticket.id},:method => 'destroy', :confirm => "Estas seguro?"  ) %>
+
+
+
+  <div id="ticket_actions">
+    <%= link_to("Detalles", {:action => 'show_ticket', :id => ticket.id},{:id => "link_details"}) %> 
+    
+    <%= link_to(@permission.name, {:action => @permission.action , :id => ticket.id,:method => @permission.method , :confirm => @permission.message} ,{:id => @permission.id_tag}) %>
   </div>
+  
+
 </div>  
 
+
+
+<!-- <div class="space"> -->
+<!-- </div> -->
 
 
 

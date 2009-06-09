@@ -1,30 +1,28 @@
 <div class="comment">
-  <p>
-    <div class="date">
-      <div class ="note">
-      Creado :
-      </div>
-      <%= comment.created_at_before_type_cast %>
-    </div>
-  </p>
-  <p>
-    <div class="category">
-      <div class ="note">
-        De :
-      </div>
-      <%= comment.subject %>
-    </div>
-  </p>
-  <p>
-    <div class="status">
-      <div class ="note">
-        Descripcion :
-      </div>
-      <%= comment.body %>
-    </div>
-  </p>
-  
-  
-  ----------------
-  <br>
+ <div class="comment_panel">
+   
+   
+   <div class="comment_header">
+     <%= comment.created_at_before_type_cast %>
+   
+     <br>
+   
+     De: <%= comment.subject %>
+   </div>
+
+   <div class="icon_comment">
+     <%= image_tag("icon_commnet.jpg") %>
+   </div>
+   
+   
+   <div class="comment_body">
+     <div class="text">
+       <%= comment.body %>
+     </div>
+   </div>
+   
+ </div>
+</div>
+
+ <div class="space">
 </div>

@@ -19,16 +19,23 @@ ActiveRecord::Schema.define(:version => 1) do
 
   create_table "comments", :force => true do |t|
     t.integer  "ticket_id"
-    t.string   "subject"
-    t.text     "body"
+    t.string   "subject",    :null => false
+    t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "fenix_data", :force => true do |t|
-    t.string   "full_name"
-    t.string   "adscription"
-    t.integer  "user_id"
+  create_table "permissions", :force => true do |t|
+    t.integer  "user_type_id",                        :null => false
+    t.string   "name"
+    t.string   "controler",    :default => "tickets"
+    t.text     "action",                              :null => false
+    t.text     "method",       :default => "get"
+    t.string   "view"
+    t.string   "icon",         :default => ".."
+    t.text     "title",                               :null => false
+    t.text     "message"
+    t.string   "id_tag",       :default => "id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,6 +65,12 @@ ActiveRecord::Schema.define(:version => 1) do
   create_table "user_categories", :force => true do |t|
     t.integer  "user_id",     :null => false
     t.integer  "category_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_types", :force => true do |t|
+    t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

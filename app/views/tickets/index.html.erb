@@ -1,17 +1,42 @@
-<h2>"Inicidencias reportadas por el personal del IFUNAM"</h2>
 
-<div class="tickets">
-  <%= render :partial => 'ticket_header' %>
-  <br>
+
+<div id="login">
+login: <%=User.find(session[:id]).login %>
+<br>
+<br>
+<%= link_to 'Salir', {:controller => 'session', :action => 'signout'} %>
+</div>
+<div id="index_title">
+  <h2>Inicidencias reportadas por el personal del IFUNAM</h2>
+</div>
+
+<div id="tickets">
+  
+  <%= render :partial => 'ticket_header' %> 
+
+  <% if User.find(session[:id]).tickets.size == 0 %>
+  <div id="no_tickets">
+    Por el momento no tienes solicitudes de soporte
+  </div>
+  <% end %>
   <%= render :partial => 'ticket', :collection => @tickets %>
   
-
- <!--  <div id="add"> -->
-<!--     <%=  link_to (image_tag("icon_add_order.jpg",:title => "Nueva solicitud de soporte"),:action => 'new' ) %> -->
-<!-- </div>   -->  
-
-   <%= link_to 'Nueva Solicitud', { :action => 'new'}, { :id => "add"} %>
   
-  
+
 
 </div>
+
+
+<% if session[:type] == 1 %> 
+  
+  <div id="add_ticket">
+    <%= link_to 'Nueva Solicitud', :action => 'new' %>
+  </div>
+<% end %> 
+
+
+
+
+
+    
+

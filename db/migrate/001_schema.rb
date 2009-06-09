@@ -20,8 +20,8 @@ class Schema < ActiveRecord::Migration
     create_table :comments do |t|
       t.references :ticket
       #t.references :parent, :class_name => 'Comment', :foreign_key => 'parent_id'
-      t.string :subject
-      t.text :body
+      t.string :subject, :null => false
+      t.text :body, :null => false
       t.timestamps
     end
 
@@ -45,54 +45,33 @@ class Schema < ActiveRecord::Migration
       t.timestamps
     end
 
-    #create_table :user_tickets do |t|
-    #  t.references :user, :ticket, :null => false
-    #  t.timestamps
-    #end
+   
 
-
-    create_table :fenix_data do |t|
-      t.string :full_name
-      t.string :adscription
-      t.references :user
+    create_table :user_types do |t|
+      t.string :name, :null => false
       t.timestamps
     end
 
-
-    # [ 'Correo electrónico',
-#       'Red inalámbrica',
-#       'Red cableada',
-#       'Soporte para windows y sus paquetes',
-#       'Virus!',
-#       'Telefonía',
-#       'Páginas web del instituto',
-#       'Fotografía y carteles',
-#       'SALVA',
-#       'SIESTA',
-#       'Cluster Brodix',
-#       'Cluster Ollín',
-#       'Supercómputo',
-#       'Laboratorio de cómputo de Sistemas Complejos',
-#       'Laboratorio de cómputo de Física Teórica',
-#       'Laboratorio de cómputo general de estudiantes (VAX)',
-#       'Problemas conmigo mismo y con mis colegas',
-#       'Otro'].each do |name|
-#         Category.create(:name => name)
-#       end
-    
-#    ['Alta', 'Normal', 'Baja'].each do |name|
-#      Priority.create(:name => name)
-#    end
-    
-    ['En proceso', 'Cerrado', 'Cancelado', 'Duplicado','Pendiente'].each do |name|
-      Status.create(:name => name)
+    create_table :permissions do |t|
+      t.references :user_type, :null => false
+      t.string :name
+      t.string :controler, :default => "tickets"
+      t.text :action, :null => false
+      t.text :method, :default => "get"
+      t.string :view
+      t.string :icon, :default => ".."
+      t.text :title, :null => false
+      t.text :message
+      t.string :id_tag, :default => "id"
+      t.timestamps
     end
-    #A normal user
-    #User.create(:login => "carlos",:password => "carlos", :email => "protozoario9@hotmail.com")
+     
+    
+    
     
   end
 
   def self.down
-    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_tickets
+    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_types, :peermissions
   end
 end

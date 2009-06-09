@@ -8,4 +8,5 @@ nato:
   id: 2
   login: "nato"
   password: "nato"
-  email: "algo@correo.com"
+  is_admin: true
+  email: "caer@ciencias.unam.mx"
