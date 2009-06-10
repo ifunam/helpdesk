@@ -10,7 +10,7 @@ class Ticket < ActiveRecord::Base
   #has_many :users, :through => :user_tickets
   
   
-  has_many :comments
+  has_many :comments, :order => "created_at DESC"
 
   
 

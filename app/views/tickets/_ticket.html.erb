@@ -22,11 +22,12 @@
 
 
 
-  <div id="ticket_actions">
-    <%= link_to("Detalles", {:action => 'show_ticket', :id => ticket.id},{:id => "link_details"}) %> 
+  <div class="ticket_actions">
     
-    <%= link_to(@permission.name, {:action => @permission.action , :id => ticket.id,:method => @permission.method , :confirm => @permission.message} ,{:id => @permission.id_tag}) %>
-  </div>
+     <%= link_to("Detalles", ticket_path(ticket) , :class => "link_details") %> 
+    <%= link_to "Cancelar", ticket_path(ticket), {:method => :delete, :confirm => "Estas seguro?"}, {:class => "link_cancel"} %> 
+
+    </div>
   
 
 </div>  
