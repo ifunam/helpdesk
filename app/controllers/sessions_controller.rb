@@ -1,11 +1,9 @@
-
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   def index
     @user=User.new
   end
 
-  def signup
-
+  def create
      if User.authenticate(params[:user][:login],params[:user][:password])
        flash[:notice] = 'Bienvenido(a)!'
        session[:id] = User.find_by_login(params[:user][:login]).id
@@ -23,7 +21,7 @@ class SessionController < ApplicationController
 
   end
 
-  def signout
+  def destroy
     reset_session
     render :action => :signout
   end

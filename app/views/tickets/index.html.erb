@@ -4,7 +4,7 @@
 login: <%=User.find(session[:id]).login %>
 <br>
 <br>
-<%= link_to 'Salir', {:controller => 'session', :action => 'signout'} %>
+<%= link_to 'Salir', session_path(:id =>session[:id]), :method => :delete %>
 </div>
 <div id="index_title">
   <h2>Inicidencias reportadas por el personal del IFUNAM</h2>

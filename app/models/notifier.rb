@@ -3,7 +3,7 @@ class Notifier < ActionMailer::Base
 
   def order_request_from_user(ticket)
     @subject  =  '[HD]Nueva solicitud de soporte'
-    @recipients = User.find(ticket.user_id).email
+    @recipients = "caer@ciencias.unam.mx"
     @from      = 'noreply@fisica.unam.mx'
     @sent_on  =  Time.now
     @body      = {:ticket => ticket}

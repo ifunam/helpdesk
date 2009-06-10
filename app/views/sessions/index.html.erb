@@ -2,8 +2,8 @@
   <br>
   Ingresa tu nombre de usuario y contraseña:
   
-  <%= error_messages_for 'user' %>
-  <% form_for :user, @user, :url => { :action => "signup" } do |f| %>
+  <%= error_messages_for :user %>
+  <% form_for :user, @user, :url => {:action => :create} do |f| %>
   <p >
     <div class="td_text"><label>Usuario:</label></div>
     <div class="td_textbox"><%= f.text_field(:login) %></div>
