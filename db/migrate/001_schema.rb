@@ -19,7 +19,7 @@ class Schema < ActiveRecord::Migration
     
     create_table :comments do |t|
       t.references :ticket
-      #t.references :parent, :class_name => 'Comment', :foreign_key => 'parent_id'
+      t.references :parent, :class_name => 'Comment', :foreign_key => 'parent_id'
       t.string :subject, :null => false
       t.text :body, :null => false
       t.timestamps
