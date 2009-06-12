@@ -1,0 +1,13 @@
+Migrar academic_client de GIF (buscar en GIT HUB) 
+
+avisarle al emo que trabajare en la migracion de ese cliente
+
+este va al salva, se conecta, y te regresa un objeto tipo active record que no es active record (active resource) 
+y puede encontrar informacion sobre el usuario en SALVA.
+
+instancia un objeto con la variable instancia "Attributes" y a su vez estos attributes son un hash que generan diferentes mètodos que permiten comprobar lo que esta regresando el servidor.
+
+
+hacer pruebas para user_profile_client.rb
+RSpec
+

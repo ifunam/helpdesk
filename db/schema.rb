@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "permissions", :force => true do |t|
