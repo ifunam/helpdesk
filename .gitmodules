@@ -1,3 +1,6 @@
 [submodule "vendor/plugins/acts_as_tree"]
 	path = vendor/plugins/acts_as_tree
 	url = git://github.com/rails/acts_as_tree.git
+[submodule "vendor/plugin/factory_girl"]
+	path = vendor/plugin/factory_girl
+	url = git://github.com/thoughtbot/factory_girl.git

@@ -32,7 +32,10 @@ login: <%=User.find(session[:id]).login %>
   <div id="add_ticket">
     <%= link_to 'Nueva Solicitud', :action => 'new' %>
   </div>
-<% end %> 
+<% end %> <%= link_to("Detalles", {:action => 'show_ticket', :id => ticket.id},{:id => "link_details"}) %> 
+    
+    <%= link_to(@permission.name, {:action => @permission.action , :id => ticket.id,:method => @permission.method , :confirm => @permission.message} ,{:id => @permission.id_tag}) %>
+  </div>
 
 
 

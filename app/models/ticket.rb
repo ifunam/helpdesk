@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
   validates_presence_of :status_id, :category_id
+  validates_presence_of :user_id
   validates_presence_of :body, :messages => "Debes introducor texto"
 
   belongs_to :category
