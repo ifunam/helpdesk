@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
-  validates_presence_of :subject, :message => "Error de subject"
-  validates_presence_of :body, :message => "Error de body"
+  validates_presence_of :subject
+  validates_presence_of :body
+  validates_presence_of :ticket_id
 
   acts_as_tree
   belongs_to :ticket

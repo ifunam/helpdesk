@@ -7,6 +7,8 @@ Factory.define :user do |u|
   u.status true
   u.is_admin true
 end
+
+
 Factory.define :category do |c|
   c.name "Red inalambrica"
 end
@@ -25,4 +27,14 @@ Factory.define :ticket do |t|
    t.association(:status, :name => "Nuevo")
    t.association(:priority, :name => "Normal")
    t.association(:user, :login => "carlos")
+end
+
+Factory.define :invalid_ticket do |it|
+  it.body {Faker::Lorem.paragraphs}
+end
+
+Factory.define :comment do |c|
+  c.subject "carlos"
+  c.body {Faker::Lorem.paragraphs}
+  c.association(:ticket, :factory => :ticket)
 end

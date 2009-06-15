@@ -12,6 +12,7 @@ describe Ticket do
   it "Should be valid" do
     @ticket.should be_valid
   end
+  
    it "Should not be valid without a body" do
     @ticket.body = nil
     @ticket.should_not be_valid
