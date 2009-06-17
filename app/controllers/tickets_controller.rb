@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class TicketsController < ApplicationController
   def index
-    @tickets= Ticket.all( :conditions => {:user_id => session[:id]})
+    @tickets= Ticket.all_find_by_user_id(session[:user_id])
   end
 
   def new
