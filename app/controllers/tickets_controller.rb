@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class TicketsController < ApplicationController
   def index
-    @tickets= Ticket.all_find_by_user_id(session[:user_id])
+    @tickets= Ticket.all(:conditions => {:user_id => session[:user_id]})
   end
 
   def new
@@ -9,7 +9,7 @@ class TicketsController < ApplicationController
   end
   
   def create
-    @ticket = Ticket.new(params[:ticket].merge(:user_id => session[:id]))
+    @ticket = Ticket.new(params[:ticket].merge(:user_id => session[:user_id]))
     if @ticket.save 
       redirect_to :action => 'index'
     else

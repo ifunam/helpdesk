@@ -1,5 +1,17 @@
 require 'faker'
 
+Factory.define :ticket do |t|
+  t.body {Faker::Lorem.paragraphs.join("\n")}
+  t.category_id 1
+  t.status_id 1
+  t.user_id 1
+  t.priority_id 1
+  t.association(:category, :name => "Red inalambrica")
+  t.association(:status, :name => "Nuevo")
+  t.association(:priority, :name => "Normal")
+  t.association(:user, :factory => :user)
+end
+
 Factory.define :user do |u|
   u.email {Faker::Internet.free_email} 
   u.login "carlos"
@@ -21,13 +33,7 @@ Factory.define :priority do |p|
   p.name "Normal"
 end
 
-Factory.define :ticket do |t|
-   t.body {Faker::Lorem.paragraphs}
-   t.association(:category, :name => "Red inalambrica")
-   t.association(:status, :name => "Nuevo")
-   t.association(:priority, :name => "Normal")
-   t.association(:user, :login => "carlos")
-end
+
 
 Factory.define :invalid_ticket do |it|
   it.body {Faker::Lorem.paragraphs}

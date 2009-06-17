@@ -1,10 +1,10 @@
 
 
 <div id="login">
-login: <%=User.find(session[:id]).login %>
+login: <%=User.find(session[:user_id]).login %>
 <br>
 <br>
-<%= link_to 'Salir', session_path(:id =>session[:id]), :method => :delete w%>
+<%= link_to 'Salir', session_path(:id =>session[:user_id]), :method => :delete %>
 </div>
 <div id="index_title">
   <h2>Inicidencias reportadas por el personal del IFUNAM</h2>
@@ -14,7 +14,7 @@ login: <%=User.find(session[:id]).login %>
   
   <%= render :partial => 'ticket_header' %> 
 
-  <% if User.find(session[:id]).tickets.size == 0 %>
+  <% if User.find(session[:user_id]).tickets.size == 0 %>
   <div id="no_tickets">
     Por el momento no tienes solicitudes de soporte
   </div>
@@ -32,10 +32,10 @@ login: <%=User.find(session[:id]).login %>
   <div id="add_ticket">
     <%= link_to 'Nueva Solicitud', :action => 'new' %>
   </div>
-<% end %> <%= link_to("Detalles", {:action => 'show_ticket', :id => ticket.id},{:id => "link_details"}) %> 
+  <% end %>
+  
     
-    <%= link_to(@permission.name, {:action => @permission.action , :id => ticket.id,:method => @permission.method , :confirm => @permission.message} ,{:id => @permission.id_tag}) %>
-  </div>
+</div>
 
 
 
