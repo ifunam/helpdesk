@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_filter :login_required
   def index
     @user=User.new
   end
@@ -6,8 +7,7 @@ class SessionsController < ApplicationController
   def create
      if User.authenticate(params[:user][:login],params[:user][:password])
        flash[:notice] = 'Bienvenido(a)!'
-       session[:id] = User.find_by_login(params[:user][:login]).id
-       session[:type]= User.find(session[:id]).is_admin? ? 2 : 1
+       session[:user_id] = User.find_by_login(params[:user][:login]).id
        options = { :controller => :tickets }
   
      else
