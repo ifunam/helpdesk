@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(:version => 1) do
 
   create_table "comments", :force => true do |t|
     t.integer  "ticket_id"
+    t.integer  "parent_id"
     t.string   "subject",    :null => false
     t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "parent_id"
   end
 
   create_table "permissions", :force => true do |t|
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(:version => 1) do
   end
 
   create_table "tickets", :force => true do |t|
-    t.integer  "status_id",   :null => false
-    t.integer  "category_id", :null => false
-    t.integer  "priority_id", :null => false
-    t.integer  "user_id",     :null => false
-    t.text     "body",        :null => false
+    t.integer  "status_id",   :default => 1, :null => false
+    t.integer  "category_id",                :null => false
+    t.integer  "priority_id", :default => 1, :null => false
+    t.integer  "user_id",                    :null => false
+    t.text     "body",                       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

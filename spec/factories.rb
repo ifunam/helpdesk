@@ -20,6 +20,10 @@ Factory.define :user do |u|
   u.is_admin true
 end
 
+Factory.define :user2 do |ui|
+  ui.login "carlos2"
+end
+
 
 Factory.define :category do |c|
   c.name "Red inalambrica"
