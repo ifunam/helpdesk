@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 class TicketsController < ApplicationController
+
   def index
     @tickets= Ticket.all(:conditions => {:user_id => session[:user_id]})
   end

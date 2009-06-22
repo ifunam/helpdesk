@@ -12,7 +12,7 @@ class Ticket < ActiveRecord::Base
   
   
   has_many :comments, :order => "created_at DESC"
-
+  accepts_nested_attributes_for :comments
   
 
 end

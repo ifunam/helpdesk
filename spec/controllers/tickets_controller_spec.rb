@@ -9,18 +9,15 @@ describe TicketsController do
   end
 
  
-  context "when display ticket index" do
+  context "when use index with saved records" do
     it "should render index view successfuly" do
       get 'index'
       response.should be_success
     end
     
-    it "should show all tickets in index view" do
-      @user=User.new Factory.attributes_for :user
-      @t=Ticket.new(@ticket)
-      @user.tickets << @t
-      @user.tickets.should have(1).tickets
-      @user.tickets.should include(@t)
+    it "should should include all saved records" do
+      get 'index'
+      assigns[:tickets].should_not be_nil
     end
   end
   

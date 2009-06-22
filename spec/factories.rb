@@ -20,8 +20,6 @@ Factory.define :user do |u|
   u.is_admin true
 end
 
-
-
 Factory.define :category do |c|
   c.name "Red inalambrica"
 end
@@ -34,21 +32,12 @@ Factory.define :priority do |p|
   p.name "Normal"
 end
 
-
-
-Factory.define :invalid_ticket do |it|
-  it.body {Faker::Lorem.paragraphs}
-end
-
 Factory.define :comment do |c|
   c.subject "carlos"
   c.body {Faker::Lorem.paragraphs}
   c.association(:ticket, :factory => :ticket)
 end
 
-
-
-
-Factory.define :ticket_invalid,{:class => :ticket}  do |ti|
-end
+Factory.define :ticket_invalid,{:class => :ticket}  do |ti| end
+Factory.define :comment_invalid,{:class => :comment} do |ci| end
 
