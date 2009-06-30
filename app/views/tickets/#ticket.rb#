@@ -1,0 +1,32 @@
+class Views::Tickets::Ticket < Erector::RailsWidget
+  def content
+    div :class => 'icon_order' do
+      rawtext image_tag("icon_order.jpg")
+    end
+    div :class => 'ticket_row' do
+      div :class => 'ticket_row_panel' do
+        div :class => 'ticket_category' do
+          rawtext Category.find(ticket.category_id).name
+        end
+        div :class => 'ticket_status' do
+          rawtext Status.find(ticket.status_id).name
+        end
+        div :class => 'ticket_body1' do
+          rawtext ticket.body.slice(0, 20)
+          text '...'
+        end
+        div :class => 'ticket_date' do
+          rawtext ticket.created_at_before_type_cast
+        end
+      end
+      div :class => 'ticket_actions' do
+        rawtext link_to("Detalles", ticket_path(ticket) , :class => "link_details")
+        rawtext link_to("Cancelar", ticket_path(ticket), {:method => :delete, :confirm => "Estas seguro?"}, {:class => "link_cancel"})
+      end
+    end
+    rawtext '<!-- <div class="space">'
+    text '-->'
+    rawtext '<!-- </div>'
+    text '-->'
+  end
+end
