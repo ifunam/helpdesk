@@ -4,11 +4,8 @@
 Secretaria tecnica de computo
 <br>
   <div id="ticket_information">
-
     <div id="ticket_panel">
-      
       <div id="ticket_header">     
-        
         <%= @ticket.created_at_before_type_cast %>
         <br>
         Categoria: <%= Category.find(@ticket.category_id).name %>
@@ -19,8 +16,6 @@ Secretaria tecnica de computo
         <br>
         <br>
       </div>
-      
-      
       <div id="ticket_body_show">
         <div class="text">        
           <%= @ticket.body %>  
@@ -30,13 +25,6 @@ Secretaria tecnica de computo
     </div>
   </div>
   
-
-
-
-
-
-
-
   
   <div id="comment_title">
     <h4> Comentarios</h4>
@@ -44,41 +32,32 @@ Secretaria tecnica de computo
   
   
   <div id="comments">
-    <%= render :partial => 'comment', :collection => @ticket.comments %>
+    <%= render :partial => 'comments/comment', :collection => @ticket.comments %>
   </div>
   
+
+
   <div class="space">
   </div>
 
+  
   <div id="comment_form">
     <div id="panel">      
       <%= error_messages_for :comment %>
-  
-      <% form_for :comment, @comment, :url => {:action => 'comment', :id => @ticket.id} do |comment_form| %>
-      
-      
-      
+      <% form_for :comment, @comment, :url => {:controller => 'comments' ,:action => 'create' , :id => @ticket.id} do |comment_form| %>
       <%= comment_form.text_area :body %>
-      
-      
       <div id="send_comment">
         <%= submit_tag "Agregar comentario" %>
       </div>
-      
       <% end %>
-  
     </div>
-    
   </div>
 </div>
 
 
-
-
-
-
-
-
 <div class="link">
-  <%= link_to "Regresar", :action => 'index' %>
+  <%= link_to "Regresar", tickets_url %>
 </div>
+
+
+

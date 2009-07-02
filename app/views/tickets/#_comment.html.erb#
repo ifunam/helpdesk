@@ -18,6 +18,7 @@
    <%= link_to "Ver hilo", comment_path %>
      
  </div>
+
  
 </div>
 <%= render :partial => 'comment', :collection => comment.children if comment.children.size > 0 %>

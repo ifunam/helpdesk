@@ -4,6 +4,7 @@
     <br>
   <%= link_to 'Salir', session_path(:id =>session[:user_id]), :method => :delete %>
 </div>
+
 <div id="index_title">
   <h2>Inicidencias reportadas por el personal del IFUNAM</h2>
 </div>
@@ -18,19 +19,15 @@
   </div>
   <% end %>
   <%= render :partial => 'ticket', :collection => @tickets %>
-  
-  
-  
-  
 </div>
 
 <div id="add_ticket">
-  <%= link_to 'Nueva Solicitud', ticket_path %>#:action => 'new' %>
+         <%= link_to 'Nueva Solicitud', new_ticket_path %>
 </div>
 
 
 
-</div>
+
 
 
 

@@ -8,12 +8,14 @@
 
   <div id="new_ticket">  
     <div id="new_ticket_panel">
-      <div class="error">
-        <%= error_messages_for 'ticket' %>
-      </div>
+      
+        <%= error_messages_for :ticket %>
+      
       
       <% form_for :ticket, @ticket, :url => { :action => 'create' } do |f| %>
-      
+      <div class="error">
+<%= f.error_messages %>
+      </div>
       <div id="category_field">
         <div id="category">
           Categoria:
