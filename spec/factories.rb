@@ -35,8 +35,6 @@ end
 Factory.define :comment do |c|
   c.subject "carlos"
   c.body "Padre"#{Faker::Lorem.paragraphs.join("\n")}
-  c.parent_id nil
-  c.ticket_id 1
   c.association(:ticket, :factory => :ticket)
 end
 

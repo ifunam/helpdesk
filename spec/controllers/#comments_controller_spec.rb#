@@ -20,6 +20,11 @@ describe CommentsController do
       post :create, :comment => Factory.attributes_for(:comment_invalid), :id => @ticket.id,:parent => nil
       should redirect_to(ticket_path(@ticket))
     end
+
+    context "When try to view a comment" do
+      it 
+    end
+    
     
   end
  
