@@ -1,4 +1,6 @@
 log/*
+db/*
+!db/migrate
 tmp/*
 *~
 #*#
