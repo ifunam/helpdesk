@@ -27,12 +27,12 @@ Secretaria tecnica de computo
   
   
   <div id="comment_title">
-    <h4> Comentarios</h4>
+    <h4> Comentarios  </h4>
   </div>
   
   
   <div id="comments">
-    <%= render :partial => 'comments/comment', :collection => @ticket.comments %>
+    <%= render :partial => 'comments/comment', :collection => @comments %>
   </div>
   
 
@@ -44,7 +44,7 @@ Secretaria tecnica de computo
   <div id="comment_form">
     <div id="panel">      
       <%= error_messages_for :comment %>
-      <% form_for :comment, @comment, :url => {:controller => 'comments' ,:action => 'create' , :id => @ticket.id} do |comment_form| %>
+      <% form_for :comment, @comment, :url => {:controller => 'comments' ,:action => 'create' , :id => @ticket.id, :parent => nil} do |comment_form| %>
       <%= comment_form.text_area :body %>
       <div id="send_comment">
         <%= submit_tag "Agregar comentario" %>

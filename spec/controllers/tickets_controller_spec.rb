@@ -1,13 +1,13 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-
-
+ 
+ 
 describe TicketsController do
   
   before(:each) do
     session[:user_id]= 1
     @ticket=Factory.attributes_for(:ticket)
   end
-
+ 
  
   context "when use index with saved records" do
     it "should render index view successfuly" do
@@ -31,10 +31,9 @@ describe TicketsController do
     
   
   context "when try to post invalid ticket" do
-
-    it "should not create a new record with invalid attributes" do
-      @it= Factory.attributes_for(:ticket_invalid)
-      post :create, :ticket => @it
+ 
+    it "should not create a new record with none attributes" do
+      post :create, :ticket => Factory.attributes_for(:ticket_invalid)
       should redirect_to(new_ticket_path)
     end
     

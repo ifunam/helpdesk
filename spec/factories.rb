@@ -34,7 +34,16 @@ end
 
 Factory.define :comment do |c|
   c.subject "carlos"
-  c.body {Faker::Lorem.paragraphs}
+  c.body "Padre"#{Faker::Lorem.paragraphs.join("\n")}
+  c.parent_id nil
+  c.ticket_id 1
+  c.association(:ticket, :factory => :ticket)
+end
+
+Factory.define :comment_child, { :class => :comment } do |c|
+  c.subject "carlos"
+  c.body "HIJO"#{Faker::Lorem.paragraphs.join("\n")}
+  c.association(:comment, :factory => :comment )
   c.association(:ticket, :factory => :ticket)
 end
 

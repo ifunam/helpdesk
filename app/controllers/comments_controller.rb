@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    #TODO:: se mostrara el ticket creado y posteriormente  sus hijos
-    @comment=Comment.new
+    
   end
   
   def new
@@ -9,19 +8,26 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment=Comment.new(params[:comment].merge(:subject => User.find(session[:user_id]),:ticket_id => params[:id] ))
-    @root=@comment.root
-    if @root==@comment
-      @comment.save
-      redirect_to ticket_path(Ticket.find (params[:id]))
-    else
-      @comment=@root.children.create(params[:comment].merge(:subject => User.find(session[:user_id]),:ticket_id => params[:id]))
-      redirect_to ticket_comment_path(@comment)
+    begin
+      @comment=Comment.find(params[:parent])
+      if @comment.children.create(params[:comment].merge(:subject => User.find(session[:user_id]),:ticket_id => params[:id] )).valid?
+        redirect_to comment_path(@comment)
+      else
+        redirect_to ticket_path(Ticket.find(params[:id]))
+      end
+    rescue ActiveRecord::RecordNotFound
+      @comment=Comment.new(params[:comment].merge(:subject => User.find(session[:user_id]),:ticket_id => params[:id]))
+      if @comment.save
+        redirect_to comment_path(@comment)
+      else
+        redirect_to ticket_path(Ticket.find(params[:id]))
+      end
     end
   end
   
   def show
-    @comment2=Comment.find(params[:id])
+    @comment=Comment.find( params[:id] )
+    @comments=Comment.find(:all,:conditions => {:parent_id => @comment.id})
   end
   
   def destroy

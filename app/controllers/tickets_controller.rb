@@ -19,6 +19,7 @@ class TicketsController < ApplicationController
 
   def show
     @ticket =Ticket.find(params[:id])
+    @comments=Comment.find(:all,:conditions => {:parent_id => nil})
   end
 
   def destroy
