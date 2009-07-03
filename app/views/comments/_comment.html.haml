@@ -1,0 +1,13 @@
+.comment{:id=>comment.dom_id}
+  .comment_panel
+    .comment_header
+      = comment.created_at_before_type_cast
+      %br
+      = comment.subject
+    .icon_comment
+      = image_tag("icon_commnet.jpg")
+    .comment_body
+      = comment.body
+  .actions
+    = link_to_remote 'Responder', :url => edit_comment_path(comment), :method => :get
+  .child_form{:id=>'child_' + comment.dom_id} 

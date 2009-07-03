@@ -1,0 +1,6 @@
+- remote_form_for @comment, :url => comment_path(@comment) do |comment_form|
+  = comment_form.text_field :subject, :value => 'Re: ' + @comment.subject
+  = comment_form.text_area :body
+  = comment_form.hidden_field :ticket_id, :value => @comment.ticket_id
+  .send_comments
+    = submit_tag "Agregar comentario"
