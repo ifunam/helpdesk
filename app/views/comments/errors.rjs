@@ -1,0 +1,2 @@
+page.replace_html 'comment_errors', @comment.errors.full_messages.to_sentence
+#error_messages_for :comment

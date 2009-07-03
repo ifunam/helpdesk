@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   skip_before_filter :login_required
-  def index
-    @user=User.new
+
+  def new
+    @user = User.new
   end
 
   def create

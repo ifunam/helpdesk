@@ -4,3 +4,9 @@
 [submodule "vendor/plugin/factory_girl"]
 	path = vendor/plugin/factory_girl
 	url = git://github.com/thoughtbot/factory_girl.git
+[submodule "vendor/plugins/domid_guma"]
+	path = vendor/plugins/domid_guma
+	url = git://github.com/nazgum/domid_gum.git
+[submodule "vendor/plugins/domid_gum"]
+	path = vendor/plugins/domid_gum
+	url = git://github.com/nazgum/domid_gum.git

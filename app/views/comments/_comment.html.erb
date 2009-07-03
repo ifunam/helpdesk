@@ -1,4 +1,4 @@
-<div class="comment">
+<div class="comment" id="<%= comment.dom_id%>">
  <div class="comment_panel">
    <div class="comment_header">
      <%= comment.created_at_before_type_cast %>
@@ -13,13 +13,7 @@
      <div class="text">
        <%= comment.body %>
      </div>
-   </div>
-   
-   <%= link_to "Ver hilo", comment_path(comment) %>
-   
- </div>
- 
+   </div>   
+ </div> 
 </div>
 
- <div class="space">
-</div>
