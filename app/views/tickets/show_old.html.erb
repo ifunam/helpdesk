@@ -29,14 +29,15 @@ Secretaria tecnica de computo
   
   <div id="comment_form">
     <div id="panel">      
-	  <div id ="comment_errors"></div>
+	    <div id ="comment_errors">
+	    </div>
       <% remote_form_for :comment, @comment, :url => comments_url do |comment_form| %>
       <%= comment_form.text_field :subject, :value => 'Re: ' + @ticket.category.name %>
 
       <%= comment_form.text_area :body %>
 	  <%= comment_form.hidden_field :ticket_id, :value => @ticket.id %>
       <div id="send_comment">
-        <%= submit_tag "Agregar comentario" %>
+        <%= submit_tag "Enviar comentario" %>
       </div>
       <% end %>
     </div>

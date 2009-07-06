@@ -1,0 +1,15 @@
+#login
+  = "login: #{User.find(session[:user_id]).login}"
+  %br
+  %br
+  = link_to 'Salir', session_path(:id =>session[:user_id]), :method => :delete
+#index_title
+  %h2 "Inicidencias reportadas por el personal del IFUNAM"
+#tickets  
+  = render :partial => 'ticket_header'
+  - if User.find(session[:user_id]).tickets.size == 0
+    #no_tickets
+    = "Por el momento no tienes solicitudes de soporte"
+  =  render :partial => 'ticket', :collection => @tickets
+#add_ticket
+  = link_to 'Nueva Solicitud', new_ticket_path

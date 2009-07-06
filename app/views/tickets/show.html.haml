@@ -1,0 +1,33 @@
+#ticket_view
+= "Solicitud de soporte #{@ticket.id}"
+%br
+= "Secretaria tecnica de computo"
+%br
+  #ticket_information
+    #ticket_panel
+      #ticket_header
+        = @ticket.created_at_before_type_cast
+        %br
+        = "Categoria: #{Category.find(@ticket.category_id).name}"
+        %br
+        = "Estado: #{Status.find(@ticket.status_id).name}"
+        %br
+        = "Mensajes #{@ticket.comments.count}"
+        %br
+        %br
+      #ticket_body_show
+        .text        
+          = @ticket.body
+  #comment_form
+    #panel
+      #comment_errors
+      - remote_form_for :comment, @comment, :url => comments_url do |comment_form|
+        = comment_form.text_field :subject, :value => 'Re: ' + @ticket.category.name
+        = comment_form.text_area :body
+        = comment_form.hidden_field :ticket_id, :value => @ticket.id
+        #send_comment
+          = submit_tag "Enviar comentario"
+    #comments
+      = render :partial => 'comments/comment', :collection => @ticket.comments
+.link
+  = link_to "Regresar", tickets_url

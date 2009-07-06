@@ -1,0 +1,2 @@
+page.replace_html 'ticket_errors', @ticket.errors.full_messages.to_sentence
+page.visual_effect :highlight, 'ticket_errors'

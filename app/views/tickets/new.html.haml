@@ -1,0 +1,19 @@
+%h3 Solicitud de de Soporte
+%h4 Secretaría técnica de cómputo
+%br
+#new_ticket  
+  #new_ticket_panel
+    #ticket_errors
+    - form_for :ticket, @ticket, :url => { :action => 'create' } do |ticket_form|
+      #category_field
+        #category
+        = "Categoria:"
+        = ticket_form.select(:category_id, Category.all(:order => 'name ASC').collect { |record|[record.name, record.id] })
+      #description
+        ="Descripcion:"
+        #description_field
+          = ticket_form.text_area :body
+      #button_new
+        = submit_tag "Nueva Solicitud"
+.link
+  = link_to "Regresar", :action => 'index'

@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
-    
     respond_to do |format|
       if @comment.save
         format.js { render 'create.rjs' }
@@ -32,6 +31,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.children << Comment.new(params[:comment])
     respond_to do |format|
+       format.html {render 'update'}
        format.js { render 'update.rjs' }
     end
   end
