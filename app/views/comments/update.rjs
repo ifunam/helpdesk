@@ -1,2 +1,2 @@
-page.replace_html "child_#{@comment.dom_id}", ''
-page.insert_html :bottom, "child_#{@comment.dom_id}", :partial => 'comment', :collection => @comment.children
+page.replace_html "comment_form_child_#{@comment.dom_id}", ''
+page.insert_html :bottom, "child_#{@comment.dom_id}", :partial => 'comments/aux/comment', :collection => @comment.children

@@ -5,11 +5,14 @@
   = link_to 'Salir', session_path(:id =>session[:user_id]), :method => :delete
 #index_title
   %h2 "Inicidencias reportadas por el personal del IFUNAM"
-#tickets  
-  = render :partial => 'ticket_header'
-  - if User.find(session[:user_id]).tickets.size == 0
-    #no_tickets
-    = "Por el momento no tienes solicitudes de soporte"
-  =  render :partial => 'ticket', :collection => @tickets
+- if User.find(session[:user_id]).tickets.size > 0
+  #tickets_header
+    = render :partial => 'ticket_header'
+  #tickets
+    = render :partial => 'ticket', :collection => @tickets
+- else
+  #no_tickets
+    = "Por el momento no tienes solicitudes de soporte"  
+
 #add_ticket
   = link_to 'Nueva Solicitud', new_ticket_path

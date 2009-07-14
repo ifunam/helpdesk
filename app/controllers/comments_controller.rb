@@ -5,13 +5,22 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+    @ticket=Ticket.find(params[:id])
+    @parameters = {:url => comments_path, :subject => "Re: #{@ticket.category.name}",:id => @ticket.id}
+    respond_to do |format|
+      format.js { render 'comment_form.rjs' }
+    end
   end
 
   def create
     @comment = Comment.new(params[:comment])
     respond_to do |format|
       if @comment.save
-        format.js { render 'create.rjs' }
+        if @comment.parent.nil?
+          format.js { render 'create.rjs' }
+        else
+          format.js { render 'child_create.rjs' }
+        end
       else
         format.js { render 'errors.rjs'}
       end
@@ -21,8 +30,8 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     @comment.body = nil
+    @parameters = { :url => comment_path(@comment), :subject => "Re:#{@comment.subject}",:id => @comment.ticket_id}
     respond_to do |format|
-      format.html { render 'edit' }
       format.js { render 'edit.rjs' }
     end
   end
@@ -31,16 +40,14 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.children << Comment.new(params[:comment])
     respond_to do |format|
-       format.html {render 'update'}
-       format.js { render 'update.rjs' }
+      format.js { render 'update.rjs' }
     end
   end
-  # def show
-  #    @comment=Comment.find( params[:id] )
-  #    @comments=Comment.find(:all,:conditions => {:parent_id => @comment.id})
-  #  end
-  # 
-  #  def destroy
-  #  end
-  #  
+
+  def show
+    @comment=Comment.find(params[:id])
+    respond_to do |format|
+      format.js { render 'show.rjs' }
+    end
+  end
 end

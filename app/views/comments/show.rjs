@@ -1,0 +1,1 @@
+page.replace_html "#{@comment.dom_id}", :partial => 'comment', :object => @comment 

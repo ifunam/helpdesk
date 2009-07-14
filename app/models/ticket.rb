@@ -7,10 +7,6 @@ class Ticket < ActiveRecord::Base
   belongs_to :status
   belongs_to :priority
   belongs_to :user
-  #has_many :user_tickets
-  #has_many :users, :through => :user_tickets
-  
-  
   has_many :comments, :conditions => { :parent_id => nil }, :order => "created_at DESC"
   accepts_nested_attributes_for :comments
   
