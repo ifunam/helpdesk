@@ -9,8 +9,12 @@ class SessionsController < ApplicationController
      if User.authenticate(params[:user][:login],params[:user][:password])
        flash[:notice] = 'Bienvenido(a)!'
        session[:user_id] = User.find_by_login(params[:user][:login]).id
-       options = { :controller => :tickets }
-  
+       if User.find(session[:user_id]).is_admin
+         options = { :controller => 'support_tickets'}
+       else
+         options = { :controller => 'user_tickets'}
+       end
+       
      else
        flash[:notice] = 'El login o password es incorrecto!'
        options = { :action => :index }

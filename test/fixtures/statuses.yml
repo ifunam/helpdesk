@@ -1,19 +1,23 @@
-proceso:
+Iniciado:
   id: 1
+  name: "Iniciado"
+
+Proceso:
+  id: 2
   name: "En proceso"
 
 Cerrado:
-  id: 2
+  id: 3
   name: "Cerrado"
 
 Cancelado:
-  id: 3
+  id: 4
   name: "Cancelado"
 
 Duplicado:
-  id: 4
+  id: 5
   name: "Duplicado"
 
 Pendiente:
-  id: 5
+  id: 6
   name: "Pendiente"

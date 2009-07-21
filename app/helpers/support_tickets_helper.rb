@@ -1,0 +1,2 @@
+module SupportTicketsHelper
+end

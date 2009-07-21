@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :tickets
+  map.resources :user_tickets
   map.resources :comments
   map.resources :tickets do |ticket|
     ticket.resources :comments

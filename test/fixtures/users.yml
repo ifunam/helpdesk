@@ -4,9 +4,22 @@ carlos:
   password: "carlos"
   email: "protozoario9@hotmail.com"
 
-nato:
+juan:
   id: 2
+  login: "juan"
+  password: "juan"
+  email: "protozoario9@hotmail.com"
+
+nato:
+  id: 3
   login: "nato"
   password: "nato"
+  is_admin: true
+  email: "caer@ciencias.unam.mx"
+
+alex:
+  id: 4
+  login: "alex"
+  password: "alex"
   is_admin: true
   email: "caer@ciencias.unam.mx"
