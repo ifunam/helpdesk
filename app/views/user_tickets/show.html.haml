@@ -15,7 +15,7 @@
     #ticket_body
       #text        
         = @ticket.body
-    #link
+    #links
       = link_to_remote 'Responder', :url => {:controller => 'comments', :action => 'new', :id => @ticket.id}
   #comment_form
 #comments

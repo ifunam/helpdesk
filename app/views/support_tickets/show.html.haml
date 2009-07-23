@@ -1,0 +1,30 @@
+= "Solicitud de soporte #{@ticket.id}"
+%br
+= "Secretaria tecnica de computo"
+%br
+#ticket
+  #ticket_panel
+    #ticket_header
+      .date
+        = @ticket.created_at_before_type_cast
+      .category
+        = "Categoria: #{Category.find(@ticket.category_id).name}"
+      .status{:id => "status_#{@ticket.dom_id}"}
+        = "Estado: #{Status.find(@ticket.status_id).name}"
+    #ticket_body
+      #text        
+        = @ticket.body
+    #links
+      -#= link_to_remote 'Responder', :url => {:controller => 'comments', :action => 'new', :id => @ticket.id}, :html => { :class => 'responder' }
+      = link_to_remote 'Reponder', :url => new_support_ticket_comment_path(@ticket)
+      = link_to "Cancelar", support_ticket_path(@ticket), {:method => :delete}
+      = link_to_remote 'Atender', :url => { :action => 'create' , :id => @ticket.id }  
+      = link_to "Re-asignar"
+      = link_to_remote 'Suspender', :url => edit_support_ticket_path(@ticket)
+  #comment_form
+#comments
+  = render :partial => 'comments/comment', :collection => @ticket.comments
+
+
+.link
+  = link_to "Regresar", support_tickets_url

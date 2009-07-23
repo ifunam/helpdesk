@@ -19,7 +19,6 @@ class UserTicketsController < ApplicationController
   def show
     @ticket =Ticket.find(params[:id])
     @comments=Comment.find(:all,:conditions => {:parent_id => nil})
-    render :partial => 'shared/show', :layout => 'application'
   end
   
 end

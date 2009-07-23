@@ -2,8 +2,18 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :tickets
   map.resources :user_tickets
+
+  map.resources :support_tickets
+  map.resources :support_tickets do |sup_ticket|
+    sup_ticket.resources :tickets
+    sup_ticket.resources :comments
+  end
+  
   map.resources :comments
   map.resources :tickets do |ticket|
+    ticket.resources :comments
+  end
+  map.resources :user_tickets do |ticket|
     ticket.resources :comments
   end
   # The priority is based upon order of creation: first created -> highest priority.
