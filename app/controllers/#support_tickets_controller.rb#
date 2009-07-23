@@ -8,10 +8,6 @@ class SupportTicketsController < ApplicationController
     change_status(2,params[:id])
   end
   
-  def create
-    change_status(2,params[:id])
-  end
-  
   def show
     @ticket=Ticket.find(params[:id])
   end

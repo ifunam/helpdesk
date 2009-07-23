@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    @ticket=Ticket.find(params[:id])
+    @ticket=Ticket.find(params[:ticket_id])
     @parameters = {:url => comments_path, :subject => "Re: #{@ticket.category.name}",:id => @ticket.id}
     respond_to do |format|
       format.js { render 'comment_form.rjs' }
@@ -50,4 +50,11 @@ class CommentsController < ApplicationController
       format.js { render 'show.rjs' }
     end
   end
+
+  def destroy
+    respond_to do |format|
+      format.js { render 'destroy.rjs' }
+    end
+  end
+  
 end
