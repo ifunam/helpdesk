@@ -277,3 +277,17 @@ heigth: 100px;
     display: block;
  
 }
+
+
+/*CSS FOR ADMIN CONTROLLER*/
+
+#admin {
+    width: 1000px;
+    margin: auto;
+    border:1px solid silver;
+    padding: 20px;
+}
+
+#buttons{
+    display: table;
+}

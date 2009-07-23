@@ -1,0 +1,9 @@
+#admin
+  #buttons
+    #tickets_button
+      = button_to_function 'Tickets',remote_function(:url => {:action => 'show', :type => 'tickets'})
+    #catalogs_button 
+      = button_to "Catalogos"
+    #users_button   
+      = button_to "Usuarios"
+  #subadmin

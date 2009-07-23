@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
-  map.resource :admin
+  map.resources :admins
   map.resources :tickets
   map.resources :comments
   map.resources :support_tickets
@@ -8,9 +8,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :support_tickets do |sup_ticket|
     sup_ticket.resources :tickets
-    sup_ticket.resources :tickets do |tic|
-      tic.resources :comments
-    end
   end
 
   map.resources :tickets do |ticket|

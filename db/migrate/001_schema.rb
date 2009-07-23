@@ -52,26 +52,9 @@ class Schema < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :permissions do |t|
-      t.references :user_type, :null => false
-      t.string :name
-      t.string :controler, :default => "tickets"
-      t.text :action, :null => false
-      t.text :method, :default => "get"
-      t.string :view
-      t.string :icon, :default => ".."
-      t.text :title, :null => false
-      t.text :message
-      t.string :id_tag, :default => "id"
-      t.timestamps
-    end
-     
-    
-    
-    
   end
 
   def self.down
-    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_types, :peermissions
+    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_types
   end
 end

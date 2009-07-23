@@ -1,5 +1,5 @@
 class SupportTicketsController < ApplicationController
-
+  layout 'support'
   def index
     @tickets=Ticket.all :order => "status_id ASC, created_at ASC"
   end
@@ -8,9 +8,6 @@ class SupportTicketsController < ApplicationController
     change_status(2,params[:id])
   end
   
-  def create
-    change_status(2,params[:id])
-  end
   
   def show
     @ticket=Ticket.find(params[:id])
@@ -22,7 +19,7 @@ class SupportTicketsController < ApplicationController
   end
 
   def edit
-    change_status(6,params[:id])
+    change_status(3,params[:id])
   end
   
   def update

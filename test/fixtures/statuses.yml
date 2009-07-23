@@ -6,9 +6,9 @@ Proceso:
   id: 2
   name: "En proceso"
 
-Cerrado:
+Pendiente:
   id: 3
-  name: "Cerrado"
+  name: "Pendiente"
 
 Cancelado:
   id: 4
@@ -18,6 +18,6 @@ Duplicado:
   id: 5
   name: "Duplicado"
 
-Pendiente:
+Cerrado:
   id: 6
-  name: "Pendiente"
+  name: "Cerrado"

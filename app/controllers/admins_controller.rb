@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  layout 'support'
   def index
   end
 
@@ -9,6 +10,10 @@ class AdminsController < ApplicationController
   end
 
   def show
+     @type = params[:type].to_s
+     respond_to do |format|
+       format.js { render 'show.rjs' }
+     end
   end
 
   def edit
