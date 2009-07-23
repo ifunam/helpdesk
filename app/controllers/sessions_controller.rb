@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
        if User.find(session[:user_id]).is_admin
          options = { :controller => 'support_tickets'}
        else
-         options = { :controller => 'user_tickets'}
+         options = { :controller => 'tickets'}
        end
        
      else
@@ -28,7 +28,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    render :action => :signout
   end
 
 end

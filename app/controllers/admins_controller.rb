@@ -1,4 +1,4 @@
-class AdminController < ApplicationController
+class AdminsController < ApplicationController
   def index
   end
 
@@ -8,13 +8,13 @@ class AdminController < ApplicationController
   def create
   end
 
+  def show
+  end
+
   def edit
   end
 
   def update
-  end
-
-  def show
   end
 
   def destroy

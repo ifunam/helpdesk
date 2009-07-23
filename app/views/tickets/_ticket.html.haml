@@ -12,5 +12,4 @@
     .ticket_body
       = ticket.body.slice(0, 20)
   .ticket_actions
-    = link_to("Detalles", user_ticket_path(ticket) , :class => "link_details")
-    -#= link_to "Cancelar", user_ticket_path(ticket), {:method => :delete, :confirm => "Estas seguro?"}, {:class => "link_cancel"}
+    = link_to("Detalles", ticket_path(ticket) , :class => "link_details")    
