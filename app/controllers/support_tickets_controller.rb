@@ -1,7 +1,7 @@
 class SupportTicketsController < ApplicationController
   layout 'support'
   def index
-    @tickets=Ticket.all :order => "status_id ASC, created_at ASC"
+    #@tickets=Ticket.all :order => "status_id ASC, created_at ASC"
   end
 
   def new

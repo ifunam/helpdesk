@@ -1,0 +1,1 @@
+page.replace_html :new_catalog, :partial => 'new_catalog'

@@ -1,0 +1,5 @@
+.category{:id => category.dom_id }
+  .category_name
+    = category.name
+  .category_action
+    = link_to_remote 'Eliminar', :url => { :type => :category, :id => category.id}, :method => :delete

@@ -1,0 +1,4 @@
+#statuses
+  = render :partial => 'status', :collection => Status.all
+#status_new
+  = link_to_remote 'Nuevo', :url => {:action => 'new', :type => 'statuses_new'},:method => :get

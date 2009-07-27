@@ -289,5 +289,16 @@ heigth: 100px;
 }
 
 #buttons{
-    display: table;
+    width: 520px;
+    margin: auto;
+}
+
+#tickets_button{
+    width: 200px;
+    float: left;
+   
+}
+#catalogs_button{
+    width: 230px;
+    float: left;
 }

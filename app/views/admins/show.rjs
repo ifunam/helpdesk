@@ -1,1 +1,2 @@
-page.replace_html :subadmin, :partial => @type
+page.replace_html :catalogs, :partial => @type, :collection => class_eval("#{@type.to_s.capitalize}.all")
+page.replace_html :new_catalog, :inline => "<%= link_to_remote 'Nuevo', :url => new_admin_path(:t => @type), :method => :get %>" 

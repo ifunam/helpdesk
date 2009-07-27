@@ -1,4 +1,9 @@
-#index_title
-  %h2 "Inicidencias reportadas por el personal del IFUNAM"
+#admin
+  #buttons
+    #tickets_button
+      = button_to_function 'Tickets',remote_function( :url => admins_path(:type => :tickets), :method => :get) 
+    #catalogs_button 
+      = button_to_function 'Catalogos', remote_function(:url => admins_path(:type => :catalogs), :method => :get)
+    #users_button   
+      = button_to_function 'Usuarios', remote_function(:url => admins_path(:type => :users), :method => :get )
 #tickets
-  = render :partial => 'ticket', :collection => @tickets
