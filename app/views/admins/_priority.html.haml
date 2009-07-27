@@ -2,4 +2,4 @@
   .priority_name
     = priority.name
   .priority_action
-    = link_to_remote 'Eliminar', :url => { :type => :priority, :id => priority.id}, :method => :delete
+    = link_to_remote 'Eliminar', :url => {:action => :destroy, :type => :priority, :id => priority.id}, :method => :delete

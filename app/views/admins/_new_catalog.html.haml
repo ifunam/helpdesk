@@ -1,2 +1,6 @@
-= "hola"
-= self.instance_variable_get("@#{@type.to_s}").class.name
+#catalog_panel_form
+  #catalog_errors
+  - remote_form_for self.instance_variable_get("@#{@type.to_s}"), :url =>{:action => 'create', :type => @type} do |catalog_form|
+    = catalog_form.text_field :name
+    #send_catalog_form
+      = submit_tag "Crear"     

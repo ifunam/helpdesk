@@ -1,0 +1,1 @@
+page.insert_html :bottom, :catalogs, :partial => @type, :object => self.instance_variable_get("@#{@type.to_s}")

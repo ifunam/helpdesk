@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  layout 'support'
+
   def index
     @type = params[:type]
     respond_to do |format|
@@ -16,6 +16,17 @@ class AdminsController < ApplicationController
   end
 
   def create
+    @type=params[:type]
+    self.instance_variable_set("@#{@type.to_s}", class_eval("#{@type.to_s.capitalize}.new"))
+    self.instance_variable_get("@#{@type.to_s}").name = params[@type][:name]
+    respond_to do |format|
+     if self.instance_variable_get("@#{@type.to_s}").save
+       format.js { render 'show.rjs' }
+     else
+       format.js { render 'errors.rjs'}
+     end
+    
+    end
   end
 
   def show
@@ -32,7 +43,6 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    #Status.delete(params[:id])
     @type = params[:type]
     class_eval "#{@type.to_s.capitalize}.delete(#{params[:id]})"
     respond_to do |format|

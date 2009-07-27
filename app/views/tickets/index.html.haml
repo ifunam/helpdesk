@@ -1,8 +1,3 @@
-#login
-  = "login: #{User.find(session[:user_id]).login}"
-  %br
-  %br
-  = link_to 'Salir', session_path(:id =>session[:user_id]), :method => :delete
 #index_title
   %h2 "Inicidencias reportadas por el personal del IFUNAM"
 - if User.find(session[:user_id]).tickets.size > 0

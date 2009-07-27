@@ -2,4 +2,4 @@
   .category_name
     = category.name
   .category_action
-    = link_to_remote 'Eliminar', :url => { :type => :category, :id => category.id}, :method => :delete
+    = link_to_remote 'Eliminar', :url => {:action =>:destroy, :type => :category, :id => category.id}, :method => :delete

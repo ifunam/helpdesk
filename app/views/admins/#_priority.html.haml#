@@ -1,4 +1,4 @@
-.priority{:id => priority.dom_id }
+.prioriy{:id => priority.dom_id }
   .priority_name
     = priority.name
   .priority_action

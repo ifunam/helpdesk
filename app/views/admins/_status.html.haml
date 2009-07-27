@@ -2,4 +2,4 @@
   .status_name
     = status.name
   .status_action
-    = link_to_remote 'Eliminar', :url => { :type => :status, :id => status.id}, :method => :delete
+    = link_to_remote 'Eliminar', :url => { :action =>:destroy, :type => :status, :id => status.id}, :method => :delete
