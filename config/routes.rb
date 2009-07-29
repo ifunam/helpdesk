@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tickets
   map.resources :comments
   map.resources :support_tickets
-
+  map.resources :categories
 
   map.resources :support_tickets do |sup_ticket|
     sup_ticket.resources :tickets
