@@ -1,1 +1,1 @@
-page.replace_html :tickets, :partial => @type
+page.replace_html :index, :partial => @type
