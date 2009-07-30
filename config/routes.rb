@@ -13,6 +13,11 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tickets do |ticket|
     ticket.resources :comments
   end
+
+    map.namespace :tech_support do |tech_support|
+      # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
+      tech_support.resources :tickets
+    end
   
   # The priority is based upon order of creation: first created -> highest priority.
 

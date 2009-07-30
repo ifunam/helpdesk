@@ -1,5 +1,8 @@
 class SupportTicketsController < ApplicationController
   def index
+    @user = User.find(session[:user_id])
+    @user_profile = UserProfileClient.find_by_login(@user.login)
+    
     #@tickets=Ticket.all :order => "status_id ASC, created_at ASC"
   end
 
@@ -17,14 +20,7 @@ class SupportTicketsController < ApplicationController
     redirect_to :action => 'index'
   end
 
-  def edit
-    change_status(3,params[:id])
-  end
-  
-  def update
-    redirect_to :action => 'index'
-  end
-
+ 
   private
 
   def change_status(status_id,ticket_id)

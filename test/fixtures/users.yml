@@ -12,14 +12,14 @@ juan:
 
 nato:
   id: 3
-  login: "nato"
-  password: "nato"
+  login: "natorro"
+  password: "natorro123"
   is_admin: true
-  email: "caer@ciencias.unam.mx"
+  email: "natorro@fisica.unam.mx"
 
 alex:
   id: 4
   login: "alex"
   password: "alex"
   is_admin: true
-  email: "caer@ciencias.unam.mx"
+  email: "alex@fisica.unam.mx"

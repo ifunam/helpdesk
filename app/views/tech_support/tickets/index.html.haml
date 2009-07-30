@@ -1,0 +1,6 @@
+#index_title
+  %h2 "Inicidencias reportadas por el personal del IFUNAM"
+  #tickets
+    = render :partial => 'ticket', :collection => @tickets
+#add_ticket
+  = link_to 'Nueva Solicitud', new_ticket_path

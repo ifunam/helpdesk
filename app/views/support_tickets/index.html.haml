@@ -1,3 +1,9 @@
+#user_profile
+
+  %p= content_tag(:b, 'Nombre de usuario: ') + @user_profile.fullname
+  %p= content_tag(:b, 'Adscripción: ') + @user_profile.adscription
+  %p= content_tag(:b, 'Jefe inmediato: ') + @user_profile.user_incharge.fullname
+
 #admin
   #buttons
     #tickets_button
