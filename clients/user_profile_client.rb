@@ -5,9 +5,21 @@ class UserProfileClient < ActiveResource::Base
   self.element_name = "academic"
  
   def self.find_by_login(login)
+    # Fix it: use this code only for develoment
     @object = new
     @object.prefix_options = {}
-    @object.attributes = self.get("show_by_login/#{login}")
+    if ENV['RAILS_ENV'] == 'development' and login == 'carlos'
+      @object.attributes = {  'adscription_id' => 7,
+                              "fullname" =>"Carlos Sánches Perales", 
+                              "phone"=>"56225001 ext 289", 
+                              "user_id"=>167, 
+                              "adscription"=>"Apoyo", 
+                              "login"=>"carlos", 
+                              "email"=> "carlos@fisica.unam.mx"
+                              }
+    else
+      @object.attributes = self.get("show_by_login/#{login}")
+    end
     @object
   end
  

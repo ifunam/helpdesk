@@ -1,14 +1,6 @@
 #ticket_index
-  #tickets_menu
-    #my_tickets
-      = link_to 'Mis solucitudes'
-      = render :partial => 'menu_tickets'
-    #separator
-      = "|"
-    #all_tickets
-      = link_to 'Todas las solicitudes'
-      = render :partial => 'all_menu_tickets'
-  
+  = render :partial => 'menu_tickets'
+ 
   #tickets_header
     = render :partial => 'ticket_header' 
   #tickets_user

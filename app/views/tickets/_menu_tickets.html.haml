@@ -1,25 +1,12 @@
-#menu_tickets
-  #order_by
-    = "Ordenar por"
-  #order_by_category
-    = link_to_remote 'Categoria', :url => {:action => 'update', :conditions => {:user_id => @user.id}, :order_by => 'category_id ASC'}
-  #order_by_date
-    = link_to_remote 'Fecha',:url => {:action => 'update', :conditions => {:user_id => @user.id}, :order_by => 'created_at ASC'}
-  #order_by_status
-    = link_to_remote 'Estado',:url => {:action => 'update', :conditions => {:user_id => @user.id}, :order_by => 'status_id ASC'}
-  #order_by
-    = "Mostrar por"
-  #order_by_category
-    = link_to 'Categoria', :url => tickets_path, :order_by => 'category_id ASC', :method => :get
-    #order_by_category_item
-      - Category.all.each do |category|
-        .category
-          = link_to_remote "#{category.name}", :url => {:action => 'update', :conditions => {:category_id => category.id, :user_id => @user.id}, :order_by => 'category_id ASC'}
-  #order_by_status
-    = link_to 'Estado'
-    #order_by_status_item
-      - Status.all.each do |status|
-        .status
-          = link_to_remote "#{status.name}", :url => {:action => 'update', :conditions => {:status_id => status.id, :user_id => @user.id}, :order_by => 'category_id ASC'}
-
-  
+%p
+  %b= "Filtrar solicitudes: "
+  = collection_select :filter, :category_id, Category.all, :id, :name
+%p 
+  %b= "Listas: "
+  = link_to 'Por fecha orden descendente', tickets_url
+  = ' | ' 
+  = link_to 'Por fecha orden ascendente', tickets_url
+  = ' | ' 
+  = link_to 'Mis solicitudes', tickets_url
+  = ' | ' 
+  = link_to 'Todas', tickets_url

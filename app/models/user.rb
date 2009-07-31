@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :tickets
   
   class << self
-    def authenticate(l,pw)
+    def authenticate?(l,pw)
       @user = User.find_by_login(l)
       !@user.nil? and @user.password == pw ###== encrypt(pw + @user.salt.to_s)
       end
@@ -34,7 +34,4 @@ class User < ActiveRecord::Base
       Ticket.all(:conditions => {:category_id => category} , :order => "created_at DESC" )
     end
   end
-
-
-
 end
