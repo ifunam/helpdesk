@@ -84,7 +84,7 @@ heigth: 100px;
 }
 /*---------------Ticket index for users---------------------*/
 
-
+/* ----MENU FOR TICKETS FILTER -----*/
 #tickets_menu{
     
 }
@@ -104,11 +104,10 @@ heigth: 100px;
     display: block;
 }
 
-
-#all_tickets  #menu_tickets {
+#all_tickets  #all_menu_tickets {
     display: none;
 }
-#all_tickets:hover #menu_tickets {
+#all_tickets:hover #all_menu_tickets {
     display: block;
 }
 
@@ -119,7 +118,13 @@ heigth: 100px;
     background-color: gray;
 }
 
-
+#all_menu_tickets{
+    border: 1px solid;
+    width: 250px;
+    position: absolute;
+    left: 415px;
+    background-color: gray;
+}
 #order_by_category #order_by_category_item{
     display: none;
     
@@ -132,7 +137,8 @@ heigth: 100px;
     border: 1px solid;
     width: 250px;
     position: absolute;
-    left: 30%;
+    top: 75%;
+    left: 40%;
     background-color: gray;
 }
 
@@ -147,9 +153,16 @@ heigth: 100px;
     border: 1px solid;
     width: 250px;
     position: absolute;
-    left: 30%;
+    top: 85%;
+    left: 40%;
     background-color: gray;
 }
+
+
+
+
+
+/*------------------------------------------------*/
 
 
 

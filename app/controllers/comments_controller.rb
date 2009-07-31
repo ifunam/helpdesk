@@ -56,5 +56,7 @@ class CommentsController < ApplicationController
       format.js { render 'destroy.rjs' }
     end
   end
+
+  
   
 end

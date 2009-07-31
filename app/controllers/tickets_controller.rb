@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
     def index
       @user = User.find(session[:user_id])
       #@user_profile = UserProfileClient.find_by_login(@user.login)
-      @tickets = get_tickets(params[:order_by])
+      @tickets = Ticket.all :order => 'created_at DESC'
     end
 
     def new
@@ -30,12 +30,18 @@ class TicketsController < ApplicationController
       redirect_to :action => 'index'
     end
 
-    def get_tickets(order_by)
-      order_by= (order_by.nil?)? 'created_at ASC':nil
-      Ticket.all :order => order_by
-      
+    
+    
+    def update
+      @order_by = params[:order_by]
+      @conditions =params[:conditions]
+      puts @order_by
+      respond_to do |format|
+        format.js { render 'update.rjs' }
+      end
     end
-   
+
+    
 
   end
  
