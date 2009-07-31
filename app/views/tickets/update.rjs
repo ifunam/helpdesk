@@ -1,1 +1,1 @@
-page.replace_html :tickets_user, :partial => 'ticket', :collection => Ticket.all(:conditions => @conditions, :order => @order_by)
+page.replace_html :tickets_user, :partial => 'ticket', :collection => Ticket.paginate(:all,:page => params[:page],:per_page => 5,:conditions => @conditions, :order => 'created_at DESC')

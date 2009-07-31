@@ -22,7 +22,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem 'erector', :lib => 'erector'
-  config.gem 'haml', :lib => 'haml' 
+  config.gem 'haml', :lib => 'haml'
+  config.gem 'will_paginate', :lib => 'will_paginate'
   # Only load the plugins named here, install the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -43,5 +44,7 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.action_mailer.delivery_method = :integral_mailer #:smtp
   
-  config.active_record.observers = :ticket_observer 
+  config.active_record.observers = :ticket_observer
+
+  require "will_paginate" 
 end

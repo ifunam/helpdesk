@@ -3,7 +3,7 @@ class TicketsController < ApplicationController
     def index
       @user = User.find(session[:user_id])
       #@user_profile = UserProfileClient.find_by_login(@user.login)
-      @tickets = Ticket.all :order => 'created_at DESC'
+      @tickets = Ticket.paginate(:all,:page => params[:page],:per_page => 5, :order => 'created_at DESC')
     end
 
     def new

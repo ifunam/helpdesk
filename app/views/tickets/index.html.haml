@@ -13,5 +13,8 @@
     = render :partial => 'ticket_header' 
   #tickets_user
     = render :partial => 'ticket', :collection => @tickets
+  = will_paginate @tickets, :class => "digg_pagination" 
+   
+
 #add_ticket
   = link_to 'Nueva Solicitud', new_ticket_path

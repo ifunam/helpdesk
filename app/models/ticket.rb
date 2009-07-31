@@ -8,6 +8,6 @@ class Ticket < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :conditions => { :parent_id => nil }, :order => "created_at DESC"
   accepts_nested_attributes_for :comments
-  
+  @@per_page = 5
 
 end
