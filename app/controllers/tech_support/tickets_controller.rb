@@ -23,3 +23,4 @@ class TechSupport::TicketsController < TicketsController
   end
 
 end
+

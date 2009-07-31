@@ -10,3 +10,6 @@
 [submodule "vendor/plugins/domid_gum"]
 	path = vendor/plugins/domid_gum
 	url = git://github.com/nazgum/domid_gum.git
+[submodule "vendor/plugins/will_paginate"]
+	path = vendor/plugins/will_paginate
+	url = git://github.com/mislav/will_paginate.git

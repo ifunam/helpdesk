@@ -1,0 +1,25 @@
+#menu_tickets
+  #order_by
+    = "Ordenar por"
+  #order_by_category
+    = link_to 'Categoria', :url => tickets_path, :order_by => 'category_id ASC', :method => :get
+  #order_by_date
+    = link_to 'Fecha',:url => tickets_path, :order_by => 'created_at ASC', :method => :get
+  #order_by_status
+    = link_to 'Estado'
+  #order_by
+    = "Mostrar por"
+  #order_by_category
+    = link_to 'Categoria', :url => tickets_path, :order_by => 'category_id ASC', :method => :get
+    #order_by_category_item
+      - Category.all.each do |category|
+        .category
+          = link_to "#{category.name}"
+  #order_by_status
+    = link_to 'Estado'
+    #order_by_status_item
+      - Status.all.each do |status|
+        .status
+          = link_to "#{status.name}", :url => tickets_path
+
+  

@@ -8,10 +8,7 @@ body {
 a{
   text-decoration: none;
 }
-  
-a:hover {
-
-}
+ 
   
 #main{
   margin: auto;
@@ -85,6 +82,193 @@ heigth: 100px;
   left: 1200px;
   text-align: center;
 }
+/*---------------Ticket index for users---------------------*/
+
+
+#tickets_menu{
+    
+}
+
+#my_tickets{
+    float: left;
+}
+#separator{
+    float: left;
+
+}
+#my_tickets  #menu_tickets {
+    display: none;
+    
+}
+#my_tickets:hover #menu_tickets {
+    display: block;
+}
+
+
+#all_tickets  #menu_tickets {
+    display: none;
+}
+#all_tickets:hover #menu_tickets {
+    display: block;
+}
+
+#menu_tickets{
+    border: 1px solid;
+    width: 250px;
+    position: absolute;
+    background-color: gray;
+}
+
+
+#order_by_category #order_by_category_item{
+    display: none;
+    
+}
+#order_by_category:hover #order_by_category_item{
+    display: block;
+}
+
+#order_by_category_item{
+    border: 1px solid;
+    width: 250px;
+    position: absolute;
+    left: 30%;
+    background-color: gray;
+}
+
+#order_by_status #order_by_status_item{
+    display: none;
+    
+}
+#order_by_status:hover #order_by_status_item{
+    display: block;
+}
+#order_by_status_item{
+    border: 1px solid;
+    width: 250px;
+    position: absolute;
+    left: 30%;
+    background-color: gray;
+}
+
+
+
+
+#ticket_index{
+    #border: solid;
+    margin: auto;
+    width: 1000px;
+    margin-top: 20px;
+    display: block; 
+}
+
+#tickets_header{
+    #border:dotted;
+    height: 50px;
+    width: 1000px;
+    margin: auto;
+#    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    background-color: #C3D9FF;
+    
+}
+
+ul#header_list{
+    list-style-type: none;
+    padding: 0;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+}
+ul#header_list li.header_item{
+    float: left;
+    padding: 10px;
+    border-right:1px solid #FFFFFF;
+    height: 30px;
+    #border: dotted;
+}
+
+ul#header_list li#category{
+    #border-left: 1px solid #FFFFFFF;
+    width: 165px;
+}
+ul#header_list li#status{
+    width: 100px;
+}
+ul#header_list li#date{
+    width: 100px;
+}
+ul#header_list li#user{
+    width: 100px;
+}
+ul#header_list li#assigned_to{
+    width: 100px;
+}
+ul#header_list li#body{
+    width: 200px;
+}
+ul#header_list li#actions{
+      border: none;
+      width: 60px;
+}
+
+
+
+#tickets_user{
+    #border: dotted;
+    display: table;
+    margin-top: 20px;
+}
+
+
+
+ul.ticket_row{
+    list-style-type: none;
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    float: left;
+    padding: 0;
+    text-align: center; 
+}
+
+ul.ticket_row#color1{
+    background-color: #F9F7ED;
+}
+ul.ticket_row#color0{
+    background-color: #EEEEEE;
+}
+
+
+ul.ticket_row li.ticket_row_item{
+    float: left;
+    #border: dotted;
+    padding: 1px;
+}
+
+ul li.ticket_row_item#category{
+    width: 185px;
+}
+ul li.ticket_row_item#status{
+    width: 120px;
+}
+ul li.ticket_row_item#date{
+    width: 120px;
+}
+ul li.ticket_row_item#user{
+    width: 115px;
+}
+ul li.ticket_row_item#assigned_to{
+    width: 115px;
+}
+ul li.ticket_row_item#body{
+    width: 220px;
+}
+ul li.ticket_row_item#actions{
+    width: 100px;
+}
+
+
+
 
 /*Tockets View (index) */
 
@@ -139,7 +323,7 @@ heigth: 100px;
     width: 900px;
     border: 2px solid silver;
     margin: 10px auto 10px auto;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
 }
 
 #ticket_header{
