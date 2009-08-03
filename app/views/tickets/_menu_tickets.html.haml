@@ -3,9 +3,9 @@
   = collection_select :filter, :category_id, Category.all, :id, :name
 %p 
   %b= "Listas: "
-  = link_to 'Por fecha orden descendente', tickets_url
+  = link_to 'Por fecha orden descendente', list_by_date_tickets_url(:order => 'DESC')
   = ' | ' 
-  = link_to 'Por fecha orden ascendente', tickets_url
+  = link_to 'Por fecha orden ascendente', list_by_date_tickets_url(:order => 'ASC')
   = ' | ' 
   = link_to 'Mis solicitudes', tickets_url
   = ' | ' 

@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.resources :admins
-  map.resources :tickets
+  map.resources :tickets, :collection => { :list_by_category => :get , :list_by_date => :get }
   map.resources :comments
   map.resources :support_tickets
   map.resources :categories

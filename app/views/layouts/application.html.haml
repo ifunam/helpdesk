@@ -5,10 +5,11 @@
     %title 
       = "Stifunam #{controller.controller_name.capitalize}"
     = stylesheet_link_tag "application.css"
-    = javascript_include_tag :defaults
+    = javascript_include_tag  :defaults
+    = javascript_include_tag 'jquery-1.3.2', 'application'
   %body
     #layout_header
-      #layout
+      #layout_header
         #header
           #logo
             = "STIFUNAM"
