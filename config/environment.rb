@@ -23,7 +23,10 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem 'erector', :lib => 'erector'
   config.gem 'haml', :lib => 'haml'
-  config.gem 'will_paginate', :lib => 'will_paginate'
+  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'binarylogic-searchlogic', :lib => 'searchlogic', :source => 'http://gems.github.com'
+  config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
+  
   # Only load the plugins named here, install the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -42,8 +45,6 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-  config.action_mailer.delivery_method = :integral_mailer #:smtp
-  
   config.active_record.observers = :ticket_observer
 
   require "will_paginate" 

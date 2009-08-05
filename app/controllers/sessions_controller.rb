@@ -2,13 +2,13 @@ class SessionsController < ApplicationController
   skip_before_filter :login_required
 
   def new
-    @user = User.new
+    @user_session = UserSession.new
   end
 
   def create
-     if User.authenticate?(params[:user][:login],params[:user][:password])
+     @user_session = UserSession.new(params[:user_session])
+     if @user_session.save
        flash[:notice] = 'Bienvenido(a)!'
-       session[:user_id] = User.find_by_login(params[:user][:login]).id
        redirect_to tickets_url
      else
        flash[:notice] = 'El login o password es incorrecto!'

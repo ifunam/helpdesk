@@ -14,7 +14,7 @@
           #logo
             = "STIFUNAM"
     #login
-      = "login: #{User.find(session[:user_id]).login}"
+      = "login: #{User.find(current_user).login}"
       = link_to 'Salir', session_path, :method => :delete    
     #main
     = yield :layout

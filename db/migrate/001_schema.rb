@@ -1,13 +1,29 @@
 class Schema < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string :login, :null => false
-      t.string :password, :email, :twitter, :salt
+      t.string    :login,               :null => false 
+      t.string    :email,               :null => false
+      t.string    :crypted_password,    :null => false
+      t.string    :password_salt,       :null => false
+      t.string    :persistence_token,   :null => false
+      t.string    :single_access_token, :null => false
+      t.string    :perishable_token,    :null => false
+      t.integer   :login_count,         :null => false, :default => 0
+      t.integer   :failed_login_count,  :null => false, :default => 0
+      t.datetime  :last_request_at
+      t.datetime  :current_login_at
+      t.datetime  :last_login_at
+      t.string    :current_login_ip
+      t.string    :last_login_ip
       t.boolean :status, :null => false, :default => true
       t.boolean :is_admin, :null => false, :default => false
       t.timestamps
     end
-
+    
+    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
+    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com')
+    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com')
+    
     create_table :tickets do |t|
       t.references :status, :null => false , :default => 1
       t.references :category, :null => false

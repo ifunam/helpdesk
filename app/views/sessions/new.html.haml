@@ -1,6 +1,6 @@
 #sign_in
   ="Ingresa tu nombre de usuario y contraseña"
-  - form_for :user, @user, :url => {:action => :create} do |f|
+  - form_for @user_session, :url => {:action => :create} do |f|
     .td_text 
       = "Usuario:"
     .td_textbox

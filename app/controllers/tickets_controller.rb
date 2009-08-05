@@ -1,21 +1,21 @@
 class TicketsController < ApplicationController
   def index
     @user_profile = UserProfileClient.find_by_login(current_user.login)
-    @tickets = Ticket.all.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
+    @tickets = Ticket.paginate_all(params[:page], params[:per_page])
   end
   
   def list_by_category
     @category = Category.find(params[:id])
     session[:filter_category_id] =  @category.id
-    @tickets = @category.tickets.paginate(:page => params[:page], :per_page => 5, :order => 'created_at DESC')
+    @tickets = Ticket.paginate_all_by_category_id(@category.id, params[:page], params[:per_page])
     render :partial => 'collection'
   end
   
   def list_by_date
     if session[:filter_category_id].nil?
-      @tickets = Ticket.all.paginate(:page => params[:page], :per_page => 5, :order => "created_at #{params[:order] || 'DESC'}")
+      @tickets = Ticket.all(:order => "created_at #{params[:order] || 'DESC'}").paginate(:page => params[:page], :per_page => 5)
     else
-      @tickets = Ticket.all(:conditions => {:category_id => session[:filter_category_id] }, :order => "created_at #{params[:order] || 'DESC'}").paginate(:page => params[:page], :per_page => 5)
+      @tickets = Ticket.paginate_all_by_category_id(session[:filter_category_id], params[:page], params[:per_page], params[:order])
     end
     render 'index'
   end

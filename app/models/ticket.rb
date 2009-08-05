@@ -6,8 +6,16 @@ class Ticket < ActiveRecord::Base
   belongs_to :status
   belongs_to :priority
   belongs_to :user
-  has_many :comments, :conditions => { :parent_id => nil }, :order => "created_at DESC"
-  accepts_nested_attributes_for :comments
-  @@per_page = 5
 
+  default_scope :order => 'created_at DESC'
+  has_many :comments, :conditions => { :parent_id => nil }
+  accepts_nested_attributes_for :comments
+
+  def self.paginate_all(page=1, per_page=5)
+    Ticket.all.paginate(:page => page, :per_page => per_page)
+  end
+  
+  def self.paginate_all_by_category_id(category_id, page=1, per_page=5, order='DESC')
+    Ticket.find_all_by_category_id(category_id).paginate(:page => page, :per_page => per_page, :order =>  "created_at #{order}")
+  end
 end
