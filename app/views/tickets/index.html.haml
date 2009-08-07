@@ -1,10 +1,6 @@
-#ticket_index
-  = render :partial => 'menu_tickets'
- 
-  #tickets_header
-    = render :partial => 'ticket_header' 
-  #tickets_collection
-    = render :partial => 'collection'
-
+#tickets_index
+  = render :partial => 'tickets_filter'
+  = render :partial => 'ticket_header' 
+  = render :partial => 'tickets_collection'
 #add_ticket
   = link_to 'Nueva Solicitud', new_ticket_path

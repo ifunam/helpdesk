@@ -1,7 +1,9 @@
 class TicketsController < ApplicationController
+  before_filter :user_profile
   def index
-    @user_profile = UserProfileClient.find_by_login(current_user.login)
+    #@user_profile = UserProfileClient.find_by_login(current_user.login)
     @tickets = Ticket.paginate_all(params[:page], params[:per_page])
+    
   end
   
   def list_by_category
