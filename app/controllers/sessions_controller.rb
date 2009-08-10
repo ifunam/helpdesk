@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 class SessionsController < ApplicationController
-  skip_before_filter :login_required
-
+  
   def new
     @user_session = UserSession.new
   end
@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
+    current_user_session.destroy
     flash[:notice] = 'Su sesión ha terminado (no regrese nunca)!'
     redirect_to new_session_path
   end

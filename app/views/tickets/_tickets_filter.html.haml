@@ -1,14 +1,15 @@
 #tickets_filter
   %p
     %b= "Filtrar solicitudes: "
-    = collection_select :filter, :category_id, Category.all, :id, :name
+    = collection_select :filter, :category_id, Category.all, :id, :name,{:prompt => true}
   %p 
     %b= "Listas: "
     = 'Por fecha'
-    = link_to 'Descendente', list_by_date_tickets_url(:order => 'DESC')
+    = link_to 'Descendente', {:action => :list_by_date, :order => 'DESC'}, :method => :get
     = ' | ' 
-    = link_to 'Asscendente', list_by_date_tickets_url(:order => 'ASC')
+    = link_to 'Ascendente', {:action => :list_by_date, :order => 'ASC'}, :method => :get
     = ' | ' 
     = link_to 'Mis solicitudes', tickets_url
     = ' | ' 
     = link_to 'Todas', tickets_url
+    -#= filter[:category_id]
