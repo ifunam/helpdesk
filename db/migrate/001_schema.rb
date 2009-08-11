@@ -21,8 +21,9 @@ class Schema < ActiveRecord::Migration
     end
     
     User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
-    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com')
-    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com')
+    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_admin => true)
+    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_admin => true)
+    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'juan@hotmail.com')
     
     create_table :tickets do |t|
       t.references :status, :null => false , :default => 1

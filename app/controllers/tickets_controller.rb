@@ -1,26 +1,26 @@
 class TicketsController < ApplicationController
   before_filter :user_profile
-  layout 'tickets'
+  
   def index
-    session[:filter_category_id] = nil
-    @tickets = Ticket.paginate_all(params[:page], 5)
+    session[:search] = {}
+    @tickets = Ticket.search_and_paginate(params[:search], params[:page])
   end
-  
-  def list_by_category
-    session[:filter_category_id] = Category.find(params[:id]).id
-    puts "la categoria es #{session[:filter_category_id]}"
-    @tickets = Ticket.paginate_all_by_category_id(session[:filter_category_id], params[:page], 5)
-    render :partial => 'tickets_collection'
+
+  def search
+    session[:search][:category_id] = params[:search][:category_id] unless params[:search][:category_id].nil?
+    @tickets = Ticket.search_and_paginate(params[:search].merge(session[:search]),params[:page])
+    respond_to do |format|
+      format.js { render :partial => 'tickets_collection' }
+      format.html { render 'index' }
+    end
   end
-  
-  def list_by_date
-     if session[:filter_category_id].nil?
-       @tickets = Ticket.paginate_all(params[:page],5,params[:order])
-     else
-       @tickets = Ticket.paginate_all_by_category_id(session[:filter_category_id], params[:page],5 , params[:order])
-     end
+
+  def my_list
+    @tickets = Ticket.search_and_paginate({ :user_id => current_user.id }, params[:page])
+    session[:search] = { :user_id => current_user.id }
     render 'index'
   end
+  
 
   def new
     @ticket = Ticket.new

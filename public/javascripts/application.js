@@ -5,7 +5,7 @@
 $(document).ready(function(){
 	$("#filter_category_id").change(function(){
               $.ajax({
-		      url: "tickets/list_by_category/" + $("#filter_category_id").val(),
+		      url: "/tickets/search/?search[category_id]=" + $("#filter_category_id").val(),
 		      success: function(data){ $("#tickets_collection").html(data); },
 		      });
 		

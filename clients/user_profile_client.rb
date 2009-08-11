@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'rubygems'
 require 'activeresource'
 class UserProfileClient < ActiveResource::Base
@@ -8,15 +9,26 @@ class UserProfileClient < ActiveResource::Base
     # Fix it: use this code only for develoment
     @object = new
     @object.prefix_options = {}
-    if ENV['RAILS_ENV'] == 'development' and login == 'carlos'
-      @object.attributes = {  'adscription_id' => 7,
-                              "fullname" =>"Carlos Sánches Perales", 
-                              "phone"=>"56225001 ext 289", 
-                              "user_id"=>167, 
-                              "adscription"=>"Apoyo", 
-                              "login"=>"carlos", 
-                              "email"=> "carlos@fisica.unam.mx"
-                              }
+    if ENV['RAILS_ENV'] == 'development' and (login == 'carlos'or login == 'juan')
+      if login == 'carlos'
+        @object.attributes = {  'adscription_id' => 7,
+          "fullname" =>"Carlos Sánches Perales", 
+          "phone"=>"56225001 ext 289", 
+          "user_id"=>167, 
+          "adscription"=>"Apoyo", 
+          "login"=>"carlos", 
+          "email"=> "carlos@fisica.unam.mx"
+        }
+      else
+        @object.attributes = {  'adscription_id' => 8,
+          "fullname" =>"Juan López López", 
+          "phone"=>"56225001 ext 289", 
+          "user_id"=>168, 
+          "adscription"=>"Apoyo", 
+          "login"=>"juan", 
+        }
+      end
+
     else
       @object.attributes = self.get("show_by_login/#{login}")
     end
