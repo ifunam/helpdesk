@@ -12,12 +12,16 @@
         = "STIFUNAM"
         
       #main
+        #login_logout
+          = "#{@user_profile.login}"
+          = "|"
+          = link_to 'Salir', session_path, :method => :delete 
         #user_profile
-          %p= "Perfil"
-          %p= "Usuario: #{@user_profile.fullname}"
-          %p= "Adscripción: #{@user_profile.adscription}"
-          %p= "Número telefonico: #{@user_profile.phone}"
-          %p= "Email: #{@user_profile.email}"
-          %p= link_to 'Salir', session_path, :method => :delete 
-          
+          #user_profile_item
+            = "Nombre:  #{@user_profile.fullname}"
+          #user_profile_item
+            = "Adscripción:  #{@user_profile.adscription}  "
+          #user_profile_item
+            = "Categoria:  #{}  "
+
         = yield :layout

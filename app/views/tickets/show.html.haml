@@ -1,23 +1,27 @@
 = "Solicitud de soporte #{@ticket.id}"
-%br
-= "Secretaria tecnica de computo"
-%br
 #ticket
-  #ticket_panel
-    #ticket_header
-      = @ticket.created_at_before_type_cast
-      %br
-      = "Categoria: #{Category.find(@ticket.category_id).name}"
-      %br
-      = "Estado: #{Status.find(@ticket.status_id).name}"
-      %br
-      %br
-    #ticket_body
-      #text        
-        = @ticket.body
-    #links
-      = link_to_remote 'Responder', :url => new_ticket_comment_path(@ticket), :method => :get
-  #comment_form
+  #ticket_header
+    #ticket_information
+      = "Datos"
+      %br= "De: #{@user_profile.fullname}"
+      %br= "Creado: #{@ticket.created_at_before_type_cast}"
+      %br= "Categoria: #{Category.find(@ticket.category_id).name}"
+      %br= "Estado: #{Status.find(@ticket.status_id).name}"
+    #user_contact
+      %br= "Contacto:"
+      %br= "Email: #{@user_profile.email}"
+      %br= "Telefono: #{@user_profile.phone}"
+    %br
+  #ticket_body
+    #text        
+      = @ticket.body
+  %br  
+  #actions
+    = link_to_remote 'Responder', :url => new_ticket_comment_path(@ticket), :method => :get
+ 
+
+ 
+#comment_form
 #comments
   = render :partial => 'comments/comment', :collection => @ticket.comments
 .link

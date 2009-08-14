@@ -28,15 +28,25 @@ a{
 }
 
 #main{
-  margin-top: 150px;
+    display:table;
+    margin:50px auto auto;
 }
 
+
+/*_-------------User profile -------------------*/
+
 #user_profile{
-    heigth: 500px;
-    float: left;
+    margin:auto auto 30px;
+}
+
+#user_profile_item{
+    margin: 10px 40px 10px auto;
+    display:inline-block;
+}
+
+#login_logout{
+    text-align: right;
     margin: auto;
-    padding: 10px;
-    width:310px;
 }
 
 /*------------------------------------------------*/
@@ -51,8 +61,6 @@ a{
     position: relative;
 }
 
-#tickets_filter{
-}
 
 #tickets_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
@@ -159,136 +167,154 @@ a{
 }
 
 
-
-
-/*Tockets View (index) */
-
-#tickets{
-    margin: auto;
-    width: 1000px;
-    margin-top: 100px;
-    display: block; 
-    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    border:1px solid silver;
+.pagination{
+    width: 180px;
+    margin:30px auto auto;
 }
 
-#no_tickets{
-    text-align: center;
-}
-
-.ticket{
-    margin: 20px auto 20px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    width: 900px;
-    border:2px solid silver;
-}
-
-
-.ticket_header{
-    margin: auto;
+#add_ticket{
+    #bottom:25px;
+    #position:relative;
+    width:130px;
     margin-top: 10px;
-    width: 800px;
+    margin-bottom: 30px;
 }
 
-.ticket_body{
-    margin: auto;
-    
-    width: 800px;
-    height: 30px;
-    border: 2px solid silver;
+
+
+
+/*--------Tikcet new ---------------*/
+
+#ticket_form{
+   # border: dotted;
+margin-top: 80px;
+
+}
+
+#ticket_form #ticket_body{ 
+    border:2px solid silver;
     background-color: white;
-    #background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    display: table;
+    margin:auto;
+    position: relative;
 }
 
-/*Ticket Show*/
+
+
+
+
+
+
+
+ \*-----------Ticket Show--------------*\
 
 #ticket{
-    margin: 80px auto 50px; 
-    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    width: 1000px;
-    border:2px solid silver;
-    display: table;
+    border: dotted;
+    #margin: 80px auto 50px;
+    #background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    #width: 1000px;
+    #border:2px solid silver;
+    #display: table;
 }
 
-#ticket_panel{
+#ticket{
     width: 900px;
     border: 2px solid silver;
     margin: 10px auto 10px auto;
-    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    background-color: #F9F7ED;
+    padding: 20px;
 }
 
-#ticket_header{
-    margin: auto;
-    margin-top: 10px;
-    width: 800px;
-    display: table;
-}
-
-#ticket_body{
-    margin: 10px auto 10px;
-    width: 800px;
-    height: 30px;
+#ticket #ticket_body{
+    #border:dotted;
     border:2px solid silver;
     background-color: white;
-    display: table;
+    #display: table;
+    margin:auto;
+    position: relative;
 }
 
-#text{
-    padding: 20px;
-    margin: auto;
-    overflow: auto;
-}
+/* #ticket_header{ */
+/*     margin: auto; */
+/*     margin-top: 10px; */
+/*     width: 800px; */
+/*     display: table; */
+/* } */
 
-/*COMMENT FORM */
+/* #ticket_body{ */
+/*     margin: 10px auto 10px; */
+/*     width: 800px; */
+/*     height: 30px; */
+/*     border:2px solid silver; */
+/*     background-color: white; */
+/*     display: table; */
+/* } */
 
-#comment_form{
+/* #text{ */
+/*     padding: 20px; */
+/*     margin: auto; */
+/*     overflow: auto; */
+/* } */
+
+
+
+
+
+
+
+
+
+
+/* /\*COMMENT FORM *\/ */
+
+/* #comment_form{ */
     
-}
+/* } */
 
-#comment_panel_form{
-    border: 2px solid silver;
-    margin: auto;
-    margin-bottom: 30px;
-    width: 900px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    display: block;
-}
+/* #comment_panel_form{ */
+/*     border: 2px solid silver; */
+/*     margin: auto; */
+/*     margin-bottom: 30px; */
+/*     width: 900px; */
+/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
+/*     display: block; */
+/* } */
 
-#new_comment{
-    width: 800px;
-    margin: 10px auto 10px;
-    display: table;
-}
+/* #new_comment{ */
+/*     width: 800px; */
+/*     margin: 10px auto 10px; */
+/*     display: table; */
+/* } */
 
-#comment_body{
-    padding: 10px;
-    margin: 10px auto 10px;
-    width: 800px;
-    height: 130px;
-    border: 1px solid #990000;
-    color:#222222 !important;
-    display: block;
-}
+/* #comment_body{ */
+/*     padding: 10px; */
+/*     margin: 10px auto 10px; */
+/*     width: 800px; */
+/*     height: 130px; */
+/*     border: 1px solid #990000; */
+/*     color:#222222 !important; */
+/*     display: block; */
+/* } */
 
 
-.comment_panel_form{
-    width: 900px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    border: 2px solid silver;
-    margin: auto;
-    margin-bottom: 30px;
-    display: block;
-}
+/* .comment_panel_form{ */
+/*     width: 900px; */
+/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
+/*     border: 2px solid silver; */
+/*     margin: auto; */
+/*     margin-bottom: 30px; */
+/*     display: block; */
+/* } */
 
-.edit_comment{
-    display: block;
-}
+/* .edit_comment{ */
+/*     display: block; */
+/* } */
 
-.new_comment{
-    width: 800px;
-    margin: 10px auto 10px;
-    display: table;
-}
+/* .new_comment{ */
+/*     width: 800px; */
+/*     margin: 10px auto 10px; */
+/*     display: table; */
+/* } */
 
 
 
@@ -297,83 +323,60 @@ a{
 
  
 
-/*COMMENTS LIST */
-#comments{
-    width: 1000px;
-    margin: auto;
-    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    border:1px solid silver;
-    display: block;
-}
+/* /\*COMMENTS LIST *\/ */
+/* #comments{ */
+/*     width: 1000px; */
+/*     margin: auto; */
+/*     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top; */
+/*     border:1px solid silver; */
+/*     display: block; */
+/* } */
 
-.comment{
-    margin: 20px auto 20px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    width: 900px;
-    border:2px solid silver;
-}
+/* .comment{ */
+/*     margin: 20px auto 20px; */
+/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
+/*     width: 900px; */
+/*     border:2px solid silver; */
+/* } */
 
-.comment_panel{
-    margin: auto;
-}
+/* .comment_panel{ */
+/*     margin: auto; */
+/* } */
 
-.comment_header{
-    margin: auto;
-    margin-top: 10px;
-    width: 800px;
-}
+/* .comment_header{ */
+/*     margin: auto; */
+/*     margin-top: 10px; */
+/*     width: 800px; */
+/* } */
 
-.comment_body{
-    margin: auto;
-    margin: 20px auto 20px;
-    width: 800px;
-    height: 30px;
-    border:2px solid silver;
-    background-color: white;
-    display: table;
-}
+/* .comment_body{ */
+/*     margin: auto; */
+/*     margin: 20px auto 20px; */
+/*     width: 800px; */
+/*     height: 30px; */
+/*     border:2px solid silver; */
+/*     background-color: white; */
+/*     display: table; */
+/* } */
 
-.text{
-    width: 800px;
-    overflow: auto;
-}
+/* .text{ */
+/*     width: 800px; */
+/*     overflow: auto; */
+/* } */
 
 
 
-.comment_form_child{
+/* .comment_form_child{ */
     
-}
+/* } */
 
-.comment_child{
-    width: 85%;
-    margin: 5px auto 5px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    border:1px solid silver;
-    display: block;
+/* .comment_child{ */
+/*     width: 85%; */
+/*     margin: 5px auto 5px; */
+/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
+/*     border:1px solid silver; */
+/*     display: block; */
  
-}
+/* } */
 
 
-/*CSS FOR ADMIN CONTROLLER*/
-
-#admin {
-    width: 1000px;
-    margin: auto;
-    border:1px solid silver;
-    padding: 20px;
-}
-
-#buttons{
-    width: 520px;
-    margin: auto;
-}
-
-#tickets_button{
-    width: 200px;
-    float: left;
-   
-}
-#catalogs_button{
-    width: 230px;
-    float: left;
-}
