@@ -38,6 +38,7 @@ class Schema < ActiveRecord::Migration
       t.references :ticket
       t.references :parent, :class_name => 'Comment', :foreign_key => 'parent_id'
       t.string :subject, :null => false
+      t.string :user, :null => false
       t.text :body, :null => false
       t.timestamps
     end

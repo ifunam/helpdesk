@@ -27,6 +27,8 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'binarylogic-searchlogic', :lib => 'searchlogic', :source => 'http://gems.github.com'
   config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
+  config.gem 'aaronchi-jrails', :lib => 'jrails', :source => 'http://gems.github.com'
+
   
   # Only load the plugins named here, install the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

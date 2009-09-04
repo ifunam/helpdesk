@@ -7,6 +7,9 @@ body {
 a{
   text-decoration: none;
 }
+
+a.hilite { background:yellow; }
+
  
   
 
@@ -200,61 +203,47 @@ margin-top: 80px;
 }
 
 
+/*-----------Ticket Show--------------*/
 
 
 
-
-
-
- \*-----------Ticket Show--------------*\
-
-#ticket{
-    border: dotted;
-    #margin: 80px auto 50px;
-    #background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    #width: 1000px;
-    #border:2px solid silver;
-    #display: table;
-}
-
-#ticket{
-    width: 900px;
+#ticket_show{
+    width: 650px;
     border: 2px solid silver;
     margin: 10px auto 10px auto;
+    margin: auto;   
     background-color: #F9F7ED;
     padding: 20px;
 }
 
-#ticket #ticket_body{
-    #border:dotted;
+#ticket_show_header{ 
+    #border: dotted;
+}
+
+.ticket_show_header_item{ 
+    width: 300px; 
+    display:inline-table;
+    #border: dotted;
+} 
+.ticket_show_header_item#contact{
+    #border: solid;
+    #float: right;
+    position: relative;
+    left: 80px;
+}
+
+#ticket_show #ticket_body{
+    border:dotted;
     border:2px solid silver;
     background-color: white;
     #display: table;
     margin:auto;
     position: relative;
+    
+    overflow: auto;
+    
 }
 
-/* #ticket_header{ */
-/*     margin: auto; */
-/*     margin-top: 10px; */
-/*     width: 800px; */
-/*     display: table; */
-/* } */
-
-/* #ticket_body{ */
-/*     margin: 10px auto 10px; */
-/*     width: 800px; */
-/*     height: 30px; */
-/*     border:2px solid silver; */
-/*     background-color: white; */
-/*     display: table; */
-/* } */
-
-/* #text{ */
-/*     padding: 20px; */
-/*     margin: auto; */
-/*     overflow: auto; */
-/* } */
 
 
 
@@ -265,11 +254,38 @@ margin-top: 80px;
 
 
 
-/* /\*COMMENT FORM *\/ */
 
-/* #comment_form{ */
+/*-------------- COMMENT FORM ----------------*/
+
+#comment_form{ 
+    #border: dotted;
+    #display: block;
+    #background-color:#F9F7ED;
+    #margin-top:50px;
+}
+
+#cancel{
+    #border: solid;
+}
+
+#comment_subject{
+    #float: left;
+}
+
+#comment_body{
+    #float: left;
     
-/* } */
+    #padding: 10px;
+    margin: 10px auto 10px;
+    
+    height: 130px;
+    border: 1px solid #990000;
+    color:#222222 !important;
+    display: block;
+    padding:20px;
+    width:650px;
+    
+}
 
 /* #comment_panel_form{ */
 /*     border: 2px solid silver; */
@@ -323,21 +339,52 @@ margin-top: 80px;
 
  
 
-/* /\*COMMENTS LIST *\/ */
-/* #comments{ */
-/*     width: 1000px; */
-/*     margin: auto; */
-/*     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top; */
-/*     border:1px solid silver; */
-/*     display: block; */
-/* } */
+/*COMMENTS LIST */
+#comments{
+    #width: 650px;
+    #padding: 20px;
+###    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    #background-color:#F9F7ED;
+    #border:1px solid silver;
+    display: block;
+#margin:20px auto auto;
+}
 
-/* .comment{ */
-/*     margin: 20px auto 20px; */
-/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
-/*     width: 900px; */
-/*     border:2px solid silver; */
-/* } */
+.comment{
+    margin: 20px auto 20px;
+    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    #width: 900px;
+    border:2px solid silver;
+    display: block;
+    
+}
+
+.comment_item{
+   margin: 5px auto;
+   padding: 5px;
+
+}
+
+.comment_item#subject{
+    float: left;
+    
+}
+
+.comment_item#date{
+    float: right;
+}
+
+.comment_item#body{
+    #margin: auto;
+    #margin: 20px auto 20px;
+    #width: 800px;
+    #height: 30px;
+    border:2px solid silver;
+    background-color: white;
+    #display: table;
+    width: 650px;
+    overflow: auto;
+}
 
 /* .comment_panel{ */
 /*     margin: auto; */

@@ -1,0 +1,10 @@
+#comment_form
+  #comment_errors
+  
+  - form_for @comment, @parameters[:url] do |comment_form|
+    = comment_form.text_field :subject, :value => @parameters[:subject]
+    = comment_form.text_area :body
+    = comment_form.hidden_field :ticket_id, :value => @parameters[:id]
+    #send_comment_form
+      = submit_tag "Enviar comentario"
+      %span{:id => 'cancel'}= "Cancelar"

@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.integer  "ticket_id"
     t.integer  "parent_id"
     t.string   "subject",    :null => false
+    t.string   "user",       :null => false
     t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

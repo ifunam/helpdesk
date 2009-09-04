@@ -1,16 +1,17 @@
 .comment{:id => comment.dom_id}
-  .comment_panel
-    .comment_header
-      .comment_subject
-        = comment.subject
-      .comment_date
-        = comment.created_at_before_type_cast
-      .comment_body
-        .text
-          = comment.body
-    .actions
-      = link_to_remote 'Responder', :url => edit_comment_path(comment), :method => :get
-.comment_form_child{:id => "comment_form_child_#{comment.dom_id}" }
-  
-.childs{:id =>'child_' + comment.dom_id}
-  = render :partial => 'comments/aux/comment', :collection => comment.children
+  .comment_item#from
+    = comment.user
+  .comment_item#subject
+    = comment.subject
+  .comment_item#date
+    = comment.created_at_before_type_cast
+  .comment_item#body
+    = comment.body
+  .actions
+    #respond
+      = link_to_remote "Responder", :url => {:controller => 'comments', :action => 'new',:ticket_id => @ticket.id },:update => {:success => "comment_form"}, :method => :get
+    
+  #comment_form
+
+  .childs{:id =>"child_#{comment.dom_id}"}
+    = render :partial => 'comment', :collection => comment.children

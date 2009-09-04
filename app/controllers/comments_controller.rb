@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :user_profile
   def index
 
   end
@@ -6,9 +7,9 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @ticket=Ticket.find(params[:ticket_id])
-    @parameters = {:url => comments_path, :subject => "Re: #{@ticket.category.name}",:id => @ticket.id}
+    @parameters = {:url => ticket_path(@ticket), :subject => "Re: #{@ticket.category.name}"}
     respond_to do |format|
-      format.js { render 'comment_form.rjs' }
+      format.js { render :partial => 'comment_form' }
     end
   end
 

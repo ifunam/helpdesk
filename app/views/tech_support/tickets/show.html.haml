@@ -17,7 +17,8 @@
         = @ticket.body
     #links
       = link_to_remote 'Responder', :url => new_ticket_comment_path(@ticket), :method => :get
-  #comment_form
+#comment_form
+
 #comments
   = render :partial => 'comments/comment', :collection => @ticket.comments
 .link
