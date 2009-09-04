@@ -15,14 +15,11 @@
         %br= "Telefono: #{@user_profile.phone}"
   #ticket_body
     = @ticket.body
-  %br  
+  %br
   #actions
-    = link_to_remote "Responder", :url => {:controller => 'comments', :action => 'new',:ticket_id => @ticket.id },:update => {:success => "comment_form"}, :method => :get
+    = link_to_remote "Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
   #comment_form 
+#comment_collection
+  = render :partial => 'comments/comment', :collection => @ticket.comments 
   
-  %h4= "Comentarios"
-
-  #comments
-    = render :partial => 'comments/comment', :collection => @ticket.comments
-.link
-  = link_to "Regresar", tickets_path
+  

@@ -1,2 +1,2 @@
-page.insert_html :top, :comments, :partial => 'comment', :object => @comment
+page.insert_html :bottom, :comment_collection, :partial => 'comment', :object => @comment
 page.replace_html  "comment_form", ''

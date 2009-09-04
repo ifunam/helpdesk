@@ -1,1 +1,0 @@
-page.replace_html "comment_form_child_#{@comment.dom_id}", :partial => 'comments/aux/comment_form'

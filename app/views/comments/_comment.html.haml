@@ -9,9 +9,9 @@
     = comment.body
   .actions
     #respond
-      = link_to_remote "Responder", :url => {:controller => 'comments', :action => 'new',:ticket_id => @ticket.id },:update => {:success => "comment_form"}, :method => :get
+      = link_to_remote "Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
     
-  #comment_form
+  .comment_form{:id => "comment_form_#{comment.dom_id}"}
 
   .childs{:id =>"child_#{comment.dom_id}"}
-    = render :partial => 'comment', :collection => comment.children
+    = render :partial => 'comments/comment', :collection => comment.children

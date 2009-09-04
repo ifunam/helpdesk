@@ -6,15 +6,16 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    @ticket=Ticket.find(params[:ticket_id])
-    @parameters = {:url => ticket_path(@ticket), :subject => "Re: #{@ticket.category.name}"}
+    @comment.ticket_id = params[:ticket_id]
+    @comment.subject = "Re: #{@comment.ticket.category.name}"
     respond_to do |format|
-      format.js { render :partial => 'comment_form' }
+      format.js { render 'new',  :layout => false }
     end
   end
 
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user = current_user.login  
     respond_to do |format|
       if @comment.save
         if @comment.parent.nil?
@@ -31,15 +32,17 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     @comment.body = nil
-    @parameters = { :url => comment_path(@comment), :subject => "Re:#{@comment.subject}",:id => @comment.ticket_id}
+    @comment.subject = 'Re: ' + @comment.subject
+    
     respond_to do |format|
-      format.js { render 'edit.rjs' }
+      format.js { render 'edit', :layout => false  }
     end
   end
   
   def update
     @comment = Comment.find(params[:id])
-    @comment.children << Comment.new(params[:comment])
+    
+    @comment.children << Comment.new(params[:comment].merge(:user => current_user.login ))
     respond_to do |format|
       format.js { render 'update.rjs' }
     end

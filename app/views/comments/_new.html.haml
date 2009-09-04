@@ -1,0 +1,3 @@
+#comment_errors
+- remote_form_for @comment, ticket_path(@ticket),:html => {:id => "comment_form_#{@comment.dom_id}"} do |comment_form|
+  = render :partial => 'comment_form', :object => comment_form
