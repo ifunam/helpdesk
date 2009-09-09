@@ -33,7 +33,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.body = nil
     @comment.subject = 'Re: ' + @comment.subject
-    
     respond_to do |format|
       format.js { render 'edit', :layout => false  }
     end
@@ -51,7 +50,7 @@ class CommentsController < ApplicationController
   def show
     @comment=Comment.find(params[:id])
     respond_to do |format|
-      format.js { render 'show.rjs' }
+      format.js { render 'show', :layout => false }
     end
   end
 

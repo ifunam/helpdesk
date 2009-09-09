@@ -13,5 +13,5 @@
     
   .comment_form{:id => "comment_form_#{comment.dom_id}"}
 
-  .childs{:id =>"child_#{comment.dom_id}"}
-    = render :partial => 'comments/comment', :collection => comment.children
+  .childs{:id =>"childs_#{comment.dom_id}"}
+    = render :partial => 'comments/child', :collection => comment.children
