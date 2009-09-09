@@ -1,2 +1,3 @@
 .link_comment_child{:id => "child_#{child.dom_id}"}
-  = link_to_remote "#{child.subject}", :url => comment_path, :update =>{:success => "child_#{child.dom_id}"}, :method => :get  
+  = link_to_remote "#{child.subject}", :url => comment_path(:id => child.id), :update =>{:success => "child_#{child.dom_id}"}, :method => :get
+  = child.dom_id

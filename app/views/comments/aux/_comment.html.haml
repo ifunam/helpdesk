@@ -1,7 +1,0 @@
-.comment_child{:id => comment.dom_id}
-  .comment_panel_child
-    =link_to_remote "---#{comment.subject}", :url => comment_path(comment), :method => :get
-  .comment_body_child
-  .comment_form_child{:id => "comment_form_child_#{comment.dom_id}" }
-  .childs{:id =>'child_' + comment.dom_id}
-    = render :partial => 'comments/aux/comment', :collection => comment.children
