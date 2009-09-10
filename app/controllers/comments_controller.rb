@@ -55,9 +55,12 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    puts "hola"
+    @comment=Comment.find(params[:id])
+    puts @comment.id
     respond_to do |format|
-      format.js { render 'destroy.rjs' }
-    end
+       format.js { render 'destroy.rjs' }
+     end
   end
 
   

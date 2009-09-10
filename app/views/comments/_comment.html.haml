@@ -1,17 +1,17 @@
-.comment{:id => comment.dom_id}
-  .comment_item#from
-    = comment.user
-  .comment_item#subject
-    = comment.subject
-  .comment_item#date
-    = comment.created_at_before_type_cast
-  .comment_item#body
-    = comment.body
-  .actions
-    #respond
-      = link_to_remote "Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
+.comment_item#from
+  = comment.user
+.comment_item#subject
+  = comment.subject
+.comment_item#date
+  = comment.created_at_before_type_cast
+.comment_item#body
+  = comment.body
+.actions
+  #respond
+    = link_to_remote "Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
     
-  .comment_form{:id => "comment_form_#{comment.dom_id}"}
+.comment_form{:id => "comment_form_#{comment.dom_id}"}
 
-  .childs{:id =>"childs_#{comment.dom_id}"}
-    = render :partial => 'comments/child', :collection => comment.children
+.childs{:id =>"childs_#{comment.dom_id}"}
+  = render :partial => 'comments/child', :collection => comment.children
+

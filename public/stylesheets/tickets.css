@@ -257,11 +257,14 @@ margin-top: 80px;
 
 /*-------------- COMMENT FORM ----------------*/
 
-#comment_form{ 
+.comment_form{ 
     #border: dotted;
     #display: block;
     #background-color:#F9F7ED;
-    #margin-top:50px;
+    margin-top:10px;
+    width: 90%;
+    padding: 2%;
+    margin: auto;
 }
 
 #cancel{
@@ -283,54 +286,14 @@ margin-top: 80px;
     color:#222222 !important;
     display: block;
     padding:20px;
-    width:650px;
+    width:90%;#600px;
     
 }
 
-/* #comment_panel_form{ */
-/*     border: 2px solid silver; */
-/*     margin: auto; */
-/*     margin-bottom: 30px; */
-/*     width: 900px; */
-/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
-/*     display: block; */
-/* } */
-
-/* #new_comment{ */
-/*     width: 800px; */
-/*     margin: 10px auto 10px; */
-/*     display: table; */
-/* } */
-
-/* #comment_body{ */
-/*     padding: 10px; */
-/*     margin: 10px auto 10px; */
-/*     width: 800px; */
-/*     height: 130px; */
-/*     border: 1px solid #990000; */
-/*     color:#222222 !important; */
-/*     display: block; */
-/* } */
 
 
-/* .comment_panel_form{ */
-/*     width: 900px; */
-/*     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top; */
-/*     border: 2px solid silver; */
-/*     margin: auto; */
-/*     margin-bottom: 30px; */
-/*     display: block; */
-/* } */
 
-/* .edit_comment{ */
-/*     display: block; */
-/* } */
 
-/* .new_comment{ */
-/*     width: 800px; */
-/*     margin: 10px auto 10px; */
-/*     display: table; */
-/* } */
 
 
 
@@ -350,7 +313,7 @@ margin-top: 80px;
 #margin:20px auto auto;
 }
 
-.comment{
+.comment_father{
     margin: 20px auto 20px;
     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
     #width: 900px;
@@ -374,16 +337,37 @@ margin-top: 80px;
     float: right;
 }
 
-.comment_item#body{
-    #margin: auto;
-    #margin: 20px auto 20px;
-    #width: 800px;
-    #height: 30px;
+.comment_father .comment_item#body{
     border:2px solid silver;
     background-color: white;
     #display: table;
     width: 650px;
     overflow: auto;
+}
+
+.childs{
+    margin:15px auto;
+    width: 95%;
+
+}
+
+
+.comment_child{
+    margin:15px auto;
+    width: 95%;
+    border: solid silver;
+    
+    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+}
+
+
+
+.comment_child .comment_item#body{
+    border:2px solid silver;
+    background-color: white;
+    width: 93%;
+    overflow: auto;
+    
 }
 
 /* .comment_panel{ */
