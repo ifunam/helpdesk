@@ -7,7 +7,6 @@
     = ticket.created_at_before_type_cast
   .ticket_row_item#user
     = User.find(ticket.user_id).login
-    -#= User.find(UserTicket.find(ticket.id).user_id).login
   .ticket_row_item#assigned_to
     = ""
   .ticket_row_item#body

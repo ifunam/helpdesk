@@ -1,6 +1,6 @@
-#index_title
-  %h2 "Inicidencias reportadas por el personal del IFUNAM"
-  #tickets
-    = render :partial => 'ticket', :collection => @tickets
+#tickets_index
+  = render :partial => 'tickets_filter'
+  = render :partial => 'ticket_header' 
+  = render :partial => 'tickets_collection'
 #add_ticket
-  = link_to 'Nueva Solicitud', new_ticket_path
+  = link_to 'Nueva Solicitud',  new_tech_support_ticket_path

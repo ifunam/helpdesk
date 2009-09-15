@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class SessionsController < ApplicationController
-  
+  layo
   def new
     @user_session = UserSession.new
   end

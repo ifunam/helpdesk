@@ -6,8 +6,9 @@
       = f.select :category_id, Category.all(:order => 'name ASC').collect { |record|[record.name, record.id] }
     %p
       = f.label "Descripción:"
-      = f.text_area :body, :size => "80x10"
+      = f.text_area :body, :size => "80x4"
     #button_new
       = submit_tag "Enviar Solicitud"
       
+-#= button_to "Cancelar", {:controller => 'tickets', :action => 'index'}
 = link_to "Cancelar", tickets_url

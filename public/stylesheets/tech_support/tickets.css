@@ -32,7 +32,9 @@ a.hilite { background:yellow; }
 
 #main{
     display:table;
+    #width: 100px;
     margin:50px auto auto;
+    
 }
 
 
@@ -62,6 +64,7 @@ a.hilite { background:yellow; }
     width: 1100px;
     display: inline-block; 
     position: relative;
+    width: 1300px;
 }
 
 
@@ -72,6 +75,7 @@ a.hilite { background:yellow; }
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
+    width: 1300px;
 }
 
 .ticket_header_item{
@@ -111,6 +115,9 @@ a.hilite { background:yellow; }
     #position: relative;
     #right: 100px;
 }
+
+
+
 .ticket_header_item#actions{
     border: none;
     #width: 50px;
@@ -130,7 +137,7 @@ a.hilite { background:yellow; }
 .ticket_row{
     margin: 20px auto 20px auto;
     display:inline-block;
-    width:1100px;
+    width:1300px;
 }
 
 #color1{
@@ -163,6 +170,10 @@ a.hilite { background:yellow; }
     width: 120px;
 }
 .ticket_row_item#body{
+    width: 220px;
+}
+.ticket_row_item#priority{
+    #border: dotted;
     width: 220px;
 }
 .ticket_row_item#actions{
@@ -369,3 +380,5 @@ margin-top: 80px;
     overflow: auto;
     
 }
+
+

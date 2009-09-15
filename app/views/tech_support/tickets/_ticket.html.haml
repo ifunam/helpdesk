@@ -1,15 +1,22 @@
--# .icon_order
--#  = image_tag("icon_order.jpg")
-.ticket
-  .ticket_panel
-    .ticket_header
-      .ticket_category
-        = Category.find(ticket.category_id).name
-      .ticket_status
-        = Status.find(ticket.status_id).name
-      .ticket_date
-        = ticket.created_at_before_type_cast
-    .ticket_body
-      = ticket.body.slice(0, 20)
-  .ticket_actions
-    = link_to("Detalles", ticket_path(ticket) , :class => "link_details")    
+.ticket_row{:id => "color#{ticket.id%2}" }
+  .ticket_row_item#category
+    = Category.find(ticket.category_id).name
+  
+  .ticket_row_item#date
+    = ticket.created_at_before_type_cast
+  .ticket_row_item#user
+    = User.find(ticket.user_id).login
+    -#= User.find(UserTicket.find(ticket.id).user_id).login
+  .ticket_row_item#assigned_to
+    = ""
+  .ticket_row_item#body
+    = ticket.body.slice(0, 20)
+  .ticket_row_item#status
+    = Status.find(ticket.status_id).name
+  .ticket_row_item#priority
+    = Priority.find(ticket.priority_id).name
+  .ticket_row_item#actions
+    .link_to_details
+      = link_to "Detalles", tech_support_ticket_path(ticket)
+    .link_to_edit
+      = link_to "Modificar", edit_tech_support_ticket_path(ticket)

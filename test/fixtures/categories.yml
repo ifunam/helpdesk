@@ -1,72 +1,72 @@
 Correo electrónico:
   id: 1
-  name: "Correo electronico"
+  name: 
 
 Red inalámbrica:
   id: 2
-  name: "Red inalambrica"
+  name: 
 
 Red cableada:
   id: 3
-  name: "Red cableada"
+  name: 
 
 Soporte para windows y sus paquetes:
   id: 4
-  name: "Soporte para windows y sus paquetes"
+  name: 
 
 Virus:
   id: 5
-  name: "Virus"
+  name: 
 
 Telefonía:
   id: 6
-  name: "Telefonia"
+  name: 
 
 Páginas web del instituto:
   id: 7
-  name: "Paginas web del instituto"
+  name: 
 
 Fotografía y carteles:
   id: 8
-  name: "Fotografia y carteles"
+  name: 
 
 SALVA:
   id: 9
-  name: "SALVA"
+  name: 
       
 SIESTA:
   id: 10
-  name: "SIESTA"
+  name: 
 
 Cluster Brodix:
   id: 11
-  name: "Cluster brodix"
+  name: 
 
 Cluster Ollín:
   id: 12
-  name: "Cluster Ollin"
+  name: 
 
 Supercómputo:
   id: 13
-  name: "Supercomputo"
+  name: 
 
 lcsc:
   id: 14
-  name: "Laboratorio de cómputo de Sistemas Complejos"
+  name: 
        
 
 lcft:
   id: 15
-  name: "Laboratorio de cómputo de Física Teórica"
+  name: 
 
 vax:
   id: 16
-  name: "Laboratorio de cómputo general de estudiantes (VAX)"
+  name: 
 
 problemas:
   id: 17
-  name: "Problemas conmigo mismo y con mis colegas"
+  name: 
 
 Otro:
   id: 18
-  name: "Otro"
+  name:

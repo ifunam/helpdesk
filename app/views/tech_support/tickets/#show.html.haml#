@@ -22,4 +22,5 @@
 #comment_collection
   = render :partial => 'comments/comment_father', :collection => @ticket.comments 
   
-= link_to "Regresar", tech_support_tickets_path
+  
+

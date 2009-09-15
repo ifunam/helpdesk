@@ -1,3 +1,5 @@
 #comment_errors
 - remote_form_for @comment, :method => :put  do |f|
   = render :partial => 'comment_form', :object => f
+#cancel
+  = link_to_function "Cancelar", %Q($("#comment_form_#{@comment.dom_id}").empty();)

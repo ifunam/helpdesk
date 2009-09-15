@@ -28,7 +28,8 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(params[:ticket])
-    @ticket.user_id = current_user.id
+     @ticket.user_id = current_user.id
+    # @ticket.users << User.find(current_user.id)
     if @ticket.save
       redirect_to :action => :index
     else
@@ -40,14 +41,9 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
 
-  def destroy
-    Ticket.destroy(params[:id])
-    redirect_to :action => 'index'
-  end
-
   def update
-    
   end
+  
 
 end
 

@@ -4,7 +4,7 @@
   %head
     %title 
       = "Stifunam #{controller.controller_name.capitalize}"
-    = stylesheet_link_tag "tickets"
+    = stylesheet_link_tag "tech_support/tickets"
     = javascript_include_tag 'jquery-1.3.2', 'application'
     %body
       #layout_header
@@ -14,7 +14,7 @@
         #login_logout
           = "#{@user_profile.login}"
           = "|"
-          = link_to 'Salir', session_path, :method => :delete 
+          = link_to 'Salir', tech_support_session_url, :method => :delete
         #user_profile
           #user_profile_item
             = "Nombre:  #{@user_profile.fullname}"

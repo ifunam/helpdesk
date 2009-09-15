@@ -3,21 +3,20 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :admins
   map.resources :tickets, :collection => { :search => :get, :my_list => :get }
   map.resources :comments
-  map.resources :support_tickets
   map.resources :categories
 
-  map.resources :support_tickets do |sup_ticket|
-    sup_ticket.resources :tickets
-  end
+  
 
   map.resources :tickets do |ticket|
     ticket.resources :comments
   end
 
-    map.namespace :tech_support do |tech_support|
-      # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-      tech_support.resources :tickets
-    end
+  map.namespace :tech_support do |tech_support|
+      # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    tech_support.resource :session
+    tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get, :ticket_comment => :get }
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
 

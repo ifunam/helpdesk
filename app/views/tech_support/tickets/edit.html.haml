@@ -1,0 +1,28 @@
+#ticket_form
+  %h3 Solicitud de de Soporte
+  - form_for @ticket, :url => {:controller => 'tech_support/tickets', :action => 'update'}, :method => :put  do |ticket_form|
+    %p
+      = ticket_form.label "Cambiar Categoria "
+      = ticket_form.select :category_id, Category.all(:order => 'name ASC').collect { |record|[record.name, record.id] },:selected => @ticket.category_id
+     
+    %p
+      = ticket_form.label "Cambiar Estado"
+      = ticket_form.select :status_id, Status.all(:order => 'name ASC').collect { |record|[record.name, record.id] },:selected => @ticket.status_id
+    %p
+      = ticket_form.label "Cambiar Prioridad"
+      = ticket_form.select :priority_id, Priority.all(:order => 'name ASC').collect { |record|[record.name, record.id] },:selected => @ticket.priority_id
+
+    %p
+      = ticket_form.label "Reasignar A"
+      = ticket_form.select :user_id, User.all(:conditions => {:is_admin => true},:order => 'id ASC').collect { |record|[record.login, record.id] }
+      .ticket_comment{:id => "ticket_comment", :ticket_id => @ticket.id}
+      
+
+      = ticket_form.hidden_field :ticket_id, :value => @ticket.id
+    %p
+      = ticket_form.label "Description"
+      = ticket_form.text_area :body, :size => "80x10", :value => @ticket.body
+
+    #send_comment_form
+      = submit_tag 'Modificar'
+  = button_to "Cancelar", tech_support_tickets_url, :method => :get

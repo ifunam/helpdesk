@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 class Schema < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
+      t.boolean :status, :null => false, :default => true
+      t.boolean :is_admin, :null => false, :default => false
       t.string    :login,               :null => false 
       t.string    :email,               :null => false
       t.string    :crypted_password,    :null => false
@@ -15,21 +18,17 @@ class Schema < ActiveRecord::Migration
       t.datetime  :last_login_at
       t.string    :current_login_ip
       t.string    :last_login_ip
-      t.boolean :status, :null => false, :default => true
-      t.boolean :is_admin, :null => false, :default => false
+      
       t.timestamps
     end
     
-    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
-    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_admin => true)
-    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_admin => true)
-    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'juan@hotmail.com')
-    
+   
     create_table :tickets do |t|
       t.references :status, :null => false , :default => 1
       t.references :category, :null => false
       t.references :priority, :null => false, :default => 1
       t.references :user, :null => false
+      #      t.references :tec_asigned, :class_name => 'User'
       t.text :body, :null => false
       t.timestamps
     end
@@ -63,16 +62,60 @@ class Schema < ActiveRecord::Migration
       t.timestamps
     end
 
-   
+    #create_table :user_tickets do |t|
+    #  t.references :user, :ticket, :null => false
+    #  t.timestamps
+    #end
 
-    create_table :user_types do |t|
-      t.string :name, :null => false
-      t.timestamps
-    end
+    
+    
+    
+    
+  
+    
+    
+    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
+    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_admin => true)
+    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_admin => true)
+    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'juan@hotmail.com')
+    
+    Category.create!(:name => "Correo electronico")
+    Category.create!(:name => "Red inalambrica")
+    Category.create!(:name => "Red cableada")
+    Category.create!(:name => "Soporte para windows y sus paquetes")
+    Category.create!(:name => "Virus")
+    Category.create!(:name => "Telefonia")
+    Category.create!(:name => "Paginas web del instituto")
+    Category.create!(:name => "Fotografia y carteles")
+    Category.create!(:name => "SALVA")
+    Category.create!(:name => "SIESTA")
+    Category.create!(:name => "Cluster brodix")
+    Category.create!(:name => "Cluster Ollin")
+    Category.create!(:name => "Supercomputo")
+    Category.create!(:name => "Laboratorio de cómputo de Sistemas Complejos")
+    Category.create!(:name => "Laboratorio de cómputo de Física Teórica")
+    Category.create!(:name => "Laboratorio de cómputo general de estudiantes (VAX)")
+    Category.create!(:name => "Problemas conmigo mismo y con mis colegas")
+    Category.create!(:name => "Otro")
+    
+    Priority.create!(:name => "Normal")
+    Priority.create!(:name => "Alta" )
+    Priority.create!(:name => "Urgente")
+    
+    Status.create!(:name => "Abierto" )
+    
+    Status.create!(:name => "En proceso")
+    Status.create!(:name => "Pendiente")
+    Status.create!(:name => "Cancelado")
+    Status.create!(:name => "Duplicado")
+    Status.create!(:name => "Cerrado")
 
+    UserCategory.create!(:user_id => 2,:category_id => 12)
+    UserCategory.create!(:user_id => 4,:category_id => 1)
+
+    
   end
-
   def self.down
-    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_types
+    drop_table :users, :tickets, :comments, :categories, :priorities, :statuses, :user_categories, :user_tickets
   end
 end

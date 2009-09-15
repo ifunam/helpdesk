@@ -1,11 +1,1 @@
-Normal:
-  id: 1
-  name: "Normal"
 
-Alta:
-  id: 2
-  name: "Alta"
-
-Urgente:
-  id: 3
-  name: "Urgente"
