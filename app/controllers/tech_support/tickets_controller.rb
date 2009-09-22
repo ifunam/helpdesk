@@ -18,10 +18,11 @@ class TechSupport::TicketsController < TicketsController
  
  def update
    @ticket=Ticket.find params[:id]
-   @ticket.body = params[:ticket][:body]
+   @ticket.body = params[:ticket][:body]+"\n"
    @ticket.category_id = params[:ticket][:category_id]
-   @ticket.status_id = params[:ticket][:status_id]
    @ticket.priority_id = params[:ticket][:priority_id]
+   @ticket.status_id = params[:ticket][:status_id]
+   @ticket.user_incharge_id = params[:ticket][:user_incharge_id]
    if @ticket.save
      redirect_to tech_support_tickets_url
    else
@@ -29,11 +30,6 @@ class TechSupport::TicketsController < TicketsController
    end
  end
 
- def ticket_comment
-   respond_to do |format|
-     format.js {render 'ticket_comment', :layout => false}
-   end
- end
  
  
 end

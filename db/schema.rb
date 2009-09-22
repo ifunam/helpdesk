@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 20090918204302) do
 
   create_table "categories", :force => true do |t|
     t.text     "name",       :null => false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.integer  "ticket_id"
     t.integer  "parent_id"
     t.string   "subject",    :null => false
-    t.string   "user",       :null => false
+    t.integer  "user_id"
     t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,11 +40,12 @@ ActiveRecord::Schema.define(:version => 1) do
   end
 
   create_table "tickets", :force => true do |t|
-    t.integer  "status_id",   :default => 1, :null => false
-    t.integer  "category_id",                :null => false
-    t.integer  "priority_id", :default => 1, :null => false
-    t.integer  "user_id",                    :null => false
-    t.text     "body",                       :null => false
+    t.integer  "status_id",        :default => 1, :null => false
+    t.integer  "category_id",                     :null => false
+    t.integer  "priority_id",      :default => 1, :null => false
+    t.integer  "user_id",                         :null => false
+    t.integer  "user_incharge_id"
+    t.text     "body",                            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,5 +77,17 @@ ActiveRecord::Schema.define(:version => 1) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "versions", :force => true do |t|
+    t.integer  "versioned_id"
+    t.string   "versioned_type"
+    t.text     "changes"
+    t.integer  "number"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
+  add_index "versions", ["number"], :name => "index_versions_on_number"
+  add_index "versions", ["versioned_type", "versioned_id"], :name => "index_versions_on_versioned_type_and_versioned_id"
 
 end

@@ -28,7 +28,7 @@ class Schema < ActiveRecord::Migration
       t.references :category, :null => false
       t.references :priority, :null => false, :default => 1
       t.references :user, :null => false
-      #      t.references :tec_asigned, :class_name => 'User'
+      t.references :user_incharge, :class_name => 'User'
       t.text :body, :null => false
       t.timestamps
     end
@@ -37,7 +37,7 @@ class Schema < ActiveRecord::Migration
       t.references :ticket
       t.references :parent, :class_name => 'Comment', :foreign_key => 'parent_id'
       t.string :subject, :null => false
-      t.string :user, :null => false
+      t.references :user
       t.text :body, :null => false
       t.timestamps
     end
@@ -61,11 +61,6 @@ class Schema < ActiveRecord::Migration
       t.references :user, :category, :null => false
       t.timestamps
     end
-
-    #create_table :user_tickets do |t|
-    #  t.references :user, :ticket, :null => false
-    #  t.timestamps
-    #end
 
     
     
@@ -102,13 +97,10 @@ class Schema < ActiveRecord::Migration
     Priority.create!(:name => "Alta" )
     Priority.create!(:name => "Urgente")
     
-    Status.create!(:name => "Abierto" )
+    Status.create!(:name => "No atendido" )
     
-    Status.create!(:name => "En proceso")
-    Status.create!(:name => "Pendiente")
-    Status.create!(:name => "Cancelado")
-    Status.create!(:name => "Duplicado")
-    Status.create!(:name => "Cerrado")
+    Status.create!(:name => "Atendido")
+    Status.create!(:name => "En Proceso")
 
     UserCategory.create!(:user_id => 2,:category_id => 12)
     UserCategory.create!(:user_id => 4,:category_id => 1)

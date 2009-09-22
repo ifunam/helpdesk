@@ -11,12 +11,7 @@ $(document).ready(function(){
               });
 	});
 
-        $("#ticket_user_id").change(function(){
-              $.ajax({
-		      url: "/tech_support/tickets/ticket_comment/",
-		      success: function(data){ $("#ticket_comment").html(data)}
-              });
-	});
+         
         
 
         $("a").hover(function () {

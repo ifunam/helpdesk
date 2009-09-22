@@ -12,10 +12,10 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.namespace :tech_support do |tech_support|
-      # Directs /admin/products/* to Admin::ProductsController
+    # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
     tech_support.resource :session
-    tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get, :ticket_comment => :get }
+    tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get }
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

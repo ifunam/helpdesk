@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
-    @comment.user = current_user.login  
+    @comment.user= current_user  
     respond_to do |format|
       if @comment.save
         if @comment.parent.nil?

@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   has_many :user_categories
   has_many :categories, :through => :user_categories
   has_many :tickets
+  has_many :tickets_incharge, :class_name => 'Ticket', :foreign_key => 'user_incharge_id'
 
-  #has_many :user_tickets
-  #has_many :tickets, :through => :user_tickets
 
+  has_many :comments
 end
