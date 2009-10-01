@@ -1,0 +1,4 @@
+- form_for (:record, @record, :url => {:action => :create}) do |f|
+  = render :partial => 'tech_support/catalogs/form', :locals => { :f => f}
+  %br
+  = submit_tag('Guardar')

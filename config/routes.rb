@@ -1,9 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
-  map.resources :admins
   map.resources :tickets, :collection => { :search => :get, :my_list => :get }
   map.resources :comments
-  map.resources :categories
 
   
 
@@ -16,6 +14,9 @@ ActionController::Routing::Routes.draw do |map|
     # (app/controllers/admin/products_controller.rb)
     tech_support.resource :session
     tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get }
+    tech_support.resources :categories
+    tech_support.resources :priorities
+    tech_support.resources :statuses
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,4 @@
+#collection
+  = render :partial => 'tech_support/catalogs/record', :collection => @collection
+  = will_paginate @collection
+= link_to "Agregar", :action => 'new'

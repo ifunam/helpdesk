@@ -1,0 +1,6 @@
+.record
+  .col
+    = record.name
+    = link_to "Mostrar", {:action => 'show',:id => record.id}
+    = link_to "Modificar", {:action => 'edit', :id => record.id}
+    = link_to "Borrar", {:action => 'destroy',:id => record.id}, :method => :delete, :confirm => "¿Deseas borrar este registro?"

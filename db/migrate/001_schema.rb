@@ -4,6 +4,7 @@ class Schema < ActiveRecord::Migration
     create_table :users do |t|
       t.boolean :status, :null => false, :default => true
       t.boolean :is_admin, :null => false, :default => false
+      t.boolean :is_tech, :null => false, :default => false
       t.string    :login,               :null => false 
       t.string    :email,               :null => false
       t.string    :crypted_password,    :null => false
@@ -62,6 +63,17 @@ class Schema < ActiveRecord::Migration
       t.timestamps
     end
 
+    create_table :catalogs do |t|
+      t.string :name, :null => false
+      t.string :controller, :null => false
+      t.timestamps
+    end
+
+    Catalog.create!(:name => 'Categorias', :controller => 'Category')
+    Catalog.create!(:name => 'Estados', :controller => 'Status')
+    Catalog.create!(:name => 'Prioridades', :controller => 'Priority')
+    Catalog.create!(:name => 'Usuarios', :controller => 'User')
+    Catalog.create!(:name => 'Tickets', :controller => 'Ticket')
     
     
     
@@ -70,9 +82,11 @@ class Schema < ActiveRecord::Migration
     
     
     User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
-    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_admin => true)
-    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_admin => true)
     User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'juan@hotmail.com')
+
+    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_tech => true)
+    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_tech => true,:is_admin => true)
+    
     
     Category.create!(:name => "Correo electronico")
     Category.create!(:name => "Red inalambrica")

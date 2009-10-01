@@ -4,7 +4,7 @@ class TechSupport::SessionsController < SessionsController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      if User.find_by_login(@user_session.login).is_admin
+      if User.find_by_login(@user_session.login).is_tech
         flash[:notice] = 'Bienvenido(a)!'
         redirect_to tech_support_tickets_url
       else

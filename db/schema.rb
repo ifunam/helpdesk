@@ -11,6 +11,13 @@
 
 ActiveRecord::Schema.define(:version => 20090918204302) do
 
+  create_table "catalogs", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "controller", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", :force => true do |t|
     t.text     "name",       :null => false
     t.datetime "created_at"
@@ -60,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
   create_table "users", :force => true do |t|
     t.boolean  "status",              :default => true,  :null => false
     t.boolean  "is_admin",            :default => false, :null => false
+    t.boolean  "is_tech",             :default => false, :null => false
     t.string   "login",                                  :null => false
     t.string   "email",                                  :null => false
     t.string   "crypted_password",                       :null => false
