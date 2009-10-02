@@ -1,0 +1,11 @@
+#catalogs
+  .catalogs_item#label
+    = content_tag(:label, 'Catalogos')
+  .catalog_item#category
+    = link_to 'Categorias', tech_support_categories_path
+  .catalog_item#status
+    = link_to 'Estados',tech_support_statuses_path
+  .catalog_item#priority
+    = link_to 'Prioridades',tech_support_priorities_path
+  .catalog_item#category
+    = link_to 'Usuarios', tech_support_users_path     

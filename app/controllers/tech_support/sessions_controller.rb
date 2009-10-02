@@ -8,7 +8,8 @@ class TechSupport::SessionsController < SessionsController
         flash[:notice] = 'Bienvenido(a)!'
         redirect_to tech_support_tickets_url
       else
-        redirect_to new_session_url
+        flash[:notice] = 'El login o password es incorrecto!'
+        redirect_to new_tech_support_session_path
       end
       
     else

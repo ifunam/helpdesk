@@ -2,6 +2,7 @@
   .col
     .record_item#name
     = record.name
+    
     .record_item#show
     = link_to "Mostrar", {:action => 'show',:id => record.id}
     .record_item#edit

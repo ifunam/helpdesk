@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
     tech_support.resources :categories
     tech_support.resources :priorities
     tech_support.resources :statuses
+    tech_support.resources :users
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
