@@ -1,7 +1,7 @@
 class TechSupport::CatalogsController < ApplicationController
   before_filter :user_profile
   def index
-    @collection = @model.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 10 )
+    @collection = @model.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 5 )
     render 'tech_support/catalogs/index'
   end
   

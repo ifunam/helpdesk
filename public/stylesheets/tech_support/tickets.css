@@ -67,6 +67,16 @@ a.hilite { background:yellow; }
     width: 1300px;
 }
 
+#catalogs{
+    height: 30px;
+    
+}
+
+.catalog_item{
+    float: left;
+    width: 200px;
+}
+
 
 #tickets_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;

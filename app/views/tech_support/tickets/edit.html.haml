@@ -1,4 +1,3 @@
-= "hola"
 #ticket_form
   %h3 Solicitud de de Soporte
   - form_for @ticket,:url => {:controller => 'tech_support/tickets', :action => 'update'} do |ticket_form|
@@ -15,14 +14,13 @@
 
     %p
       = ticket_form.label "Reasignar A"
-      = ticket_form.select :user_incharge_id, User.all(:conditions => {:is_admin => true},:order => 'id ASC').collect { |record|[record.login, record.id] }
+      = ticket_form.select :user_incharge_id, User.all(:conditions => {:is_tech => true},:order => 'id ASC').collect { |record|[record.login, record.id] }
       
 
       = ticket_form.hidden_field :id, :value => @ticket.id
     %p
       = ticket_form.label "Description"
       = ticket_form.text_area :body, :size => "80x10", :value => @ticket.body
-
     #send_comment_form
       = submit_tag 'Modificar'
   = button_to "Cancelar", tech_support_tickets_url, :method => :get

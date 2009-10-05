@@ -1,0 +1,86 @@
+body { 
+  padding: 0 0 18px 0;  
+  background: #fff url(/images/bg.jpg)  repeat-x; 
+  display: block;
+  
+}
+  
+a{
+  text-decoration: none;
+}
+ 
+  
+#main{
+  margin: auto;
+}
+
+#layout { 
+  width:800px; 
+  margin:0 auto; 
+  text-align:left; 
+}
+
+#header { 
+  position:relative; 
+  background: #2a9ac3 url(/images/header.jpg) no-repeat;
+}
+#logo {
+  font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
+  position: relative; 
+  overflow: hidden; 
+  height: 132px;
+  font-size:260%;
+  margin: 0;
+color : white;
+  line-height: 120px;
+text-align: left;
+}
+
+#logo_unam{
+position: relative;
+left: 1200px;
+bottom: 130px;
+background: url('/images/logo_unam.jpg') #no-repeat center center;
+width: 100px;
+heigth: 100px;
+}
+
+#layout_header{
+  height: 180px;
+
+}
+/* layout ---------------------------------------------------------------------- */
+
+/*login and menu*/
+
+
+
+#sign_in{
+    
+    font: bold 14px;
+    margin-top: 100px;
+    margin-left: 500px;
+    font-size: 12px;
+}
+
+.td_text {
+  margin-left: 30em;
+  display: table-cell;
+  width: 100px;
+  vertical-align: top;
+  padding: 2px;
+}
+
+.td_textbox{
+  #display:table-cell;
+  padding: 2px;
+}
+
+
+#login{
+  height: 70px;
+  width: 150px;
+  position: relative;
+  left: 1200px;
+  text-align: center;
+}

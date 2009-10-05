@@ -2,17 +2,15 @@ class TechSupport::UsersController < ApplicationController
   before_filter :user_profile
 
   def index
-    @collection = User.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 10 )
-    #render 'tech_support/catalogs/index'
+    @collection = User.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 5 )
   end
   
   def new
-    @record = @model.new
-     render 'tech_support/catalogs/new'
+  @user=User.new
   end
   
   def create
-    @record = @model.new(params[:record])
+    @user = @User.new(params[:record])
     if @record.save
       redirect_to :action => 'index'
     else
@@ -21,27 +19,25 @@ class TechSupport::UsersController < ApplicationController
   end
 
   def edit
-    @record = @model.find(params[:id])
-     render 'tech_support/catalogs/edit'
+    @user = User.find(params[:id])
   end
 
   def update
-    @record = @model.find(params[:id])
-    if @record.update_attributes(params[:record])
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
       redirect_to :action => 'index'
     else
-      render 'tech_support/catalogs/edit'
+      render 'edit'
     end
   end
 
   def show
-    @record = @model.find(params[:id])
-    render 'tech_support/catalogs/show'
+    @user = User.find(params[:id])
   end
   
   def destroy
-    @record = @model.find(params[:id])
-    if @record.destroy
+    @user = User.find(params[:id])
+    if @user.destroy
       redirect_to :action => 'index'
     end
   end

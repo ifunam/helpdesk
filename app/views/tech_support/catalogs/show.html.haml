@@ -1,4 +1,6 @@
-= content_tag(:label, "Nombre")
-= @record.name
-%br
-= link_to "Regresar", :action => 'index'
+#show
+  = content_tag(:label, "Nombre :", :class => 'name')
+  = @record.name
+  %br
+  .link
+    = link_to "Regresar", :action => 'index'

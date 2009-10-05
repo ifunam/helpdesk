@@ -1,0 +1,6 @@
+- form_for (:user, @user, :url => {:action => :create}) do |f|
+  = render :partial => 'form', :locals => { :f => f}
+  %br
+  %br
+  = submit_tag('Guardar')
+= button_to "Cancelar", {:controller => @user.class.name.pluralize, :action => 'index'}, :method => :get

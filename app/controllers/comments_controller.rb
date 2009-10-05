@@ -14,8 +14,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params[:comment])
-    @comment.user= current_user  
+      @comment = Comment.new(params[:comment])
+      @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         if @comment.parent.nil?
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     
-    @comment.children << Comment.new(params[:comment].merge(:user => current_user.login ))
+    @comment.children << Comment.new(params[:comment].merge(:user => current_user ))
     respond_to do |format|
       format.js { render 'update.rjs' }
     end
@@ -56,7 +56,6 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment=Comment.find(params[:id])
-    puts @comment.id
     respond_to do |format|
        format.js { render 'destroy.rjs' }
      end

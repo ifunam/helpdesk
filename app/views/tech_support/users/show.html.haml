@@ -1,0 +1,26 @@
+#show
+  .show_item
+    = content_tag(:label,'Login :')
+    = @user.login
+  .show_item
+    = content_tag(:label,'Email :', :id => 'email')
+    = @user.email
+  .show_item
+    = content_tag(:label,'Estado :', :id => 'status')
+    - if @user.status
+      = "Activo"
+    - else
+      = "Inactiovo"
+  .show_item
+    = content_tag(:label,'Roll:', :id => 'roll')
+    - if @user.is_tech
+      = "Soporte"
+    - else
+      = "Usuario"
+.link
+  = link_to "Regresar", tech_support_users_path
+
+    
+    
+    
+

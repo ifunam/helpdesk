@@ -66,11 +66,11 @@ class Schema < ActiveRecord::Migration
   
     
     
-    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'protozoario9@hotmail.com')
-    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'juan@hotmail.com', :is_tech => true)
+    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'csanchez@fisica.unam.mx')
+    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'csanchezo@fisica.unam.mx', :is_tech => true)
 
-    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'don_perro@hotmail.com', :is_tech => true)
-    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'jimmy_neurotic@hotmail.com',:is_tech => true)
+    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'csanchezt@fisica.unam.mx', :is_tech => true)
+    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'csanchezp@fisica.unam.mx',:is_tech => true)
     
     
     Category.create!(:name => "Correo electronico")

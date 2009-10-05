@@ -1,5 +1,10 @@
 #collection
   = render :partial => 'collection_header'
   = render :partial => 'record', :collection => @collection
-= link_to "Agregar", :action => 'new'
-= link_to "Regresar", tech_support_tickets_path
+  
+  #catalog_paginator
+    = will_paginate @collection
+.link
+  = link_to "Agregar", :action => 'new'
+.link
+  = link_to "Regresar", tech_support_tickets_path
