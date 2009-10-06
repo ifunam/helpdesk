@@ -15,7 +15,7 @@ class TechSupport::CatalogsController < ApplicationController
     if @record.save
       redirect_to :action => 'index'
     else
-      render :action => 'new'
+      render 'tech_support/catalogs/new'
     end
   end
 
