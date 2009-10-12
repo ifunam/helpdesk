@@ -10,8 +10,8 @@ class TechSupport::UsersController < ApplicationController
   end
   
   def create
-    @user = @User.new(params[:record])
-    if @record.save
+    @user = User.new(params[:user].merge(:password => 'notengo'))
+    if @user.save
       redirect_to :action => 'index'
     else
       render :action => 'new'

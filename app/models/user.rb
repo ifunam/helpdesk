@@ -1,15 +1,11 @@
 class User < ActiveRecord::Base
-  acts_as_authentic #do |c|
-  #  c.validate_password_field=false
-  #  c.require_password_confirmation= false	
-  #   c.password_field=:login
+  acts_as_authentic do |c|
+    c.validate_password_field = false
+      c.check_passwords_against_database = false
 
-#	c.validate_password_field=false
-#	c.require_password_confirmation= false
-#	c.password_field = :login
-#	c.ignore_blank_passwords= true
-	
-  #end
+  end		    
+  
+  #acts_as_authentic 
 
 
   validates_length_of :login, :within => 3..30
@@ -24,5 +20,6 @@ class User < ActiveRecord::Base
 
 
   has_many :comments
+
 
 end

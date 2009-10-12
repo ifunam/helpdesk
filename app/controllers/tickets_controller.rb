@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_filter :user_profile#, :login_required
+ before_filter :user_profile
   
   def index
     session[:search] = {}

@@ -1,6 +1,6 @@
 body { 
   padding: 0 0 18px 0;  
-  background: #fff url(/soporte/images/bg.jpg)  repeat-x; 
+  background: #fff url(/images/bg.jpg)  repeat-x; 
   display: block;
 }
   
@@ -15,7 +15,7 @@ a.hilite { background:yellow; }
 
 
 #layout_header{
-    background: #2a9ac3 url(/soporte/images/header.jpg) no-repeat scroll 0 0;
+    background: #2a9ac3 url(/images/header.jpg) no-repeat scroll 0 0;
     height: 180px;
     font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
     position: relative; 
@@ -66,7 +66,7 @@ a.hilite { background:yellow; }
 
 
 #tickets_header{
-    background:#E5E5E5 url(/soporte/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
     font-family:Andale Mono,monospace;
     font-size:large;
     font-variant:small-caps;
@@ -278,7 +278,7 @@ margin-top: 80px;
 #comments{
     #width: 650px;
     #padding: 20px;
-###    background:#E5E5E5 url(/soporte/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+###    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
     #background-color:#F9F7ED;
     #border:1px solid silver;
     display: block;
@@ -287,7 +287,7 @@ margin-top: 80px;
 
 .comment_father{
     margin: 20px auto 20px;
-    background:#E5E5E5 url(/soporte/images/gradient_panel.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
     #width: 900px;
     border:2px solid silver;
     display: block;
@@ -329,7 +329,7 @@ margin-top: 80px;
     width: 95%;
     border: solid silver;
     
-    background:#E5E5E5 url(/soporte/images/gradient_panel.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
 }
 
 

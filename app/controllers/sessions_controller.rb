@@ -1,17 +1,17 @@
 
 class SessionsController < ApplicationController
-  
+  skip_before_filter :login_required  
   def new
     @user_session = UserSession.new
    
   end
 
   def create
+   # @user_session = UserSession.new(:login => 'alex', :password => nil)
 
-    #if AuthenticationClient.authenticate?(params[:user_session][:login], params[:user_session][:password]) 
-           @user_session = UserSession.new(params[:user_session])
-      if @user_session.save
-      if !User.find_by_login(@user_session.login).is_tech
+    if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
+      session[:user] = User.find_by_login(params[:user_session][:login])
+      if !session[:user].nil?
         flash[:notice] = 'Bienvenido(a)!'
         redirect_to tickets_url
       else
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    current_user_session.destroy
+    #current_user_session.destroy
     flash[:notice] = 'Su sesión ha terminado (no regrese nunca)!'
     redirect_to new_session_path
   end
