@@ -1,6 +1,6 @@
 body { 
   padding: 0 0 18px 0;  
-  background: #fff url(/images/bg.jpg)  repeat-x; 
+  background: #fff url(/soporte/images/bg.jpg)  repeat-x; 
   display: block;
 }
   
@@ -15,7 +15,7 @@ a.hilite { background:yellow; }
 
 
 #layout_header{
-    background: #2a9ac3 url(/images/header.jpg) no-repeat scroll 0 0;
+    background: #2a9ac3 url(/soporte/images/header.jpg) no-repeat scroll 0 0;
     height: 180px;
     font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
     position: relative; 
@@ -66,7 +66,7 @@ a.hilite { background:yellow; }
 
 
 #tickets_header{
-    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/soporte/images/gradient_panelsurround.jpg) repeat-x scroll left top;
     font-family:Andale Mono,monospace;
     font-size:large;
     font-variant:small-caps;
@@ -88,43 +88,26 @@ a.hilite { background:yellow; }
 }
 .ticket_header_item#status{
     width: 130px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#date{
     width: 120px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#user{
     width: 120px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#assigned_to{
     width: 120px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#body{
     width: 220px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#actions{
     border: none;
-    #width: 50px;
-    #position: relative;
-    #right: 100px;
-    #text-aligne:right;
 }
 
 
 #tickets_collection{
-    #border: dotted;
-    #display: table;
     margin: auto;
-    #margin-top: 20px;
 }
 
 .ticket_row{
@@ -142,7 +125,6 @@ a.hilite { background:yellow; }
 
 .ticket_row_item{
     float: left;
-    #border: dotted;
     text-align: center;
     margin: 10px auto 10px auto;
 }
@@ -171,13 +153,11 @@ a.hilite { background:yellow; }
 
 
 .pagination{
-    width: 180px;
     margin:30px auto auto;
+	text-align: center;
 }
 
 #add_ticket{
-    #bottom:25px;
-    #position:relative;
     width:130px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -189,7 +169,6 @@ a.hilite { background:yellow; }
 /*--------Tikcet new ---------------*/
 
 #ticket_form{
-   # border: dotted;
 margin-top: 80px;
 
 }
@@ -217,17 +196,13 @@ margin-top: 80px;
 }
 
 #ticket_show_header{ 
-    #border: dotted;
 }
 
 .ticket_show_header_item{ 
     width: 300px; 
     display:inline-table;
-    #border: dotted;
 } 
 .ticket_show_header_item#contact{
-    #border: solid;
-    #float: right;
     position: relative;
     left: 80px;
 }
@@ -236,12 +211,9 @@ margin-top: 80px;
     border:dotted;
     border:2px solid silver;
     background-color: white;
-    #display: table;
     margin:auto;
     position: relative;
-    
     overflow: auto;
-    
 }
 
 
@@ -306,7 +278,7 @@ margin-top: 80px;
 #comments{
     #width: 650px;
     #padding: 20px;
-###    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
+###    background:#E5E5E5 url(/soporte/images/gradient_panelsurround.jpg) repeat-x scroll left top;
     #background-color:#F9F7ED;
     #border:1px solid silver;
     display: block;
@@ -315,7 +287,7 @@ margin-top: 80px;
 
 .comment_father{
     margin: 20px auto 20px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/soporte/images/gradient_panel.jpg) repeat-x scroll left top;
     #width: 900px;
     border:2px solid silver;
     display: block;
@@ -357,7 +329,7 @@ margin-top: 80px;
     width: 95%;
     border: solid silver;
     
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    background:#E5E5E5 url(/soporte/images/gradient_panel.jpg) repeat-x scroll left top;
 }
 
 

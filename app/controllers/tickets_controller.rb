@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_filter :user_profile
+  before_filter :user_profile#, :login_required
   
   def index
     session[:search] = {}
@@ -29,9 +29,8 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(params[:ticket])
      @ticket.user_id = current_user.id
-    # @ticket.users << User.find(current_user.id)
     if @ticket.save
-      redirect_to :action => :index
+      redirect_to :action => 'index'
     else
       render 'new'
     end
@@ -43,7 +42,4 @@ class TicketsController < ApplicationController
 
   def update
   end
-  
-
 end
-

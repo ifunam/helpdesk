@@ -67,7 +67,7 @@ class Schema < ActiveRecord::Migration
     
     
     User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'csanchez@fisica.unam.mx')
-    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'csanchezo@fisica.unam.mx', :is_tech => true)
+    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'csanchezo@fisica.unam.mx')
 
     User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'csanchezt@fisica.unam.mx', :is_tech => true)
     User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'csanchezp@fisica.unam.mx',:is_tech => true)
@@ -100,8 +100,6 @@ class Schema < ActiveRecord::Migration
     
     Status.create!(:name => "Atendido")
     Status.create!(:name => "En Proceso")
-
-    UserCategory.create!(:user_id => 2,:category_id => 4)
 
     UserCategory.create!(:user_id => 3,:category_id => 12)
     UserCategory.create!(:user_id => 4,:category_id => 1)

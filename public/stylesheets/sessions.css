@@ -1,6 +1,6 @@
 body { 
   padding: 0 0 18px 0;  
-  background: #fff url(/images/bg.jpg)  repeat-x; 
+  background: #fff url(/soporte/images/bg.jpg)  repeat-x; 
   display: block;
   
 }
@@ -22,7 +22,7 @@ a{
 
 #header { 
   position:relative; 
-  background: #2a9ac3 url(/images/header.jpg) no-repeat;
+  background: #2a9ac3 url(/soporte/images/header.jpg) no-repeat;
 }
 #logo {
   font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
@@ -40,7 +40,7 @@ text-align: left;
 position: relative;
 left: 1200px;
 bottom: 130px;
-background: url('/images/logo_unam.jpg') #no-repeat center center;
+background: url(/soporte/images/logo_unam.jpg) #no-repeat center center;
 width: 100px;
 heigth: 100px;
 }

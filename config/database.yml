@@ -19,5 +19,5 @@ production:
   adapter: mysql
   database: help_desk_production
   username: root
-  password: csanchezp123..
+  password: emocional123
   host: localhost

@@ -3,8 +3,8 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
-
+RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+ENV['RAILS_ENV'] ||= 'production'
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -16,7 +16,7 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   
   config.load_paths += %W( #{RAILS_ROOT}/clients )
-
+  # config.action_controller.relative_url_root = "/var/www/help_desk/public"
   # Specify gems that this application depends on and have them installed with rake gems:install
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
@@ -49,7 +49,19 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-  config.active_record.observers = :ticket_observer
+  config.active_record.observers = :ticket_observer, :comment_observer
+  config.action_controller.relative_url_root = '/soporte'
 
+
+  config.action_mailer.register_template_extension('haml') 
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = {
+    :address => 'fenix.fisica.unam.mx',
+    :port => 25,
+    :domain => 'fisica.unam.mx',
+    :authentication => :plain,
+    :location => '/usr/sbin/sendmail',
+    :arguments => '-i -t' 
+  }
 
 end

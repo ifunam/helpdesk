@@ -1,0 +1,11 @@
+= "Su solicitud de soporte  ha sido actualizada"
+
+= "Número de solicitud:  #{@ticket.id}"
+= "Fecha: #{@ticket.created_at.strftime("%d-%m-%Y")}"
+ 
+= "Su solicitud ha sufrido cambio, para ver el estado de su solicitud siga la siguiente liga."
+
+= url_for(:host => "garden.fisica.unam.mx", :controller => "session", :action => "new")
+= "Gracias por usar el STIF-UNAM!!"
+ 
+= "                              Instituto de Física."

@@ -1,6 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-# The production environment is meant for finished, "live" apps.
+#1;2000;0c The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
 config.cache_classes = true
 
@@ -23,6 +23,18 @@ config.action_view.cache_template_loading            = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+
+#ActionMailer::Base.delivery_method = :smtp
+
+#ActionMailer::Base.smtp_settings = {
+#:address => '132.248.7.40',
+#:port => 25,
+#:domain => 'fisica.unam.mx',
+#:authentication => :login,
+#:user_name => 'natorro',
+#:password => 'emocional123',
+#} 
 
 # Enable threaded mode
 # config.threadsafe!
