@@ -7,6 +7,7 @@ class TechSupport::TicketsController < TicketsController
  end
 
  def my_tickets
+     puts current_user.id
    @tickets = Ticket.search_and_paginate({ :category_id => UserCategory.find_by_user_id(current_user.id).category_id}, params[:page])
     session[:search] = {:category_id => UserCategory.find_by_user_id(current_user.id).category_id }
     render 'index'

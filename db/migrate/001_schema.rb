@@ -101,7 +101,9 @@ class Schema < ActiveRecord::Migration
     Status.create!(:name => "Atendido")
     Status.create!(:name => "En Proceso")
 
-    UserCategory.create!(:user_id => 2,:category_id => 12)
+    UserCategory.create!(:user_id => 2,:category_id => 4)
+
+    UserCategory.create!(:user_id => 3,:category_id => 12)
     UserCategory.create!(:user_id => 4,:category_id => 1)
 
     

@@ -17,7 +17,7 @@ test:
 
 production:
   adapter: mysql
-  database: help_desk_development
+  database: help_desk_production
   username: root
-  password:
+  password: csanchezp123..
   host: localhost
