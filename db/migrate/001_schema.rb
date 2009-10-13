@@ -6,18 +6,19 @@ class Schema < ActiveRecord::Migration
       t.boolean :is_tech, :null => false, :default => false
       t.string    :login,               :null => false 
       t.string    :email,               :null => false
-      t.string    :crypted_password,    :null => false
-      t.string    :password_salt,       :null => false
-      t.string    :persistence_token,   :null => false
-      t.string    :single_access_token, :null => false
-      t.string    :perishable_token,    :null => false
-      t.integer   :login_count,         :null => false, :default => 0
-      t.integer   :failed_login_count,  :null => false, :default => 0
-      t.datetime  :last_request_at
-      t.datetime  :current_login_at
-      t.datetime  :last_login_at
-      t.string    :current_login_ip
-      t.string    :last_login_ip
+      t.string    :password      
+    # t.string    :crypted_password,    :null => false
+    #  t.string    :password_salt,       :null => false
+      #t.string    :persistence_token,   :null => false
+      #t.string    :single_access_token, :null => false
+      #t.string    :perishable_token,    :null => false
+   #   t.integer   :login_count,         :null => false, :default => 0
+   #   t.integer   :failed_login_count,  :null => false, :default => 0
+   #   t.datetime  :last_request_at
+   #   t.datetime  :current_login_at
+   #   t.datetime  :last_login_at
+   #   t.string    :current_login_ip
+   #   t.string    :last_login_ip
       
       t.timestamps
     end
@@ -66,11 +67,11 @@ class Schema < ActiveRecord::Migration
   
     
     
-    User.create!(:login => 'carlos', :password => 'carlos', :password_confirmation => 'carlos', :email => 'csanchez@fisica.unam.mx')
-    User.create!(:login => 'juan', :password => 'juan', :password_confirmation => 'juan', :email => 'csanchezo@fisica.unam.mx')
+    User.create!(:login => 'carlos', :password => 'carlos',  :email => 'csanchezd@fisica.unam.mx')
+    User.create!(:login => 'juan', :password => 'juan',  :email => 'csanchezo@fisica.unam.mx')
 
-    User.create!(:login => 'natorro', :password => 'natorro', :password_confirmation => 'natorro', :email => 'csanchezt@fisica.unam.mx', :is_tech => true)
-    User.create!(:login => 'alex', :password => 'alex', :password_confirmation => 'alex', :email => 'csanchezp@fisica.unam.mx',:is_tech => true)
+    User.create!(:login => 'natorro', :password => 'natorro',  :email => 'csanchez@fisica.unam.mx', :is_tech => true)
+    User.create!(:login => 'alex', :password => 'alex', :email => 'csanchezp@fisica.unam.mx',:is_tech => true)
     
     
     Category.create!(:name => "Correo electronico")
