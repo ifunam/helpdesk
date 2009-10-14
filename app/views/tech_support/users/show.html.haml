@@ -10,11 +10,11 @@
     - if @user.status
       = "Activo"
     - else
-      = "Inactiovo"
+      = "Inactivo"
   .show_item
     = content_tag(:label,'Roll:', :id => 'roll')
     - if @user.is_tech
-      = "Soporte"
+      = "Tecnico"
     - else
       = "Usuario"
 .link

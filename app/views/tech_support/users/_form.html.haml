@@ -2,15 +2,24 @@
 %br
 = f.text_field :login, :size => 30
 %br
+%br
 = f.label "Email"
 %br
 = f.text_field :email, :size => 30
 %br
+%br
 = f.label "Estado"
 %br
--#= f.text_field :status, :size => 30
-= f.radio_button :is_tech, :cheked => false
+= "Activo"
+= f.radio_button :status, true
+= "Inactivo"
+= f.radio_button :status, false
 %br
-= f.label "Roll"
 %br
-= f.text_field :is_tech, :size => 30
+= f.label "Categoría"
+%br
+= "Tecnico"
+= f.radio_button :is_tech, true
+= "Usuario"
+= f.radio_button :is_tech, false
+%br
