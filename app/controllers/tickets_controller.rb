@@ -27,7 +27,7 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket = Ticket.new(params[:ticket])
+     @ticket = Ticket.new(params[:ticket])
      @ticket.user_id = current_user.id
     if @ticket.save
       redirect_to :action => 'index'

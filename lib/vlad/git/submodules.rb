@@ -10,7 +10,8 @@ module Vlad::Git::Submodules
      "#{git_cmd} clone #{repository} #{destination}", 
      "cd #{destination}", 
      "#{git_cmd} checkout -f -b deployed-#{revision} #{revision}", 
-     "git submodule -q update --init", # This line is added to make sure submodules are fetched too. 
+     "git submodule init",
+     "git submodule -q update", #--init,  This line is added to make sure submodules are fetched too. 
      "cd -" 
     ].join(" && ") 
   end

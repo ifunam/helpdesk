@@ -1,12 +1,16 @@
 #sign_in
-  ="Ingresa tu nombre de usuario y contraseña"
-  - form_for @user_session, :url => {:action => :create} do |f|
-    .td_text 
-      = "Usuario:"
-    .td_textbox
-      = f.text_field(:login)
-    .td_text
-      = "Contraseña:"
-    .td_textbox
-      = f.password_field(:password)
-    = submit_tag "Ingresar"
+  ="Para iniciar sessión debes introducir tu login y contraseñade de Salva"
+  #flash
+    = flash[:notice]
+  %br
+  #form_session
+    - form_for @user_session, :url => {:action => :create} do |f|
+      .td_text 
+        = "Usuario:"
+      .td_textbox
+        = f.text_field(:login)
+      .td_text
+        = "Contraseña:"
+      .td_textbox
+        = f.password_field(:password)
+      = submit_tag "Ingresar"

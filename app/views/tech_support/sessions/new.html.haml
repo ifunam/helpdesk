@@ -1,5 +1,7 @@
 #sign_in
-  ="Ingresa tu nombre de usuario y contraseña"
+  ="Para iniciar sessión debes introducir" 
+  %br="tu login y contraseñade de Salva"
+  %br
   - form_for @user_session, :url => {:action => :create} do |f|
     .td_text 
       = "Usuario:"

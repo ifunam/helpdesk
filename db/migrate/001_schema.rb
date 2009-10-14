@@ -67,12 +67,10 @@ class Schema < ActiveRecord::Migration
   
     
     
-    User.create!(:login => 'carlos', :password => 'carlos',  :email => 'csanchezd@fisica.unam.mx')
-    User.create!(:login => 'juan', :password => 'juan',  :email => 'csanchezo@fisica.unam.mx')
+    User.create!(:login => 'carlos', :password => 'carlos',  :email => 'csanchez@fisica.unam.mx')
 
-    User.create!(:login => 'natorro', :password => 'natorro',  :email => 'csanchez@fisica.unam.mx', :is_tech => true)
-    User.create!(:login => 'alex', :password => 'alex', :email => 'csanchezp@fisica.unam.mx',:is_tech => true)
-    
+    User.create!(:login => 'alex', :password => 'alex', :email => 'alex@fisica.unam.mx',:is_tech => true)
+    User.create!(:login => 'natorro', :password => 'alex', :email => 'natorro@fisica.unam.mx',:is_tech => true)
     
     Category.create!(:name => "Correo electronico")
     Category.create!(:name => "Red inalambrica")
