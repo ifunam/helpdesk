@@ -10,7 +10,7 @@ class UserProfileClient < ActiveResource::Base
     @object = new
     @object.prefix_options = {}
 
-    if ENV['RAILS_ENV'] == 'development' and (login == 'carlos' or login == 'juan' or login == 'natorro')
+    if ENV['RAILS_ENV'] == 'development' and (login == 'carlos' or login == 'alex' or login == 'natorro')
       if login == 'carlos'
         @object.attributes = {  'adscription_id' => 7,
           "fullname" =>"Carlos Sánches Perales",
@@ -21,13 +21,13 @@ class UserProfileClient < ActiveResource::Base
           "email"=> "carlos@fisica.unam.mx"
         }
       else
-        if login == 'juan'
+        if login == 'alex'
           @object.attributes = {  'adscription_id' => 8,
-            "fullname" =>"Juan Perez",
+            "fullname" =>"Alex",
             "phone"=>"56225001 ext 289",
             "user_id"=>168,
             "adscription"=>"Apoyo",
-            "login"=>"juan",
+            "login"=>"alex",
           }
         else
           @object.attributes = {  'adscription_id' => 9,

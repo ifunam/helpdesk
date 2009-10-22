@@ -19,12 +19,12 @@ class Notifier < ActionMailer::Base
 
   end 
   
-   def new_comment(user)
+   def new_comment(comment)
      @subject  =  '[Soporte Fisica] Nuevo comentario'
-     @recipients = user.email
+     @recipients = comment.user.email
      @from      = 'karlos@garden.fisica.unam.mx'
      @sent_on   = Time.now
-     #@body     =  {:user => user}
+     @body     =  {:comment => comment}
    end
 
  
