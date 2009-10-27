@@ -23,7 +23,7 @@ class TechSupport::SessionsController < SessionsController
   def destroy
     reset_session
     #current_user_session.destroy
-    flash[:notice] = 'Su sesión ha terminado (no regrese nunca)!'
+    flash[:notice] = 'Gracias por utilizar STIFUNAM!'
     redirect_to new_tech_support_session_path
   end
   

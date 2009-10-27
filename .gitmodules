@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/domid_gum"]
 	path = vendor/plugins/domid_gum
 	url = git://github.com/nazgum/domid_gum.git
+[submodule "vendor/plugins/ssl_required"]
+	path = vendor/plugins/ssl_required
+	url = git://github.com/rails/ssl_requirement.git
