@@ -1,6 +1,6 @@
 
 class SessionsController < ApplicationController
-  include SsRequired
+  include SslRequirement
   skip_before_filter :login_required 
 
  ssl_required :new, :create
