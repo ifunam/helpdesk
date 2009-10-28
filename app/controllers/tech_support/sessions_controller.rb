@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 class TechSupport::SessionsController < SessionsController
 
+ 
+
   def create
     if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
     #if !User.find_by_login(params[:user_session][:login]).nil?
@@ -11,7 +13,7 @@ class TechSupport::SessionsController < SessionsController
         redirect_to tech_support_tickets_url
       else
         flash[:notice] = 'El login o password es incorrecto!'
-        redirect_to new_tech_support_session_path
+        redirect_to :controller => '/tech_support/tickets', :protocol => 'http'
       end
       
     else

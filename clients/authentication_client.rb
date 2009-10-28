@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'activeresource'
 class AuthenticationClient < ActiveResource::Base
-  self.site = 'http://salva.fisica.unam.mx:8080/'
+  self.site = 'http://localhost:8443/'
   self.element_name = "session"
 
   def self.authenticate?(login, passwd)

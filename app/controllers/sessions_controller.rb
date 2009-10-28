@@ -1,6 +1,10 @@
 
 class SessionsController < ApplicationController
-  skip_before_filter :login_required  
+  include SsRequired
+  skip_before_filter :login_required 
+
+ ssl_required :new, :create
+ 
   def new
     @user_session = UserSession.new
    
@@ -17,7 +21,7 @@ class SessionsController < ApplicationController
       session[:user] = User.find_by_login(params[:user_session][:login])
       if !session[:user].nil?
         flash[:notice] = 'Bienvenido(a)!'
-        redirect_to tickets_url
+        redirect_to :controller => :tickets, :protocol => 'http'
       else
         redirect_to new_session_path
         flash[:notice] = 'El login o password es incorrecto!'
