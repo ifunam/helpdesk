@@ -5,21 +5,21 @@
       %h5= "Información general."
       %p
         = "De: #{@user_profile.fullname}"
-        %br= "Creado: #{@ticket.created_at_before_type_cast}"
+        %br= "Fecha de envío: #{@ticket.created_at_before_type_cast}"
         %br= "Categoría: #{Category.find(@ticket.category_id).name}"
         %br= "Estado: #{Status.find(@ticket.status_id).name}"
+        %br="Descripción:"
+        %br= @ticket.body
     .ticket_show_header_item{:id => 'contact'}
       %h5= "Contacto."
       %p
         = "Email: #{@user_profile.email}"
         %br= "Teléfono: #{@user_profile.phone}"
-  #ticket_body
-    = @ticket.body
-  %br
+
   #actions
-    = link_to_remote "Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
+    = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
   #comment_form 
 #comment_collection
   = render :partial => 'comments/comment_father', :collection => @ticket.comments 
   
-= link_to "Regresar", tickets_path
+=button_to 'Regresar', tickets_url, :method => :get

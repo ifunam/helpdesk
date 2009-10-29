@@ -1,18 +1,16 @@
-.comment_item#from
-  ="De:"
-  = comment.user.login
-.comment_item#subject
-  = comment.subject
-.comment_item#date
-  = comment.created_at_before_type_cast
-.comment_item#body
-  = comment.body
-.actions
-  #respond
-    = link_to_remote "Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
+.comment
+  %br= "De: " + comment.user.login
+  %br= comment.subject
+  %br= "Fecha de envío:  #{comment.created_at_before_type_cast}"
+  %br= "Descripcion:"
+  %br= comment.body
+  %p
+  .actions
+    #respond
+      = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px; padding-left: 14px;')+"Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
     
-.comment_form{:id => "comment_form_#{comment.dom_id}"}
+  .comment_form{:id => "comment_form_#{comment.dom_id}"}
 
-.childs{:id =>"childs_#{comment.dom_id}"}
-  = render :partial => 'comments/child', :collection => comment.children
+  .childs{:id =>"childs_#{comment.dom_id}"}
+    = render :partial => 'comments/child', :collection => comment.children
 

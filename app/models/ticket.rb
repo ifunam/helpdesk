@@ -15,7 +15,7 @@ class Ticket < ActiveRecord::Base
   accepts_nested_attributes_for :comments
 
 
-  def self.search_and_paginate(search = :all,page = 1, per_page = 5)
+  def self.search_and_paginate(search = :all,page = 1, per_page = 10)
     Ticket.search(search).all.paginate(:page => page, :per_page => per_page)
   end
 

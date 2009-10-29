@@ -1,13 +1,11 @@
 #tickets_filter
   %p
-    %b= "Filtrar solicitudes: "
-    = collection_select :filter, :category_id, Category.all, :id, :name, {:prompt => true}
+    = "Filtrar solicitudes: "
+    = collection_select :filter, :category_id, Category.all, :id, :name, {:prompt => '-- Seleccionar --'}
   %p 
-    %b= "Listas: "
-    = 'Por fecha'
-    = link_to 'Descendente', search_tickets_url(:search => {:order => "descend_by_created_at"}) 
+    = link_to 'Solicitudes por fecha descendente', search_tickets_url(:search => {:order => "descend_by_created_at"}) 
     = ' | ' 
-    = link_to 'Ascendente', search_tickets_url(:search => {:order => "ascend_by_created_at"})
+    = link_to 'Solicitudes por fecha ascendente', search_tickets_url(:search => {:order => "ascend_by_created_at"})
     = ' | ' 
     = link_to 'Mis solicitudes', my_list_tickets_url
     = ' | ' 

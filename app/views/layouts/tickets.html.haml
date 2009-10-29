@@ -8,10 +8,12 @@
     = javascript_include_tag 'jquery-1.3.2', 'application'
     %body
       #layout_header
-        = "STIFUNAM"
+        %h1= "Seguimiento de Solicitudes de Servicio"
+        %h2= "Instituto de Física - UNAM" 
+        %h3= "Secretaría Técnica de Cómputo y Telecomunicaciones"
         
       #main
-        #login_logout
+        #login
           = "#{@user_profile.login}"
           = "|"
           = link_to 'Salir', session_path, :method => :delete 

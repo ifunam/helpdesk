@@ -2,34 +2,51 @@ body {
   padding: 0 0 18px 0;  
   background: #fff url(/images/bg.jpg)  repeat-x; 
   display: block;
+  font-family: Arial, Helvetica,sans-serif;
+  font-size: 90%;
 }
   
 a{
   text-decoration: none;
 }
 
-a.hilite { background:yellow; }
+#a.hilite { 
+#background:yellow; 
+#}
 
  
   
 
 
 #layout_header{
-    background: #2a9ac3 url(/images/header.jpg) no-repeat scroll 0 0;
-    height: 180px;
-    font-family: 'Trebuchet MS', 'Geneva CE', lucida, sans-serif;
+    width:800px; 
+    margin:0 auto; 
+    text-align:left; 
+    position:relative; 
+    background: #2a9ac3 url(/images/header.jpg) no-repeat;
     position: relative; 
     overflow: hidden; 
     height: 132px;
-    font-size:260%;
-    margin: 0 auto;
-    text-align:left;
-    width:800px;
+    #font-size:230%;
     color : white;
-    line-height: 120px;
     text-align: left;
 }
 
+#layout_header h1{
+    font-size: 28px;
+    margin-bottom: 0px;
+}
+
+#layout_header h2{
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#layout_header h3{
+    font-size: 20px;
+    margin-top: 0px;
+}
 #main{
     display:table;
     margin:50px auto auto;
@@ -39,7 +56,7 @@ a.hilite { background:yellow; }
 /*_-------------User profile -------------------*/
 
 #user_profile{
-    margin:auto auto 30px;
+    #margin:auto auto 30px;
 }
 
 #user_profile_item{
@@ -47,9 +64,11 @@ a.hilite { background:yellow; }
     display:inline-block;
 }
 
-#login_logout{
+#login{
     text-align: right;
     margin: auto;
+    color: green;
+    font-size: 16px;
 }
 
 /*------------------------------------------------*/
@@ -61,17 +80,18 @@ a.hilite { background:yellow; }
     margin: auto;
     width: 1100px;
     display: inline-block; 
-    position: relative;
+    #position: relative;
 }
 
 
 #tickets_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    font-family:Andale Mono,monospace;
     font-size:large;
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
+    border-bottom: 1px solid silver;
+    border-top: 1px solid silver;
 }
 
 .ticket_header_item{
@@ -111,16 +131,16 @@ a.hilite { background:yellow; }
 }
 
 .ticket_row{
-    margin: 20px auto 20px auto;
     display:inline-block;
     width:1100px;
+    border-bottom: 1px solid silver;
 }
 
 #color1{
-    background-color: #F9F7ED;
+    background-color: #f0f7ff;
 }
 #color0{
-    background-color: #EEEEEE;
+    background-color: #ffffe0;
 }
 
 .ticket_row_item{
@@ -169,7 +189,7 @@ a.hilite { background:yellow; }
 /*--------Tikcet new ---------------*/
 
 #ticket_form{
-margin-top: 80px;
+    #margin-top: 80px;
 
 }
 
@@ -230,17 +250,16 @@ margin-top: 80px;
 /*-------------- COMMENT FORM ----------------*/
 
 .comment_form{ 
-    #border: dotted;
-    #display: block;
-    #background-color:#F9F7ED;
     margin-top:10px;
     width: 90%;
-    padding: 2%;
     margin: auto;
 }
 
 #cancel{
-    #border: solid;
+    width: 200px;
+    position: relative;
+    bottom: 26px;
+    left: 150px;
 }
 
 #comment_subject{
@@ -276,15 +295,14 @@ margin-top: 80px;
 
 /*COMMENTS LIST */
 #comments{
-    #width: 650px;
-    #padding: 20px;
-###    background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    #background-color:#F9F7ED;
-    #border:1px solid silver;
     display: block;
-#margin:20px auto auto;
 }
 
+.comment{
+    margin: auto;
+    width: 95%;
+
+}
 .comment_father{
     margin: 20px auto 20px;
     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
