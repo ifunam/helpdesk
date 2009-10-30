@@ -9,5 +9,5 @@
       = f.text_area :body, :size => "80x10"
     #button_new
       = submit_tag('Enviar Solicitud')
-      
-  = button_to "Cancelar", tech_support_tickets_path, :method => :get
+  #cancel    
+    = button_to 'Cancelar', tech_support_tickets_path, :method => :get

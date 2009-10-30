@@ -10,9 +10,9 @@ a{
   text-decoration: none;
 }
 
-#a.hilite { 
-#background:yellow; 
-#}
+a.hilite { 
+background:yellow; 
+}
 
  
   
@@ -79,7 +79,7 @@ a{
 #tickets_index{
     margin: auto;
     width: 1100px;
-    display: inline-block; 
+    display: inline-block;
     #position: relative;
 }
 

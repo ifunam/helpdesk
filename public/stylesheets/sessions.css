@@ -24,11 +24,26 @@ a{
     position: relative; 
     overflow: hidden; 
     height: 132px;
-    font-size:230%;
+    #font-size:230%;
     color : white;
     text-align: left;
 }
 
+#layout_header h1{
+    font-size: 28px;
+    margin-bottom: 0px;
+}
+
+#layout_header h2{
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#layout_header h3{
+    font-size: 20px;
+    margin-top: 0px;
+}
 
 
 /* layout ---------------------------------------------------------------------- */

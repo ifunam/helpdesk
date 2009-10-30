@@ -1,7 +1,6 @@
 .ticket_row{:id => "color#{ticket.id%2}" }
   .ticket_row_item#category
     = Category.find(ticket.category_id).name
-  
   .ticket_row_item#date
     = ticket.created_at_before_type_cast
   .ticket_row_item#user
