@@ -1,33 +1,33 @@
-body { 
-  padding: 0 0 18px 0;  
-  background: #fff url(/images/bg.jpg)  repeat-x; 
+body {
+  padding: 0 0 18px 0;
+  background: #fff url(/images/bg.jpg)  repeat-x;
   display: block;
   font-family: Arial, Helvetica,sans-serif;
   font-size: 90%;
 }
-  
+
 a{
   text-decoration: none;
 }
 
 a.hilite { background:yellow; }
 
- 
-  
+
+
 
 
 #layout_header{
-    width:800px; 
-    margin:0 auto; 
-    text-align:left; 
-    position:relative; 
+    width:800px;
+    margin:0 auto;
+    text-align:left;
+    position:relative;
     background: #2a9ac3 url(/images/header.jpg) no-repeat;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
     height: 132px;
     color : white;
     text-align: left;
-    
+
 }
 #layout_header h1{
     font-size: 28px;
@@ -48,7 +48,7 @@ a.hilite { background:yellow; }
     display:table;
     #width: 100px;
     margin:50px auto auto;
-    
+
 }
 
 
@@ -78,13 +78,13 @@ a.hilite { background:yellow; }
 #tickets_index{
     margin: auto;
     width: 1100px;
-    display: inline-block; 
+    display: inline-block;
     width: 1300px;
 }
 
 #catalogs{
     height: 30px;
-    
+
 }
 
 .catalog_item{
@@ -225,13 +225,21 @@ text-align: center;
 
 /*--------Tikcet new ---------------*/
 
-#ticket_form{
-   # border: dotted;
-   #margin-top: 80px;
-
+#edit_cancel{
+    width: 200px;
+    position: relative;
+    bottom: 26px;
+    left: 100px;
 }
 
-#ticket_form #ticket_body{ 
+#new_cancel{
+    width: 200px;
+    position: relative;
+    bottom: 26px;
+    left: 150px;
+}
+
+#ticket_form #ticket_body{
     border:2px solid silver;
     background-color: white;
     display: table;
@@ -248,20 +256,20 @@ text-align: center;
     width: 650px;
     border: 2px solid silver;
     margin: 10px auto 10px auto;
-    margin: auto;   
+    margin: auto;
     background-color: #F9F7ED;
     padding: 20px;
 }
 
-#ticket_show_header{ 
+#ticket_show_header{
     #border: dotted;
 }
 
-.ticket_show_header_item{ 
-    width: 300px; 
+.ticket_show_header_item{
+    width: 300px;
     display:inline-table;
     #border: dotted;
-} 
+}
 .ticket_show_header_item#contact{
     #border: solid;
     #float: right;
@@ -276,9 +284,9 @@ text-align: center;
     #display: table;
     margin:auto;
     position: relative;
-    
+
     overflow: auto;
-    
+
 }
 
 
@@ -314,17 +322,17 @@ text-align: center;
 
 #comment_body{
     #float: left;
-    
+
     #padding: 10px;
     margin: 10px auto 10px;
-    
+
     height: 130px;
     border: 1px solid #990000;
     color:#222222 !important;
     display: block;
     padding:20px;
     width:90%;#600px;
-    
+
 }
 
 
@@ -337,7 +345,7 @@ text-align: center;
 
 
 
- 
+
 
 /*COMMENTS LIST */
 #comments{
@@ -356,7 +364,7 @@ text-align: center;
     #width: 900px;
     border:2px solid silver;
     display: block;
-    
+
 }
 
 .comment_item{
@@ -367,7 +375,7 @@ text-align: center;
 
 .comment_item#subject{
     float: left;
-    
+
 }
 
 .comment_item#date{
@@ -393,7 +401,7 @@ text-align: center;
     margin:15px auto;
     width: 95%;
     border: solid silver;
-    
+
     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
 }
 
@@ -404,7 +412,7 @@ text-align: center;
     background-color: white;
     width: 93%;
     overflow: auto;
-    
+
 }
 
 

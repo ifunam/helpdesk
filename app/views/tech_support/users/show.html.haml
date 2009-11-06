@@ -1,26 +1,22 @@
 #show
-  .show_item
-    = content_tag(:label,'Login :')
-    = @user.login
-  .show_item
-    = content_tag(:label,'Email :', :id => 'email')
-    = @user.email
-  .show_item
-    = content_tag(:label,'Estado :', :id => 'status')
-    - if @user.status
-      = "Activo"
-    - else
-      = "Inactivo"
-  .show_item
-    = content_tag(:label,'Roll:', :id => 'roll')
-    - if @user.is_tech
-      = "Tecnico"
-    - else
-      = "Usuario"
-.link
-  = link_to "Regresar", tech_support_users_path
+  .show_item#name= 'Login :'
+  =  @user.login
+  .show_item#email= 'Email :'
+  = @user.email
+  .show_item#status= 'Estado :'
+  - if @user.status
+    = "Activo"
+  - else
+    = "Inactivo"
+  .show_item#roll= 'Roll:'
+  - if @user.is_tech
+    = "Tecnico"
+  - else
+    = "Usuario"
+#back
+  = button_to "Regresar", tech_support_users_path,:method => :get
 
-    
-    
-    
+
+
+
 

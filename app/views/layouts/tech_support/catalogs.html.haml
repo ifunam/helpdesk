@@ -13,7 +13,7 @@
         %h3= "Secretaría Técnica de Cómputo y Telecomunicaciones"
         
       #main
-        #login_logout
+        #login
           = "#{@user_profile.login}"
           = "|"
           = link_to 'Salir', tech_support_session_url, :method => :delete
@@ -22,7 +22,4 @@
             = "Nombre:  #{@user_profile.fullname}"
           #user_profile_item
             = "Adscripción:  #{@user_profile.adscription}  "
-          #user_profile_item
-            = "Categoria:  #{}  "
-
         = yield :layout

@@ -1,6 +1,6 @@
 #show
-  = content_tag(:label, "Nombre :", :class => 'name')
+  #show_name= "Nombre :"
   = @record.name
   %br
-  .link
-    = link_to "Regresar", :action => 'index'
+#back
+  = button_to "Regresar", {:controller => @record.class.name.pluralize}, :method => :get

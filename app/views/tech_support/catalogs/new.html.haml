@@ -1,6 +1,6 @@
-- form_for (:record, @record, :url => {:action => :create}) do |f|
-  = render :partial => 'tech_support/catalogs/form', :locals => { :f => f}
-  %br
-  %br
-  = submit_tag('Guardar')
-= button_to "Cancelar", {:controller => @record.class.name.pluralize, :action => 'index'}, :method => :get
+#new
+  - form_for (:record, @record, :url => {:action => :create}) do |f|
+    = render :partial => 'tech_support/catalogs/form', :locals => { :f => f}
+    = submit_tag('Guardar')
+  #cancel
+    = button_to "Cancelar", {:controller => @record.class.name.pluralize, :action => 'index'}, :method => :get

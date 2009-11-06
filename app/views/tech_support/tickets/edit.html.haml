@@ -4,7 +4,7 @@
     %p
       = ticket_form.label "Cambiar Categoría "
       = ticket_form.select :category_id, Category.all(:order => 'name ASC').collect { |record|[record.name, record.id] },:selected => @ticket.category_id
-     
+
     %p
       = ticket_form.label "Cambiar Estado"
       = ticket_form.select :status_id, Status.all(:order => 'name ASC').collect { |record|[record.name, record.id] },:selected => @ticket.status_id
@@ -15,7 +15,7 @@
     %p
       = ticket_form.label "Reasignar a"
       = ticket_form.select :user_incharge_id, User.all(:conditions => {:is_tech => true},:order => 'id ASC').collect { |record|[record.login, record.id] }
-      
+
 
       = ticket_form.hidden_field :id, :value => @ticket.id
     %p
@@ -23,4 +23,5 @@
       = ticket_form.text_area :body, :size => "80x10", :value => @ticket.body
     #send_comment_form
       = submit_tag 'Modificar'
-  = button_to "Cancelar", tech_support_tickets_url, :method => :get
+  #edit_cancel
+    = button_to "Cancelar", tech_support_tickets_url, :method => :get

@@ -2,8 +2,8 @@
   = render :partial => 'tech_support/catalogs/collection_header'
   = render :partial => 'tech_support/catalogs/record', :collection => @collection
   #catalog_paginator
-    = will_paginate @collection
-.link
-  = link_to "Agregar nuevo", :action => 'new'
-.link
-  = link_to "Regresar", tech_support_tickets_path
+    = will_paginate @collection, :prev_label => 'Anterior', :next_label => 'Siguiente'
+#buttons
+  = button_to "Agregar nuevo", :action => 'new'
+  #cancel
+    = button_to "Regresar", tech_support_tickets_path, :method => :get

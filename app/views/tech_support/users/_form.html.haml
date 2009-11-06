@@ -1,25 +1,23 @@
-= f.label "Login :"
-%br
-= f.text_field :login, :size => 30
-%br
-%br
-= f.label "Email"
-%br
-= f.text_field :email, :size => 30
-%br
-%br
-= f.label "Estado"
-%br
-= "Activo"
-= f.radio_button :status, true
-= "Inactivo"
-= f.radio_button :status, false
-%br
-%br
-= f.label "Categoría"
-%br
-= "Tecnico"
-= f.radio_button :is_tech, true
-= "Usuario"
-= f.radio_button :is_tech, false
-%br
+#form
+  .form_item
+    = f.label "Login :"
+  .form_item
+    = f.text_field :login, :size => 30
+  .form_item
+    = f.label "Email"
+  .form_item
+    = f.text_field :email, :size => 30
+  .form_item
+    = f.label "Estado"
+    %br
+    = "Activo"
+    = f.radio_button :status, true
+    = "Inactivo"
+    = f.radio_button :status, false
+  .form_item
+    = f.label "Categoría"
+    %br
+    = "Tecnico"
+    = f.radio_button :is_tech, true
+    = "Usuario"
+    = f.radio_button :is_tech, false
