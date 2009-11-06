@@ -10,6 +10,11 @@ a{
   text-decoration: none;
 }
 
+a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
 a.hilite { background:yellow; }
 
 
@@ -54,12 +59,21 @@ a.hilite { background:yellow; }
 
 /*_-------------User profile -------------------*/
 
+#controller_title{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
+
 #user_profile{
-    margin:auto auto 10px;
+    margin: 5px auto 15px;
+    border-bottom: 1px solid silver;
+    padding-bottom: 0px;
 }
 
 #user_profile_item{
-    margin: 10px 40px 10px auto;
+    margin: 10px 40px 0px auto;
     display:inline-block;
 }
 
@@ -71,9 +85,20 @@ a.hilite { background:yellow; }
 }
 
 /*------------------------------------------------*/
+#catalogs{
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
 
+#catalogs a {
+    display: inline-block;
+    float: left;
+    margin-right: 25px;
+    #margin-left: 25px;
 
-
+}
 
 #tickets_index{
     margin: auto;
@@ -84,7 +109,6 @@ a.hilite { background:yellow; }
 
 #catalogs{
     height: 30px;
-
 }
 
 .catalog_item{

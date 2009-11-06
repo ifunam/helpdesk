@@ -1,15 +1,15 @@
 class TechSupport::CatalogsController < ApplicationController
   before_filter :user_profile
   def index
-    @collection = @model.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 5 )
+    @collection = @model.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 10 )
     render 'tech_support/catalogs/index'
   end
-  
+
   def new
     @record = @model.new
      render 'tech_support/catalogs/new'
   end
-  
+
   def create
     @record = @model.new(params[:record])
     if @record.save
@@ -37,7 +37,7 @@ class TechSupport::CatalogsController < ApplicationController
     @record = @model.find(params[:id])
     render 'tech_support/catalogs/show'
   end
-  
+
   def destroy
     @record = @model.find(params[:id])
     if @record.destroy
