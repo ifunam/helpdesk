@@ -1,0 +1,4 @@
+module TechSupport::TicketsHelper
+
+
+end

@@ -130,6 +130,7 @@ a.hilite { background:yellow; }
 
 .collection_header_item#name{
     border-right: 3px solid #FFFFFF;
+
 }
 
 .record{
@@ -150,12 +151,13 @@ a.hilite { background:yellow; }
     float: left;
     text-align: center;
     margin: 10px auto 10px auto;
-    width: 300px;
+    width: 295px;
 
 }
-
-
-
+.record_item#name{
+    text-align:left;
+    margin-left:10px;
+}
 .record_item#actions{
     text-align: right;
 }

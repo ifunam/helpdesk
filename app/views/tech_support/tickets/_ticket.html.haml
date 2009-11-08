@@ -5,13 +5,12 @@
     = ticket.created_at_before_type_cast
   .ticket_row_item#user
     = User.find(ticket.user_id).login
-    -#= User.find(UserTicket.find(ticket.id).user_id).login
   .ticket_row_item#assigned_to
     = "#{ticket.status_id == 1 ? " " : User.find(ticket.user_incharge).login}"
   .ticket_row_item#body
     = ticket.body.slice(0, 20)
   .ticket_row_item#status
-    = Status.find(ticket.status_id).name
+    = image_tag("#{Status.find(ticket.status_id).name.gsub(" ","_").downcase}.png")+Status.find(ticket.status_id).name
   .ticket_row_item#priority
     = Priority.find(ticket.priority_id).name
   .ticket_row_item#actions

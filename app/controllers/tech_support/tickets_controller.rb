@@ -1,5 +1,5 @@
 class TechSupport::TicketsController < TicketsController
-  
+
  def my_list
     @tickets = Ticket.search_and_paginate({ :user_id => current_user.id }, params[:page])
     session[:search] = { :user_id => current_user.id }
@@ -8,15 +8,15 @@ class TechSupport::TicketsController < TicketsController
 
  def my_tickets
      puts current_user.id
-   @tickets = Ticket.search_and_paginate({ :category_id => UserCategory.find_by_user_id(current_user.id).category_id}, params[:page])
-    session[:search] = {:category_id => UserCategory.find_by_user_id(current_user.id).category_id }
+   @tickets = Ticket.search_and_paginate({ :user_incharge_id => current_user.id}, params[:page])
+    session[:search] = {:user_incharge_id => current_user.id}
     render 'index'
  end
 
  def edit
    @ticket=Ticket.find(params[:id])
  end
- 
+
  def update
    @ticket=Ticket.find params[:id]
    @ticket.body = params[:ticket][:body]+"\n"
@@ -31,7 +31,7 @@ class TechSupport::TicketsController < TicketsController
    end
  end
 
- 
- 
+
+
 end
 
