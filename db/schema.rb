@@ -40,12 +40,13 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
   end
 
   create_table "tickets", :force => true do |t|
-    t.integer  "status_id",        :default => 1, :null => false
-    t.integer  "category_id",                     :null => false
-    t.integer  "priority_id",      :default => 1, :null => false
-    t.integer  "user_id",                         :null => false
+    t.integer  "status_id",                 :default => 1, :null => false
+    t.integer  "category_id",                              :null => false
+    t.integer  "priority_id",               :default => 1, :null => false
+    t.integer  "user_id",                                  :null => false
     t.integer  "user_incharge_id"
-    t.text     "body",                            :null => false
+    t.integer  "user_last_modification_id"
+    t.text     "body",                                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,11 +59,12 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
   end
 
   create_table "users", :force => true do |t|
-    t.boolean  "status",     :default => true,  :null => false
-    t.boolean  "is_tech",    :default => false, :null => false
-    t.string   "login",                         :null => false
-    t.string   "email",                         :null => false
-    t.string   "password"
+    t.boolean  "status",     :default => true,               :null => false
+    t.boolean  "is_tech",    :default => false,              :null => false
+    t.string   "login",                                      :null => false
+    t.string   "email",                                      :null => false
+    t.string   "password",   :default => "without password"
+    t.string   "name",                                       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -16,7 +16,9 @@
         #login
           = "#{@user_profile.login}"
           = "|"
-          = link_to 'Salir', tech_support_session_url, :method => :delete
+          = link_to 'Salir',tech_support_logout_url
+          %br
+          = link_to 'Calendario de técnicos'
         #controller_title
           = controller_title
         #user_profile

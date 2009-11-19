@@ -1,23 +1,23 @@
 
 class SessionsController < ApplicationController
-  include SslRequirement
-  skip_before_filter :login_required 
+  #include SslRequirement
+  skip_before_filter :login_required
 
- ssl_required :new, :create
- 
+# ssl_required :new, :create
+
   def new
     @user_session = UserSession.new
-   
+
   end
 
   def create
-  
 
-    if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
-    
-    #if !User.find_by_login(params[:user_session][:login]).nil?
+
+  #  if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
+
+    if !User.find_by_login(params[:user_session][:login]).nil?
     @user_session= User.find_by_login(params[:user_session][:login])
-    
+
       session[:user] = User.find_by_login(params[:user_session][:login])
       if !session[:user].nil?
         flash[:notice] = 'Bienvenido(a)!'

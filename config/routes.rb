@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tickets, :collection => { :search => :get, :my_list => :get }
   map.resources :comments
 
-  
+
 
   map.resources :tickets do |ticket|
     ticket.resources :comments
@@ -13,13 +13,14 @@ ActionController::Routing::Routes.draw do |map|
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
     tech_support.resource :session
+    tech_support.logout '/logout', :controller => "sessions", :action => "destroy"
     tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get }
     tech_support.resources :categories
     tech_support.resources :priorities
     tech_support.resources :statuses
     tech_support.resources :users
   end
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -32,13 +33,13 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
-  
+
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -53,7 +54,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "sessions", :action => 'new'
-  
+
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.
@@ -62,5 +63,5 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 
-  
+
 end

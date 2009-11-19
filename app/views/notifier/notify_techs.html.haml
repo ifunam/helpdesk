@@ -1,4 +1,4 @@
-= "Su solicitud de soporte  ha sido enviada."
+= "Existe una nueva solicitud de soporte sin atender"
 %br
 = "Número de solicitud:  #{@ticket.id}"
 = "De #{@ticket.user.name}"
@@ -7,11 +7,9 @@
 = "Estado: #{Status.find(@ticket.status_id).name}"
 = "Descripción:"
 = @ticket.body
-= "Para consultar su solicitud haga click en la siguiente liga- "
+= "Para Revisar esta nueva solicitud siga esta liga."
 = url_for(:host => "soporte.fisica.unam.mx", :controller => "tickets", :action => "show", :id => @ticket.id )
 
-= "El administrador ha sido informado de su solicitud de soporte."
-= "Recibira una respuesta o la solucion a su problema lo mas pronto posible"
 = "Gracias por usar el Sistema deSeguimiento de Solicitudes de Servicio"
 
 = "                              Instituto de Física."

@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  
+
 
   def order_request_from_user(ticket)
     @subject  =  '[Soporte Fisica]Nueva solicitud de soporte'
@@ -15,10 +15,17 @@ class Notifier < ActionMailer::Base
     @from      = 'karlos@garden.fisica.unam.mx'
     @sent_on  =  Time.now
     @body      = {:ticket => ticket}
+  end
+
+  def notify_techs(ticket,user)
+    @subject  =  '[Soporte Fisica]Nueva solicitud de soporte'
+    @recipients = user.email
+    @from      = 'karlos@garden.fisica.unam.mx'
+    @sent_on  =  Time.now
+    @body      = {:ticket => ticket}
+  end
 
 
-  end 
-  
    def new_comment(user)
      @subject  =  '[Soporte Fisica] Nuevo comentario'
      @recipients = user.email
@@ -27,6 +34,6 @@ class Notifier < ActionMailer::Base
      #@body     =  {:user => user}
    end
 
- 
+
 
 end

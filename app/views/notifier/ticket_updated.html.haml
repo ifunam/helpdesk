@@ -1,11 +1,17 @@
 = "Su solicitud de soporte  ha sido actualizada"
 
 = "Número de solicitud:  #{@ticket.id}"
-= "Fecha: #{@ticket.created_at.strftime("%d-%m-%Y")}"
- 
+= "De #{@ticket.user.name}"
+= "Fecha de envio: #{@ticket.created_at.strftime("%d-%m-%Y")}"
+= "Categoría: #{Category.find(@ticket.category_id).name}"
+= "Estado: #{Status.find(@ticket.status_id).name}"
+= "Descripción:"
+= @ticket.body
+
 = "Su solicitud ha sufrido cambio, para ver el estado de su solicitud siga la siguiente liga."
 
-= url_for(:host => "soporte.fisica.unam.mx", :controller => "session", :action => "new")
-= "Gracias por usar el STIF-UNAM!!"
- 
+= url_for(:host => "soporte.fisica.unam.mx", :controller => "tickets", :action => "show", :id => @ticket.id)
+= "Gracias por usar el Sistema de Seguimiento de Solicitudes de Servicio"
+
 = "                              Instituto de Física."
+= "                                      UNAM."

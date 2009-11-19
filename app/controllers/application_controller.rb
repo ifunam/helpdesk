@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   #before_filter :activate_authlogic
+  session[:redirect_to] = ":controller=> :tickets, :action => 'index'"
   before_filter :login_required
   helper_method :current_user_session, :current_user
 
@@ -16,7 +17,7 @@ private
     @user_profile = UserProfileClient.find_by_login(current_user.login)
   end
 
-  
+
 #  def current_user_session
 #    return @current_user_session if defined?(@current_user_session)
 #    @current_user_session = UserSession.find
@@ -29,7 +30,8 @@ private
   end
 
   def login_required
-     !session[:user].nil? ? (return true) : (redirect_to :controller=> :sessions, :action => 'new' and return false)
+    session[:redirect_to] = request_uri
+    !session[:user].nil? ? (return true) : (redirect_to :controller=> :sessions, :action => 'new' and return false)
   end
 
 
