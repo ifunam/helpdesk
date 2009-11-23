@@ -27,7 +27,8 @@ Rails::Initializer.run do |config|
   config.gem 'binarylogic-searchlogic', :lib => 'searchlogic', :source => 'http://gems.github.com'
   config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
   config.gem 'aaronchi-jrails', :lib => 'jrails', :source => 'http://gems.github.com'
-  config.gem 'laserlemon-vestal_versions', :lib => 'vestal_versions', :source => 'http://gems.github.com'
+config.gem 'vestal_versions'
+
   config.gem 'vlad'
   
 

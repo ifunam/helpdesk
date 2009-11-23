@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   #before_filter :activate_authlogic
-    before_filter :login_required
+  before_filter :login_required
   helper_method :current_user_session, :current_user
 
 private

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Ticket < ActiveRecord::Base
-  #versioned
+  versioned
   validates_presence_of :status_id, :category_id#, :user_id
   validates_presence_of :body, :messages => "Debes introducor texto"
 

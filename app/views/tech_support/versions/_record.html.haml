@@ -1,0 +1,27 @@
+.version_row{:id => "color#{record.id%2}" }
+  = record.class.name
+  .version_row_item#id
+    = record.id
+  .version_row_item#version
+    = record.version
+  .version_row_item#category
+    = Category.find(record.category_id).name
+  .version_row_item#status
+    = Status.find(record.status_id).name
+  .version_row_item#priority
+    = Priority.find(record.priority_id).name
+  .version_row_item#user
+    = User.find(record.user_id).login
+  .version_row_item#assigned_to
+    = "#{record.status_id == 1 ? "sdsds " : User.find(record.user_incharge).login}"
+  .version_row_item#last_modified_by
+    = "algo"
+  .version_row_item#body
+    = record.body.slice(0, 20)
+  .version_row_item#date_created
+    = record.created_at_before_type_cast
+  .version_row_item#date_updated
+    = record.updated_at_before_type_cast
+  .version_row_item#actions
+    .link_to_details
+      = link_to "Detalles", tech_support_version_path(record)
