@@ -12,9 +12,9 @@
   .version_row_item#user
     = User.find(record.user_id).login
   .version_row_item#assigned_to
-    = "#{record.status_id == 1 ? "sdsds " : User.find(record.user_incharge).login}"
+    = "#{record.user_incharge_id.nil? ? "   " : User.find(record.user_incharge).login}"
   .version_row_item#last_modified_by
-    = "algo"
+    = "#{record.user_last_modification_id.nil? ? "   " : User.find(record.user_last_modification_id).login}"
   .version_row_item#body
     = record.body.slice(0, 20)
   .version_row_item#date_created
@@ -23,4 +23,4 @@
     = record.updated_at_before_type_cast
   .version_row_item#actions
     .link_to_details
-      = link_to "Detalles", tech_support_version_path(record)
+      = link_to 'Detalles', tech_support_ticket_path(record)

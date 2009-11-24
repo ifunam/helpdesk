@@ -18,6 +18,6 @@
       = link_to "Detalles", tech_support_ticket_path(ticket)
     .link_to_edit
       = link_to "Modificar", edit_tech_support_ticket_path(ticket)
-    .link_to_edit
+    .link_to_delete
       = link_to "Borrar", tech_support_ticket_path(ticket), :method => :delete, :confirm => '¿ Desea borrar esta solicitud ?'
 

@@ -9,7 +9,8 @@
         %br= "Categoría: #{Category.find(@ticket.category_id).name}"
         %br= "Estado: #{Status.find(@ticket.status_id).name}"
         %br="Descripción"
-        %br= @ticket.body
+        #ticket_body
+          = @ticket.body
     .ticket_show_header_item{:id => 'contact'}
       %h5= "Contacto."
       %p
@@ -22,4 +23,5 @@
   = render :partial => 'comments/comment_father', :collection => @ticket.comments
 
 = button_to "Regresar", tech_support_tickets_url, :method => :get
-= link_to 'Modificaciones', tech_support_ticket_versions_path(@ticket), :method => :get
+#link_to_modifications
+  = link_to 'Modificaciones hechas', tech_support_ticket_version_path(@ticket)

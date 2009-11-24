@@ -124,7 +124,7 @@ a.hilite { background:yellow; }
 
 .version_header_item{
     float: left;
-    width: 14%;
+    #width: 14%;
     margin: auto;
     margin-top: 10px;
     border-right: 3px solid #FFFFFF;

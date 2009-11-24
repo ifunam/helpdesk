@@ -9,13 +9,13 @@ body {
 a{
   text-decoration: none;
 }
+
 a:visited {
   text-decoration: none;
   color: blue;
 }
-a.hilite {
-background:yellow;
-}
+
+a.hilite { background:yellow; }
 
 
 
@@ -30,11 +30,10 @@ background:yellow;
     position: relative;
     overflow: hidden;
     height: 132px;
-    #font-size:230%;
     color : white;
     text-align: left;
-}
 
+}
 #layout_header h1{
     font-size: 28px;
     margin-bottom: 0px;
@@ -52,7 +51,9 @@ background:yellow;
 }
 #main{
     display:table;
+    #width: 100px;
     margin:50px auto auto;
+
 }
 
 
@@ -84,21 +85,41 @@ background:yellow;
 }
 
 /*------------------------------------------------*/
+#catalogs{
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
 
+#catalogs a {
+    display: inline-block;
+    float: left;
+    margin-right: 25px;
+    #margin-left: 25px;
 
-
+}
 
 #tickets_index{
     margin: auto;
-    width: 1100px;
     display: inline-block;
-    #position: relative;
+    width: 1300px;
+    margin:auto;
+}
+
+#catalogs{
+    height: 30px;
+}
+
+.catalog_item{
+    float: left;
+    width: 200px;
 }
 
 
 #tickets_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    #font-size:large;
+    font-size:large;
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
@@ -108,7 +129,7 @@ background:yellow;
 
 .ticket_header_item{
     float: left;
-    width: 14%;
+    #width: 14%;
     margin: auto;
     margin-top: 10px;
     border-right: 3px solid #FFFFFF;
@@ -116,24 +137,28 @@ background:yellow;
 }
 
 .ticket_header_item#category{
-    width: 200px;
-}
-.ticket_header_item#status{
-    width: 130px;
+    width: 210px;
 }
 .ticket_header_item#date{
-    width: 120px;
+    width: 150px;
 }
 .ticket_header_item#user{
     width: 120px;
 }
 .ticket_header_item#assigned_to{
-    width: 120px;
+    width: 130px;
 }
 .ticket_header_item#body{
     width: 220px;
 }
+.ticket_header_item#status{
+    width: 130px;
+}
+.ticket_header_item#priority{
+    width: 130px;
+}
 .ticket_header_item#actions{
+    width: 190px;
     border: none;
 }
 
@@ -144,7 +169,7 @@ background:yellow;
 
 .ticket_row{
     display:inline-block;
-    width:1100px;
+    width:1300px;
     border-bottom: 1px solid silver;
 }
 
@@ -162,34 +187,56 @@ background:yellow;
 }
 
 .ticket_row_item#category{
-    width: 200px;
+    width: 210px;
 }
 .ticket_row_item#status{
     width: 130px;
 }
 .ticket_row_item#date{
-    width: 120px;
+    width: 150px;
 }
 .ticket_row_item#user{
-    width: 120px;
+    width: 130px;
 }
 .ticket_row_item#assigned_to{
-    width: 120px;
+    width: 130px;
 }
 .ticket_row_item#body{
     width: 220px;
 }
+.ticket_row_item#priority{
+    #border: dotted;
+    width: 140px;
+}
 .ticket_row_item#actions{
-    width: 150px;
+    width: 180px;
+    display:inline;
+    float: left;
 }
 
+.link_to_details{
+    width: 65px;
+display:inline;
+}
+
+.link_to_edit{
+    width: 65px;
+    display:inline;
+}
+
+.link_to_delete{
+    width: 65px;
+    display:inline;
+}
 
 .pagination{
     margin:30px auto auto;
-    text-align: center;
+text-align: center;
 }
 
 #add_ticket{
+    #bottom:25px;
+    #position:relative;
     width:130px;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -200,9 +247,18 @@ background:yellow;
 
 /*--------Tikcet new ---------------*/
 
-#ticket_form{
-    #margin-top: 80px;
+#edit_cancel{
+    width: 200px;
+    position: relative;
+    bottom: 26px;
+    left: 100px;
+}
 
+#new_cancel{
+    width: 200px;
+    position: relative;
+    bottom: 26px;
+    left: 150px;
 }
 
 #ticket_form #ticket_body{
@@ -228,11 +284,13 @@ background:yellow;
 }
 
 #ticket_show_header{
+    #border: dotted;
 }
 
 .ticket_show_header_item{
     width: 300px;
     display:inline-table;
+    #border: dotted;
 }
 .ticket_show_header_item#contact{
     position: relative;
@@ -246,6 +304,14 @@ background:yellow;
     overflow: auto;
 }
 
+#link_to_modifications{
+    text-align: right;
+    width: 150px
+    position: relative;
+    bottom: 25px;
+    left: 50px;
+    left: 540px;
+}
 
 
 
@@ -266,6 +332,7 @@ background:yellow;
 }
 
 #cancel{
+    #border: solid;
     width: 200px;
     position: relative;
     bottom: 26px;
@@ -313,6 +380,7 @@ background:yellow;
     width: 95%;
 
 }
+
 .comment_father{
     margin: 20px auto 20px;
     background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
@@ -369,3 +437,5 @@ background:yellow;
     overflow: auto;
 
 }
+
+

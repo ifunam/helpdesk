@@ -6,7 +6,7 @@ $(document).ready(function(){
 
         $("#filter_category_id").change(function(){
               $.ajax({
-                      url: "/tickets/search/?search[category_id]=" + $("#filter_category_id").val(),
+                      url: "/tech_support/tickets/search/?search[category_id]=" + $("#filter_category_id").val(),
                       success: function(data){ $("#tickets_collection").html(data); }
               });
         });

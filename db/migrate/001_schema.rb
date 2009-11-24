@@ -56,7 +56,7 @@ class Schema < ActiveRecord::Migration
 
 
 
-    #User.create!(:login => 'carlos',:name =>"Carlos Sánchez Perales" ,  :email => 'csanchez@fisica.unam.mx',:is_tech => true)
+    User.create!(:login => 'carlos',:name =>"Carlos Sánchez Perales" ,  :email => 'csanchez@fisica.unam.mx')
     User.create!(:login => 'memo' , :name =>"Guillermo Ramírez Santiago",:email => 'memo@fisica.unam.mx',:is_tech => true)
     User.create!(:login => 'salma' ,:name =>"Edith Ramírez Bermudez", :email => 'salma@fisica.unam.mx',:is_tech => true)
     User.create!(:login => 'goz',:name =>" Gustavo Gomez Macias", :email => 'goz@fisica.unam.mx',:is_tech => true)

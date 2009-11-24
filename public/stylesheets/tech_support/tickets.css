@@ -102,9 +102,9 @@ a.hilite { background:yellow; }
 
 #tickets_index{
     margin: auto;
-    width: 1100px;
     display: inline-block;
     width: 1300px;
+    margin:auto;
 }
 
 #catalogs{
@@ -123,14 +123,13 @@ a.hilite { background:yellow; }
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
-    width: 1300px;
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
 
 .ticket_header_item{
     float: left;
-    width: 14%;
+    #width: 14%;
     margin: auto;
     margin-top: 10px;
     border-right: 3px solid #FFFFFF;
@@ -138,50 +137,34 @@ a.hilite { background:yellow; }
 }
 
 .ticket_header_item#category{
-    width: 200px;
-}
-.ticket_header_item#status{
-    width: 130px;
-    #position: relative;
-    #right: 100px;
+    width: 210px;
 }
 .ticket_header_item#date{
-    width: 120px;
-    #position: relative;
-    #right: 100px;
+    width: 150px;
 }
 .ticket_header_item#user{
     width: 120px;
-    #position: relative;
-    #right: 100px;
 }
 .ticket_header_item#assigned_to{
-    width: 120px;
-    #position: relative;
-    #right: 100px;
+    width: 130px;
 }
 .ticket_header_item#body{
     width: 220px;
-    #position: relative;
-    #right: 100px;
 }
-
-
-
+.ticket_header_item#status{
+    width: 130px;
+}
+.ticket_header_item#priority{
+    width: 130px;
+}
 .ticket_header_item#actions{
+    width: 190px;
     border: none;
-    #width: 50px;
-    #position: relative;
-    #right: 100px;
-    #text-aligne:right;
 }
 
 
 #tickets_collection{
-    #border: dotted;
-    #display: table;
     margin: auto;
-    #margin-top: 20px;
 }
 
 .ticket_row{
@@ -199,37 +182,52 @@ a.hilite { background:yellow; }
 
 .ticket_row_item{
     float: left;
-    #border: dotted;
     text-align: center;
     margin: 10px auto 10px auto;
 }
 
 .ticket_row_item#category{
-    width: 200px;
+    width: 210px;
 }
 .ticket_row_item#status{
     width: 130px;
 }
 .ticket_row_item#date{
-    width: 120px;
+    width: 150px;
 }
 .ticket_row_item#user{
-    width: 120px;
+    width: 130px;
 }
 .ticket_row_item#assigned_to{
-    width: 120px;
+    width: 130px;
 }
 .ticket_row_item#body{
     width: 220px;
 }
 .ticket_row_item#priority{
     #border: dotted;
-    width: 220px;
+    width: 140px;
 }
 .ticket_row_item#actions{
-    width: 150px;
+    width: 180px;
+    display:inline;
+    float: left;
 }
 
+.link_to_details{
+    width: 65px;
+display:inline;
+}
+
+.link_to_edit{
+    width: 65px;
+    display:inline;
+}
+
+.link_to_delete{
+    width: 65px;
+    display:inline;
+}
 
 .pagination{
     margin:30px auto auto;
@@ -295,24 +293,30 @@ text-align: center;
     #border: dotted;
 }
 .ticket_show_header_item#contact{
-    #border: solid;
-    #float: right;
     position: relative;
-    left: 80px;
+    bottom: 670px;
+    left: 400px;
 }
 
 #ticket_show #ticket_body{
-    border:dotted;
-    border:2px solid silver;
-    background-color: white;
+    #border:dotted;
+    #border:2px solid silver;
+    #background-color: white;
     #display: table;
-    margin:auto;
+    #margin:auto;
     position: relative;
-
+    width: 650px;
     overflow: auto;
-
 }
 
+#link_to_modifications{
+    text-align: right;
+    width: 150px;
+    position: relative;
+    bottom: 25px;
+    left: 50px;
+    left: 540px;
+}
 
 
 

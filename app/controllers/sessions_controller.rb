@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 # ssl_required :new, :create
 
   def new
+    flash[:notice]= " "
     @user_session = UserSession.new
 
   end
