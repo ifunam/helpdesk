@@ -299,11 +299,6 @@ text-align: center;
 }
 
 #ticket_show #ticket_body{
-    #border:dotted;
-    #border:2px solid silver;
-    #background-color: white;
-    #display: table;
-    #margin:auto;
     position: relative;
     width: 650px;
     overflow: auto;
@@ -311,7 +306,7 @@ text-align: center;
 
 #link_to_modifications{
     text-align: right;
-    width: 150px;
+    width: 150px
     position: relative;
     bottom: 25px;
     left: 50px;

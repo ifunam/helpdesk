@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  
+
   config.load_paths += %W( #{RAILS_ROOT}/clients )
   # config.action_controller.relative_url_root = "/var/www/help_desk/public"
   # Specify gems that this application depends on and have them installed with rake gems:install
@@ -27,12 +27,12 @@ Rails::Initializer.run do |config|
   config.gem 'binarylogic-searchlogic', :lib => 'searchlogic', :source => 'http://gems.github.com'
   config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
   config.gem 'aaronchi-jrails', :lib => 'jrails', :source => 'http://gems.github.com'
-config.gem 'vestal_versions'
+  config.gem 'vestal_versions'
 
-  config.gem 'vlad'
-  
+  #config.gem 'vlad'
 
-  
+
+
   # Only load the plugins named here, install the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -52,10 +52,10 @@ config.gem 'vestal_versions'
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   config.active_record.observers = :ticket_observer, :comment_observer
-  
 
 
-  config.action_mailer.register_template_extension('haml') 
+
+  config.action_mailer.register_template_extension('haml')
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.sendmail_settings = {
     :address => 'fenix.fisica.unam.mx',
@@ -63,7 +63,7 @@ config.gem 'vestal_versions'
     :domain => 'fisica.unam.mx',
     :authentication => :plain,
     :location => '/usr/sbin/sendmail',
-    :arguments => '-i -t' 
+    :arguments => '-i -t'
   }
 
 end

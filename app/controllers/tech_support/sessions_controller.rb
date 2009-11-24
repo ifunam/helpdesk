@@ -4,8 +4,8 @@ class TechSupport::SessionsController < SessionsController
 
 
   def create
-#    if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
-    if !User.find_by_login(params[:user_session][:login]).nil?
+    if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password])
+    #if !User.find_by_login(params[:user_session][:login]).nil?
      @user =User.find_by_login(params[:user_session][:login])
       if !@user.nil? and @user.is_tech?
             session[:user] = @user
