@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  #include SslRequirement
+  include SslRequirement
   skip_before_filter :login_required
 
-  #ssl_required :new, :create
+  ssl_required :new, :create
 
   def new
     flash[:notice]= " "
@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password]) and User.exist?(:login => params[:user_session][:login])
-    if User.exists?(:login => params[:user_session][:login])
+     if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password]) and User.exist?(:login => params[:user_session][:login])
+    #if User.exists?(:login => params[:user_session][:login])
       session[:user] = User.find_by_login(params[:user_session][:login])
       flash[:notice] = 'Bienvenido(a)!'
       return_to tickets_url
