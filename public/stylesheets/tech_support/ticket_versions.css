@@ -117,7 +117,7 @@ a.hilite { background:yellow; }
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
-    width: 1500px;
+    width: 1510px;
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
@@ -147,13 +147,13 @@ a.hilite { background:yellow; }
     width: 100px;
 }
 .version_header_item#user{
-    width: 130px;
+    width: 180px;
 }
 .version_header_item#assigned_to{
-    width: 130px;
+    width: 180px;
 }
 .version_header_item#last_modified_by{
-    width: 140px
+    width: 180px
 }
 .version_header_item#body{
     width: 130px;
@@ -165,23 +165,19 @@ a.hilite { background:yellow; }
     width: 150px;
 }
 .version_header_item#date_updated{
-    width: 200px;
-}
-
-.version_header_item#actions{
+    width: 180px;
     border: none;
-    width: 100px;
 }
 
 
 #versions_collection{
     margin: auto;
-    width:1500px
+    width:1510px
 }
 
 .version_row{
     display:inline-block;
-    width:1500px;
+    width:1510px;
     border-bottom: 1px solid silver;
 }
 
@@ -195,7 +191,6 @@ a.hilite { background:yellow; }
 .version_row_item{
     float: left;
     text-align: center;
-#    width:1500px
     height: 20px;
     margin: 10px auto 10px auto;
 }
@@ -203,9 +198,10 @@ a.hilite { background:yellow; }
     width: 40px;
 }
 .version_row_item#version{
-    width: 100px;
+    width: 105px;
 }
 .version_row_item#category{
+    text-align: left;
     width: 110px;
 }
 .version_row_item#status{
@@ -216,25 +212,28 @@ a.hilite { background:yellow; }
 }
 
 .version_row_item#user{
-    width: 140px;
+text-align: left;
+    width: 180px;
 }
 .version_row_item#assigned_to{
-    width: 130px;
+    text-align: left;
+    width: 190px;
 }
 .version_row_item#last_modified_by{
-    width: 140px;
+text-align: left;
+    width: 180px;
 }
 .version_row_item#body{
+text-align: left;
     width: 170px;
 }
 .version_row_item#date_created{
+text-align: left;
     width: 150px;
 }
 .version_row_item#date_updated{
-    width: 200px;
-}
-.version_row_item#actions{
-    width: 100px;
+text-align: left;
+    width: 180px;
 }
 
 

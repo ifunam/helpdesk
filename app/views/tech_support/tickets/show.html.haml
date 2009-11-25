@@ -1,27 +1,34 @@
-%h4= "Solicitud de soporte #{@ticket.id}"
+%h4= "Solicitud de soporte No. #{@ticket.id}"
 #ticket_show
-  #ticket_show_header
-    .ticket_show_header_item{:id => 'information'}
-      %h5= "Información general."
-      %p
-        = "De: #{@user_profile.fullname}"
-        %br= "Fecha de envío: #{@ticket.created_at_before_type_cast}"
-        %br= "Categoría: #{Category.find(@ticket.category_id).name}"
-        %br= "Estado: #{Status.find(@ticket.status_id).name}"
-        %br="Descripción"
-        #ticket_body
-          = @ticket.body
-    .ticket_show_header_item{:id => 'contact'}
-      %h5= "Contacto."
-      %p
-        = "Email: #{@user_profile.email}"
-        %br= "Teléfono: #{@user_profile.phone}"
+  %b= "De: "
+  = @ticket.user.profile.fullname + " &lt;#{@ticket.user.profile.email}&gt;"
+  %br
+  %b= "Teléfono:"
+  = @ticket.user.profile.phone
+  %br
+  %b= "Fecha de envío:"
+  = @ticket.created_at_before_type_cast
+  %br
+  %b= "Categoría:"
+  = @ticket.category.name
+  %br
+  %b= "Estado:"
+  = @ticket.status.name
+  %br
+  %b="Descripción:"
+  #ticket_body
+    = textilize(@ticket.body)
+
   #actions
+    #link_to_modifications
+      = link_to 'Historial de cambios', tech_support_ticket_version_path(@ticket)
+    %br
+    = link_to image_tag("icon_comment.jpg",:border => 0, :style => 'margin-right: 3px;')+'Modificar', edit_tech_support_ticket_path(@ticket)
+    = "&nbsp;"
     = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
   #comment_form
 #comment_collection
   = render :partial => 'comments/comment_father', :collection => @ticket.comments
-
+%br
 = button_to "Regresar", tech_support_tickets_url, :method => :get
-#link_to_modifications
-  = link_to 'Modificaciones hechas', tech_support_ticket_version_path(@ticket)
+

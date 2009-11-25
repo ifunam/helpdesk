@@ -103,7 +103,7 @@ a.hilite { background:yellow; }
 #tickets_index{
     margin: auto;
     display: inline-block;
-    width: 1300px;
+    width: 1450px;
     margin:auto;
 }
 
@@ -123,6 +123,8 @@ a.hilite { background:yellow; }
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
+    #width: 1450px;
+    #margin: auto;
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
@@ -143,10 +145,10 @@ a.hilite { background:yellow; }
     width: 150px;
 }
 .ticket_header_item#user{
-    width: 120px;
+    width: 180px;
 }
 .ticket_header_item#assigned_to{
-    width: 130px;
+    width: 180px;
 }
 .ticket_header_item#body{
     width: 220px;
@@ -169,7 +171,7 @@ a.hilite { background:yellow; }
 
 .ticket_row{
     display:inline-block;
-    width:1300px;
+    width:1450px;
     border-bottom: 1px solid silver;
 }
 
@@ -188,6 +190,8 @@ a.hilite { background:yellow; }
 
 .ticket_row_item#category{
     width: 210px;
+    text-align: left;
+    margin-left: 5px;
 }
 .ticket_row_item#status{
     width: 130px;
@@ -196,13 +200,14 @@ a.hilite { background:yellow; }
     width: 150px;
 }
 .ticket_row_item#user{
-    width: 130px;
+    width: 180px;
 }
 .ticket_row_item#assigned_to{
-    width: 130px;
+    width: 190px;
 }
 .ticket_row_item#body{
     width: 220px;
+    text-align:left;
 }
 .ticket_row_item#priority{
     #border: dotted;
@@ -294,8 +299,9 @@ text-align: center;
 }
 .ticket_show_header_item#contact{
     position: relative;
-    bottom: 670px;
+    bottom: 400px;
     left: 400px;
+    border: dotted;
 }
 
 #ticket_show #ticket_body{

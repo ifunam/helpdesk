@@ -1,15 +1,15 @@
 .ticket_row{:id => "color#{ticket.id%2}" }
   .ticket_row_item#category
-    = Category.find(ticket.category_id).name
+    = ticket.category.name
   .ticket_row_item#status
-    = image_tag("#{Status.find(ticket.status_id).name.gsub(" ","_").downcase}.png")+Status.find(ticket.status_id).name
+    = image_tag("#{ticket.status.name.gsub(" ","_").downcase}.png")+ticket.status.name
   .ticket_row_item#date
     = ticket.created_at_before_type_cast
   .ticket_row_item#user
-    = User.find(ticket.user_id).login
+    = ticket.user.profile.fullname
   .ticket_row_item#assigned_to
-    = "#{ticket.status_id == 1 ? " " : User.find(ticket.user_incharge).login}"
+    = "#{ticket.status_id == 1 ? "-" : ticket.user_incharge.profile.fullname}"
   .ticket_row_item#body
-    = ticket.body.slice(0, 20)
+    = truncate(ticket.body,:length => 30)
   .ticket_row_item#actions
     = link_to("Detalles", ticket_path(ticket) , :class => "link_details")

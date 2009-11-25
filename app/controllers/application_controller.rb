@@ -1,14 +1,10 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
-
+require 'redcloth'
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  #   layout nil
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
-  #before_filter :activate_authlogic
-    before_filter :login_required
+  before_filter :login_required
   helper_method :current_user_session, :current_user
 
 private
@@ -17,19 +13,30 @@ private
   end
 
 
-#  def current_user_session
-#    return @current_user_session if defined?(@current_user_session)
-#    @current_user_session = UserSession.find
-#  end
+
 
   def current_user
-#    return @current_user if defined?(@current_user)
-#    @current_user = current_user_session && current_user_session.user
      session[:user] if defined? session[:user]
   end
 
+  #def login_required
+  #  !session[:user].nil? ? (return true) : (redirect_to :controller=> :sessions, :action => 'new' and return false)
+  #end
+
   def login_required
-    !session[:user].nil? ? (return true) : (redirect_to :controller=> :sessions, :action => 'new' and return false)
+
+    if session[:user].nil?
+      session[:redirect_to] = request.request_uri
+      redirect_to :controller=> :sessions, :action => 'new'
+      return false
+    end
+
+    return true
+  end
+
+  def return_to(controller)
+    controller = session[:redirect_to] unless session[:redirect_to].nil?
+    redirect_to controller, :protocol => 'http'
   end
 
 

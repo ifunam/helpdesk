@@ -1,10 +1,4 @@
 class User < ActiveRecord::Base
-  #acts_as_authentic# do |c|
-  #  c.validate_password_field = false
-  #    c.check_passwords_against_database = false
-#
- # end
-
   #acts_as_authentic
 
 
@@ -22,5 +16,9 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+
+  def profile
+    UserProfileClient.find_by_login(login)
+  end
 
 end

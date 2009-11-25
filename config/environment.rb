@@ -28,8 +28,8 @@ Rails::Initializer.run do |config|
   config.gem 'binarylogic-authlogic', :lib => 'authlogic', :source => 'http://gems.github.com'
   config.gem 'aaronchi-jrails', :lib => 'jrails', :source => 'http://gems.github.com'
   config.gem 'vestal_versions'
-
-  #config.gem 'vlad'
+  config.gem 'RedCloth',:lib => 'redcloth', :source => 'http://gems.github.com'
+  config.gem 'vlad'
 
 
 

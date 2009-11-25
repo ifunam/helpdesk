@@ -1,4 +1,3 @@
-= render :partial => '/tech_support/tickets/catalogs'
 #versions_header
   .version_header_item#id Id
   .version_header_item#version Version
@@ -11,8 +10,9 @@
   .version_header_item#body Descripción
   .version_header_item#date_created Fecha creación
   .version_header_item#date_updated Fecha actualización
-  .version_header_item#actions Acciones
 #versions_collection
   - 1.upto(@ticket.version) do |n|
     - @ticket.revert_to(n)
     = render :partial => 'record', :object => @ticket
+%br
+= button_to "Regresar", tech_support_ticket_path(@ticket), :method => :get
