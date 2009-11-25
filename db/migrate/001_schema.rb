@@ -5,9 +5,9 @@ class Schema < ActiveRecord::Migration
       t.boolean :status, :null => false, :default => true
       t.boolean :is_tech, :null => false, :default => false
       t.string  :login, :null => false
-      t.string  :email, :null => false
-      t.string  :password, :default => "without password"
-      t.string  :name, :null => false
+      t.string  :email
+      t.string  :password
+      t.string  :name
       t.timestamps
     end
 

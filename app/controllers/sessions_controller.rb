@@ -1,3 +1,4 @@
+
 class SessionsController < ApplicationController
   include SslRequirement
   skip_before_filter :login_required

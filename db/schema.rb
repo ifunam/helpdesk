@@ -59,12 +59,12 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
   end
 
   create_table "users", :force => true do |t|
-    t.boolean  "status",     :default => true,               :null => false
-    t.boolean  "is_tech",    :default => false,              :null => false
-    t.string   "login",                                      :null => false
-    t.string   "email",                                      :null => false
-    t.string   "password",   :default => "without password"
-    t.string   "name",                                       :null => false
+    t.boolean  "status",     :default => true,  :null => false
+    t.boolean  "is_tech",    :default => false, :null => false
+    t.string   "login",                         :null => false
+    t.string   "email"
+    t.string   "password"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
