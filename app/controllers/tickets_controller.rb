@@ -1,6 +1,4 @@
 class TicketsController < ApplicationController
- before_filter :user_profile
-  
   def index
     session[:search] = {}
     @tickets = Ticket.search_and_paginate(params[:search], params[:page])
@@ -20,7 +18,6 @@ class TicketsController < ApplicationController
     session[:search] = { :user_id => current_user.id }
     render 'index'
   end
-  
 
   def new
     @ticket = Ticket.new
@@ -38,8 +35,5 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
-  end
-
-  def update
   end
 end

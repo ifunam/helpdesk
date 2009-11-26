@@ -14,7 +14,7 @@
 
       #main
         #login
-          = "#{@user_profile.login}"
+          = "#{current_user.profile.login}"
           = "|"
           = link_to 'Salir',tech_support_logout_url
           %br
@@ -23,7 +23,7 @@
           = controller_title
         #user_profile
           #user_profile_item
-            = "Nombre:  #{@user_profile.fullname}"
+            = "Nombre:  #{current_user.profile.fullname}"
           #user_profile_item
-            = "Adscripción:  #{@user_profile.adscription}  "
+            = "Adscripción:  #{current_user.profile.adscription}  "
         = yield :layout

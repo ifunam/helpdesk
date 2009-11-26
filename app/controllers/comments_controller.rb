@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter :user_profile
   def index
-
+    render 'index'
   end
 
   def new
@@ -14,8 +13,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-      @comment = Comment.new(params[:comment])
-      @comment.user_id = current_user.id
+    @comment = Comment.new(params[:comment])
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         if @comment.parent.nil?
@@ -37,10 +36,9 @@ class CommentsController < ApplicationController
       format.js { render 'edit', :layout => false  }
     end
   end
-  
+
   def update
     @comment = Comment.find(params[:id])
-    
     @comment.children << Comment.new(params[:comment].merge(:user => current_user ))
     respond_to do |format|
       format.js { render 'update.rjs' }
@@ -57,10 +55,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment=Comment.find(params[:id])
     respond_to do |format|
-       format.js { render 'destroy.rjs' }
-     end
+      format.js { render 'destroy.rjs' }
+    end
   end
-
-  
-  
 end

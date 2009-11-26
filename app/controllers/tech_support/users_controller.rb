@@ -1,6 +1,4 @@
 class TechSupport::UsersController < ApplicationController
-  before_filter :user_profile
-
   def index
     @collection = User.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 10 )
   end
@@ -14,7 +12,6 @@ class TechSupport::UsersController < ApplicationController
     if @user.save
       redirect_to :action => 'index'
     else
-	
       render :action => 'new'
     end
   end

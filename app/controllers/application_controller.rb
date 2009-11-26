@@ -7,13 +7,9 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
   helper_method :current_user_session, :current_user
 
-private
-  def user_profile
-    @user_profile = UserProfileClient.find_by_login(current_user.login)
-  end
-
+  private
   def current_user
-     session[:user] if defined? session[:user]
+    session[:user] if defined? session[:user]
   end
 
   def login_required
@@ -22,7 +18,6 @@ private
       redirect_to :controller=> :sessions, :action => 'new'
       return false
     end
-
     return true
   end
 

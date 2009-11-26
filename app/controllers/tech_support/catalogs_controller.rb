@@ -1,5 +1,4 @@
 class TechSupport::CatalogsController < ApplicationController
-  before_filter :user_profile
   def index
     @collection = @model.all.paginate(:page => params[:page] || 1,   :per_page => params[:per_page] || 10 )
     render 'tech_support/catalogs/index'
@@ -7,7 +6,7 @@ class TechSupport::CatalogsController < ApplicationController
 
   def new
     @record = @model.new
-     render 'tech_support/catalogs/new'
+    render 'tech_support/catalogs/new'
   end
 
   def create
@@ -21,7 +20,7 @@ class TechSupport::CatalogsController < ApplicationController
 
   def edit
     @record = @model.find(params[:id])
-     render 'tech_support/catalogs/edit'
+    render 'tech_support/catalogs/edit'
   end
 
   def update

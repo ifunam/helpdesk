@@ -1,5 +1,4 @@
 class TechSupport::TicketsController < TicketsController
-
  def my_list
     @tickets = Ticket.search_and_paginate({ :user_id => current_user.id }, params[:page])
     session[:search] = { :user_id => current_user.id }

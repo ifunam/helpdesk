@@ -1,13 +1,24 @@
-#sign_in
-  ="Para iniciar sesión debes introducir tu login y contraseña de Salva"
+%p{:id=>'session_instructions'}
+  ="Para iniciar sesión debes introducir tu login y contraseña de su correo electrónico en el Instituto de Física."
   %br
-  - form_for @user_session, :url => {:action => :create} do |f|
-    .td_text 
-      = "Usuario:"
-    .td_textbox
-      = f.text_field(:login)
-    .td_text
-      = "Contraseña:"
-    .td_textbox
-      = f.password_field(:password)
-    = submit_tag "Ingresar"
+  %br
+
+  ="Por ejemplo, sí tu cuenta es juan@fisica.unam.mx, la información para ingresar es: "
+  %b="juan y *tucontraseña*."
+
+
+#sign_in
+  #flash
+    = flash[:notice]
+  %br
+  #form_session
+    - form_for @user_session, :url => {:action => :create} do |f|
+      .td_text 
+        = "Usuario:"
+      .td_textbox
+        = f.text_field(:login)
+      .td_text
+        = "Contraseña:"
+      .td_textbox
+        = f.password_field(:password)
+      = submit_tag "Ingresar"
