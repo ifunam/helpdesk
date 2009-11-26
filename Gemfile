@@ -29,7 +29,7 @@ gem "authlogic"
 # gem "domid_gum", :path => 'vendor/plugins/domid_gum', :git => "git://github.com/nazgum/domid_gum.git", :branch => "master"
 
 only :development do
-	'sqlite3-ruby'
+	gem 'sqlite3-ruby'
 end
 
 only :test do 
