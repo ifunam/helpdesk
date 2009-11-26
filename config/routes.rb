@@ -1,9 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
+  map.logout '/logout', :controller => "sessions", :action => "destroy"
   map.resources :tickets, :collection => { :search => :get, :my_list => :get }
   map.resources :comments
-
-
 
   map.resources :tickets do |ticket|
     ticket.resources :comments
