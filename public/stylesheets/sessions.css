@@ -5,12 +5,10 @@ body {
   font-family: Arial, Helvetica,sans-serif;
   font-size: 90%;
 }
-  
+
 a{
   text-decoration: none;
 }
- 
-  
 #main{
   margin: auto;
 }
@@ -51,13 +49,15 @@ a{
 /*login and menu*/
 
 
-
 #sign_in{
-    
-    #font: bold 14px;
-    margin-top: 100px;
-    margin-left: 500px;
+    display:block;
+	width: 230px;
+    margin-top: 20px;
+    margin-left: auto;
+	margin-right: auto;
     font-size: 12px;
+	border: 2px double silver;
+	padding: 10px;
 }
 
 .td_text {
@@ -69,15 +69,23 @@ a{
 }
 
 .td_textbox{
-  #display:table-cell;
   padding: 2px;
 }
 
-
 #login{
-  height: 70px;
-  width: 150px;
   position: relative;
-  left: 1200px;
   text-align: center;
+}
+
+#session_instructions {
+	display: block;
+	border-top: 1px solid green;
+	border-bottom: 1px solid green;
+	background-color: #ffffcc;
+	width: 400px;
+	margin-top: 60px;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: justify;
 }

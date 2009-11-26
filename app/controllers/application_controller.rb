@@ -12,19 +12,11 @@ private
     @user_profile = UserProfileClient.find_by_login(current_user.login)
   end
 
-
-
-
   def current_user
      session[:user] if defined? session[:user]
   end
 
-  #def login_required
-  #  !session[:user].nil? ? (return true) : (redirect_to :controller=> :sessions, :action => 'new' and return false)
-  #end
-
   def login_required
-
     if session[:user].nil?
       session[:redirect_to] = request.request_uri
       redirect_to :controller=> :sessions, :action => 'new'
@@ -36,8 +28,7 @@ private
 
   def return_to(controller)
     controller = session[:redirect_to] unless session[:redirect_to].nil?
+    session[:redirect_to] = nil
     redirect_to controller, :protocol => 'http'
   end
-
-
 end

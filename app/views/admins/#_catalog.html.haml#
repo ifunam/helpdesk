@@ -1,3 +1,0 @@
-.catalog{:id => @type}
-  =render :partial => @type, :collection => class_eval("#{@type.to_s.capitalize}.all")
-  ="agldo"y
