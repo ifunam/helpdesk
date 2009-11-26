@@ -1,0 +1,7 @@
+settings:
+  :address: 'fenix.fisica.unam.mx'
+  :domain:  'fisica.unam.mx'
+  :port: 25
+  :authentication: plain
+  :location: /usr/sbin/sendmail
+  :arguments: -i -t
