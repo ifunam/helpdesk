@@ -4,9 +4,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tickets, :collection => { :search => :get, :my_list => :get }
   map.resources :comments
 
-  map.resources :tickets do |ticket|
-    ticket.resources :comments
-  end
+#  map.resources :tickets do |ticket|
+#    ticket.resources :comments
+#  end
 
   map.namespace :tech_support do |tech_support|
     # Directs /admin/products/* to Admin::ProductsController
