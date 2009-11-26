@@ -1,4 +1,5 @@
 # Settings specified here will take precedence over those in config/environment.rb
+Bundler.require_env RAILS_ENV
 
 #1;2000;0c The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
