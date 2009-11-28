@@ -272,18 +272,19 @@ background:yellow;
     margin: auto;
 }
 
-#cancel{
-    width: 200px;
+
+#comment_form #cancel{
+    #width: 200px;
     position: relative;
-    bottom: 26px;
-    left: 150px;
+    bottom: 27px;
+    left: 160px;
 }
 
-#comment_subject{
-    #float: left;
+#comment_form_subject{
+    #width: 200px;
 }
 
-#comment_body{
+#comment_form_body{
     #float: left;
 
     #padding: 10px;
@@ -291,16 +292,16 @@ background:yellow;
 
     height: 130px;
     border: 1px solid #990000;
-    color:#222222 !important;
-    display: block;
-    padding:20px;
-    width:90%;#600px;
+    width:98%;
 
 }
 
 
 
-
+.comment_body{
+    width: 650px;
+    overflow: auto;
+}
 
 
 
@@ -322,7 +323,7 @@ background:yellow;
 }
 .comment_father{
     margin: 20px auto 20px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    background: #f9f9f9;
     #width: 900px;
     border:2px solid silver;
     display: block;

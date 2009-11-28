@@ -2,14 +2,15 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang=>"en"}
   %head
-    %title 
+    %title
       = "Stifunam #{controller.controller_name.capitalize}"
     = stylesheet_link_tag "sessions.css"
     = javascript_include_tag :defaults
   %body
     #layout_header
       %h1= "Seguimiento de Solicitudes de Servicio"
-      %h2= "Instituto de Física - UNAM" 
-      %h3= "Secretaría Técnica de Cómputo y Telecomunicaciones"    
+      %h2= "Instituto de Física - UNAM"
+      %h3= "Secretaría Técnica de Cómputo y Telecomunicaciones"
     #main
-    = yield :layout
+      = yield :layout
+      

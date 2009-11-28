@@ -21,6 +21,7 @@
 
   #actions
     = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
+  %br
   #comment_form
 #comment_collection
   = render :partial => 'comments/comment_father', :collection => @ticket.comments

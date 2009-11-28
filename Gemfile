@@ -5,7 +5,7 @@ source 'http://gems.github.com'
 
 bundle_path "vendor/bundler_gems"
 gem 'test-unit', '1.2.3', :source => 'http://gems.rubyforge.org'
-gem "rails", :version => '2.3.4' do
+gem "rails", :version => '2.3.5' do
 	directory "vendor/rails" do
 		%w(activesupport activemodel actionpack actionmailer activerecord activeresource).each do |lib|
   			gem lib, :path => lib

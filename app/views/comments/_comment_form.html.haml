@@ -1,5 +1,5 @@
-= comment_form.text_field :subject
-= comment_form.text_area :body
+= comment_form.text_field :subject, {:id => "comment_form_subject"}
+= comment_form.text_area :body, {:id => "comment_form_body"}
 = comment_form.hidden_field :ticket_id
 #send_comment_form
-  = submit_tag "Enviar comentario"
+  = submit_tag "Enviar comentario", {:id => "comment_form_submit"}

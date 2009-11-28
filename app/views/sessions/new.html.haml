@@ -10,15 +10,17 @@
 #sign_in
   #flash
     = flash[:notice]
+    = "alfksalkdaksdkaksd"
   %br
   #form_session
     - form_for @user_session, :url => {:action => :create} do |f|
-      .td_text 
+      .form_session_label
         = "Usuario:"
-      .td_textbox
+      .form_session_textbox
         = f.text_field(:login)
-      .td_text
+      .form_session_label
         = "Contraseña:"
-      .td_textbox
+      .form_session_textbox
         = f.password_field(:password)
+      %br
       = submit_tag "Ingresar"

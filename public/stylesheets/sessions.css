@@ -1,6 +1,6 @@
-body { 
-  padding: 0 0 18px 0;  
-  background: #fff url(/images/bg.jpg)  repeat-x; 
+body {
+  padding: 0 0 18px 0;
+  background: #fff url(/images/bg.jpg)  repeat-x;
   display: block;
   font-family: Arial, Helvetica,sans-serif;
   font-size: 90%;
@@ -14,15 +14,14 @@ a{
 }
 
 #layout_header{
-    width:800px; 
-    margin:0 auto; 
-    text-align:left; 
-    position:relative; 
+    width:800px;
+    margin:0 auto;
+    text-align:left;
+    position:relative;
     background: #2a9ac3 url(/images/header.jpg) no-repeat;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
     height: 132px;
-    #font-size:230%;
     color : white;
     text-align: left;
 }
@@ -50,17 +49,27 @@ a{
 
 
 #sign_in{
-    display:block;
-	width: 230px;
-    margin-top: 20px;
-    margin-left: auto;
-	margin-right: auto;
-    font-size: 12px;
-	border: 2px double silver;
-	padding: 10px;
+    #display:block;
+        width: 400px;
+    #margin-top: 20px;
+    #margin-left: auto;
+    #    margin-right: auto;
+    #font-size: 12px;
+        border: 2px double silver;
+        padding: 10px;
+        margin: auto;
 }
 
-.td_text {
+#flash{
+    width: 300px;
+    margin: auto;
+}
+#form_session{
+    width: 300px;
+    margin: auto;
+}
+
+.form_session_label {
   margin-left: 30em;
   display: table-cell;
   width: 100px;
@@ -68,24 +77,21 @@ a{
   padding: 2px;
 }
 
-.td_textbox{
+.form_session_textbox{
   padding: 2px;
 }
 
-#login{
-  position: relative;
-  text-align: center;
-}
+
 
 #session_instructions {
-	display: block;
-	border-top: 1px solid green;
-	border-bottom: 1px solid green;
-	background-color: #ffffcc;
-	width: 400px;
-	margin-top: 60px;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: justify;
+        display: block;
+        border-top: 1px solid green;
+        border-bottom: 1px solid green;
+        background-color: #ffffcc;
+        width: 400px;
+        margin-top: 60px;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: justify;
 }

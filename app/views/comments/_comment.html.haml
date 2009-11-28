@@ -1,14 +1,21 @@
 .comment
-  %br= "De: " + comment.user.login
-  %br= comment.subject
-  %br= "Fecha de envío:  #{comment.created_at_before_type_cast}"
-  %br= "Descripcion:"
-  %br= comment.body
+  %b= "De: "
+  = comment.user.login
+  %br
+  %b= "Encabezado"
+  = comment.subject
+  %br
+  %b= "Fecha de envío:"
+  = comment.created_at_before_type_cast
+  %br
+  %b= "Descripcion:"
+  .comment_body
+    = textilize(comment.body)
   %p
   .actions
     #respond
       = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px; padding-left: 14px;')+"Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
-    
+  %br
   .comment_form{:id => "comment_form_#{comment.dom_id}"}
 
   .childs{:id =>"childs_#{comment.dom_id}"}
