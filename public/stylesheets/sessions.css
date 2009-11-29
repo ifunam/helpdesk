@@ -49,20 +49,17 @@ a{
 
 
 #sign_in{
-    #display:block;
-        width: 400px;
-    #margin-top: 20px;
-    #margin-left: auto;
-    #    margin-right: auto;
-    #font-size: 12px;
-        border: 2px double silver;
-        padding: 10px;
-        margin: auto;
+    width: 400px;
+    border: 2px double silver;
+    padding: 10px;
+    margin: auto;
+#    text-align: center;
 }
 
 #flash{
-    width: 300px;
+    width: 350px;
     margin: auto;
+    text-align: center;
 }
 #form_session{
     width: 300px;

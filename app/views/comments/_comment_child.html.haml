@@ -1,3 +1,4 @@
 .comment_child{:id => "child_#{comment_child.dom_id}"}
   = render :partial => 'comments/comment', :object => comment_child
-  = link_to_remote "Ocultar" , {:method => :delete}, :style => 'padding-left: 14px;'
+  .button_hide
+    = link_to_remote "Ocultar" , {:method => :delete}, :style => 'padding-left: 14px;'

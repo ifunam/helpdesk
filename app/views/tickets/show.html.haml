@@ -1,29 +1,31 @@
-%h4= "Solicitud de soporte #{@ticket.id}"
 #ticket_show
-  %b= "De: "
-  = @ticket.user.profile.fullname + " &lt;#{@ticket.user.profile.email}&gt;"
-  %br
-  %b= "Teléfono:"
-  = @ticket.user.profile.phone
-  %br
-  %b= "Fecha de envío:"
-  = @ticket.created_at_before_type_cast
-  %br
-  %b= "Categoría:"
-  = @ticket.category.name
-  %br
-  %b= "Estado:"
-  = @ticket.status.name
-  %br
-  %b="Descripción:"
-  #ticket_body
-    = textilize(@ticket.body)
+  %h4{:id => "h4_show"}= "Solicitud de soporte #{@ticket.id}"
+  #ticket_profile
+    %b= "De: "
+    = @ticket.user.profile.fullname + " &lt;#{@ticket.user.profile.email}&gt;"
+    %br
+    %b= "Teléfono:"
+    = @ticket.user.profile.phone
+    %br
+    %b= "Fecha de envío:"
+    = @ticket.created_at_before_type_cast
+    %br
+    %b= "Categoría:"
+    = @ticket.category.name
+    %br
+    %b= "Estado:"
+    = @ticket.status.name
+    %br
+    %b="Descripción:"
+    #ticket_body
+      = textilize(@ticket.body)
 
-  #actions
-    = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
+    #actions
+      = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
+    %br
+    #comment_form
+  %h4{:id => "h4_show"}= "Comentarios"
+  #comment_collection
+    = render :partial => 'comments/comment_father', :collection => @ticket.comments
   %br
-  #comment_form
-#comment_collection
-  = render :partial => 'comments/comment_father', :collection => @ticket.comments
-%br
-=button_to 'Regresar', tickets_url, :method => :get
+  =button_to 'Regresar', tickets_url, :method => :get

@@ -11,31 +11,17 @@ $(document).ready(function(){
               });
         });
 
-
-
-
         $("a").hover(function () {
              $(this).addClass("hilite");}, function () {
              $(this).removeClass("hilite");
         });
 
-        $("#respond").click(function () {
-
+        /*$("#respond").click(function () {
               $.ajax({
-
                       url: "/comments/new/?ticket_id=" +  $("#respond").attr("ticket_id"),
                       success: function(data){ $("#comment_form").html(data);}
               });
-
-
-
-          });
-
-
-
-
-
-
+              });*/
 
 });
 

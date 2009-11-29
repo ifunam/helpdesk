@@ -30,7 +30,6 @@ background:yellow;
     position: relative;
     overflow: hidden;
     height: 132px;
-    #font-size:230%;
     color : white;
     text-align: left;
 }
@@ -52,7 +51,7 @@ background:yellow;
 }
 #main{
     display:table;
-    margin:50px auto auto;
+    margin: 50px auto auto;
 }
 
 
@@ -223,34 +222,23 @@ background:yellow;
 
 /*-----------Ticket Show--------------*/
 
-
-
 #ticket_show{
-    width: 650px;
+    width: 1200px;
+}
+#h4_show{
+    text-align: center;
+}
+
+#ticket_profile{
     border: 2px solid silver;
     margin: 10px auto 10px auto;
     margin: auto;
-    background-color: #F9F7ED;
+    background-color: #f9f9f9;
     padding: 20px;
 }
 
-#ticket_show_header{
-}
-
-.ticket_show_header_item{
-    width: 300px;
-    display:inline-table;
-}
-.ticket_show_header_item#contact{
-    position: relative;
-    bottom: 670px;
-    left: 400px;
-}
-
-#ticket_show #ticket_body{
-    position: relative;
-    width: 650px;
-    overflow: auto;
+#ticket_profile #ticket_body{
+    width: 1150px;
 }
 
 
@@ -266,114 +254,77 @@ background:yellow;
 
 /*-------------- COMMENT FORM ----------------*/
 
-.comment_form{
-    margin-top:10px;
-    width: 90%;
+#comment_form{
+    margin: auto;
+    width: 80%;
+}
+
+#comment_form #new_comment{
     margin: auto;
 }
-
-
 #comment_form #cancel{
-    #width: 200px;
+    width: 200px;
     position: relative;
-    bottom: 27px;
+    bottom: 30px;
     left: 160px;
-}
 
-#comment_form_subject{
-    #width: 200px;
 }
-
 #comment_form_body{
-    #float: left;
-
-    #padding: 10px;
     margin: 10px auto 10px;
-
     height: 130px;
     border: 1px solid #990000;
-    width:98%;
-
-}
-
-
-
-.comment_body{
-    width: 650px;
-    overflow: auto;
+    width:100%;
 }
 
 
 
 
+.comment_form{
+    margin: auto;
+    width: 80%;
+}
+.comment_form #cancel{
+    width: 200px;
+    position: relative;
+    bottom: 30px;
+    left: 160px;
 
+}
 
 
 
 
 /*COMMENTS LIST */
-#comments{
-    display: block;
+
+#comment_collection{
 }
+
+
 
 .comment{
     margin: auto;
-    width: 95%;
-
+    margin-bottom: 10px;
+    border: 1px solid silver;
+    padding:20px;
 }
 .comment_father{
-    margin: 20px auto 20px;
     background: #f9f9f9;
-    #width: 900px;
-    border:2px solid silver;
-    display: block;
-
+    padding:20px;
 }
 
-.comment_item{
-   margin: 5px auto;
-   padding: 5px;
 
-}
 
-.comment_item#subject{
-    float: left;
 
-}
 
-.comment_item#date{
-    float: right;
-}
-
-.comment_father .comment_item#body{
-    border:2px solid silver;
-    background-color: white;
-    #display: table;
-    width: 650px;
-    overflow: auto;
-}
+/*------------------------chilsd---------------*/
 
 .childs{
-    margin:15px auto;
-    width: 95%;
-
 }
-
 
 .comment_child{
-    margin:15px auto;
-    width: 95%;
-    border: solid silver;
-
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
+    border-bottom: 1px solid silver;
+    margin-bottom: 20px;
 }
 
-
-
-.comment_child .comment_item#body{
-    border:2px solid silver;
-    background-color: white;
-    width: 93%;
-    overflow: auto;
-
+.button_hide{
 }

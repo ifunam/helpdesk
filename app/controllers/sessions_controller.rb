@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 class SessionsController < ApplicationController
   include SslRequirement
@@ -6,9 +7,8 @@ class SessionsController < ApplicationController
   ssl_required :new, :create  if RAILS_ENV == 'production'
 
   def new
-    flash[:notice]= " "
     @user_session = UserSession.new
-
+    #flash[:notice]= " "
   end
 
   def create
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Bienvenido(a)!'
       return_to tickets_url
     else
-      flash[:notice] = 'El login o password es incorrecto!'
+      flash[:notice] = 'El nombre de usuario o contraseña es incorrecto'
       redirect_to new_session_path
     end
   end

@@ -1,6 +1,6 @@
-.comment
+.comment_father{:id => "father_#{comment.dom_id}"}
   %b= "De: "
-  = comment.user.login
+  = comment.user.profile.fullname+" &lt;#{comment.user.profile.email}&gt;"
   %br
   %b= "Encabezado"
   = comment.subject
@@ -12,12 +12,12 @@
   .comment_body
     = textilize(comment.body)
   %p
-  .actions
-    #respond
-      = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px; padding-left: 14px;')+"Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
+  #actions
+    = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px; padding-left: 14px;')+"Responder", :url => edit_comment_path(:id => comment.id) ,:update => {:success => "comment_form_#{comment.dom_id}"}, :method => :get
   %br
   .comment_form{:id => "comment_form_#{comment.dom_id}"}
 
-  .childs{:id =>"childs_#{comment.dom_id}"}
-    = render :partial => 'comments/child', :collection => comment.children
+%h4= "Comentarios"
+.childs{:id =>"childs_#{comment.dom_id}"}
+  = render :partial => 'comments/child', :collection => comment.children
 
