@@ -89,7 +89,7 @@ background:yellow;
 
 #tickets_index{
     margin: auto;
-    width: 1200px;
+    width: 1500px;
     display: inline-block;
     #position: relative;
 }
@@ -115,22 +115,22 @@ background:yellow;
 }
 
 .ticket_header_item#category{
-    width: 200px;
+    width: 400px;
 }
 .ticket_header_item#status{
-    width: 135px;
+    width: 145px;
 }
 .ticket_header_item#date{
-    width: 140px;
+    width: 155px;
 }
 .ticket_header_item#user{
-    width: 180px;
+    width: 200px;
 }
 .ticket_header_item#assigned_to{
-    width: 180px;
+    width: 200px;
 }
 .ticket_header_item#body{
-    width: 220px;
+    width: 230px;
 }
 .ticket_header_item#actions{
     width: 100px;
@@ -144,7 +144,7 @@ background:yellow;
 
 .ticket_row{
     display:inline-block;
-    width:1200px;
+    width:1500px;
     border-bottom: 1px solid silver;
 }
 
@@ -162,27 +162,27 @@ background:yellow;
 }
 
 .ticket_row_item#category{
-    width: 200px;
+    width: 400px;
     text-align:left;
     margin-left: 5px;
 }
 .ticket_row_item#status{
-    width: 140px;
+    width: 155px;
 }
 .ticket_row_item#date{
-    width: 145px;
+    width: 155px;
     text-align:left;
 }
 .ticket_row_item#user{
-    width: 180px;
+    width: 200px;
     text-align:left;
 }
 .ticket_row_item#assigned_to{
-    width: 190px;
+    width: 200px;
     text-align:left;
 }
 .ticket_row_item#body{
-    width: 220px;
+    width: 230px;
     text-align:left;
 }
 .ticket_row_item#actions{
@@ -218,7 +218,12 @@ background:yellow;
     margin:auto;
     position: relative;
 }
-
+#ticket_form #cancel{
+    position: relative;
+    left: 150px;
+    bottom: 30px;
+    width: 200px;
+}
 
 /*-----------Ticket Show--------------*/
 
