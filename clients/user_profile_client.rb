@@ -10,39 +10,19 @@ class UserProfileClient < ActiveResource::Base
     @object = new
     @object.prefix_options = {}
 
-    if ENV['RAILS_ENV'] == 'development' and (login == 'carlos' or login == 'alex' or login == 'natorro')
-      if login == 'carlos'
-        @object.attributes = {  'adscription_id' => 7,
-          "fullname" =>"Carlos Sánches Perales",
-          "phone"=>"56225001 ext 289",
-          "user_id"=>167,
-          "adscription"=>"Apoyo",
-          "login"=>"carlos",
-          "email"=> "carlos@fisica.unam.mx"
-        }
-      else
-        if login == 'alex'
-          @object.attributes = {  'adscription_id' => 8,
-            "fullname" =>"Alejandro Juárez Robles",
-            "phone"=>"56225001 ext 289",
-            "user_id"=>168,
-            "adscription"=>"Apoyo",
-            "login"=>"alex",
-            "email"=> "alex@fisica.unam.mx"
-          }
-        else
-          @object.attributes = {  'adscription_id' => 9,
-            "fullname" =>"Carlos Lopez Nataren",
-            "phone"=>"56225001 ext 289",
-            "user_id"=>168,
-            "adscription"=>"Apoyo",
-            "login"=>"natorro",
-          }
-        end
-      end
-
-    else
-      @object.attributes = self.get("show_by_login/#{login}")
+     if RAILS_ENV == 'development'
+       @user= User.find_by_login(login)
+       @object.attributes = {
+        'adscription_id' => @user.id % 10,
+        "fullname" =>@user.name,
+        "phone"=>"No phone number",
+        "user_id"=>@user.id,
+        "adscription"=>"Técnico",
+        "login"=>@user.login,
+        "email"=> @user.email
+      }
+     else
+       @object.attributes = self.get("show_by_login/#{login}")
     end
     @object
   end
