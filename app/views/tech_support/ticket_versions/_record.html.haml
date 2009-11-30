@@ -2,17 +2,17 @@
   .version_row_item#version
     = record.version
   .version_row_item#category
-    = record.category.name
+    = Category.find(record.category_id).name
   .version_row_item#status
-    = image_tag("#{record.status.name.gsub(" ","_").downcase}.png")+record.status.name
+    = image_tag("#{Status.find(record.status_id).name.gsub(" ","_").downcase}.png")+Status.find(record.status_id).name
   .version_row_item#priority
-    = record.priority.name
+    = Priority.find(record.priority_id).name
   .version_row_item#user
-    = record.user.profile.fullname
+    = User.find(record.user_id).profile.fullname
   .version_row_item#assigned_to
-    = "#{record.user_incharge_id.nil? ? "-" : record.user_incharge.profile.fullname}"
+    = "#{record.user_incharge_id.nil? ? "-" : User.find(record.user_incharge_id).profile.fullname}"
   .version_row_item#last_modified_by
-    = "#{record.user_last_modification_id.nil? ? "-" : record.user_last_modification.profile.fullname}"
+    = "#{record.user_last_modification_id.nil? ? "-" : User.find(record.user_last_modification_id).profile.fullname}"
   .version_row_item#body
     = truncate(record.body,:length =>20)
   .version_row_item#date_updated

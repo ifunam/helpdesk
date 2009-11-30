@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class Ticket < ActiveRecord::Base
   versioned
   validates_presence_of :status_id, :category_id#, :user_id
@@ -18,12 +17,4 @@ class Ticket < ActiveRecord::Base
     Ticket.search(search).all.paginate(:page => page, :per_page => per_page)
   end
 
-  def self versions
-    @versions = []
-    1.upto(@ticket.version) do |n|
-      @ticket.revert_to(n)
-      @versions << @ticket
-    end
-    @versions
-  end
 end
