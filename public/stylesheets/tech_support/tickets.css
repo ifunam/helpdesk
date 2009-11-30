@@ -277,37 +277,24 @@ text-align: center;
 
 /*-----------Ticket Show--------------*/
 
-
-
 #ticket_show{
-    width: 650px;
+    width: 1200px;
+}
+#h4_show{
+    text-align: center;
+}
+
+#ticket_profile{
     border: 2px solid silver;
     margin: 10px auto 10px auto;
-    margin: auto;
-    background-color: #F9F7ED;
+    #margin: auto;
+    background-color: #f9f9f9;
     padding: 20px;
 }
 
-#ticket_show_header{
-    #border: dotted;
-}
 
-.ticket_show_header_item{
-    width: 300px;
-    display:inline-table;
-    #border: dotted;
-}
-.ticket_show_header_item#contact{
-    position: relative;
-    bottom: 400px;
-    left: 400px;
-    border: dotted;
-}
-
-#ticket_show #ticket_body{
-    position: relative;
-    width: 650px;
-    overflow: auto;
+#ticket_profile #ticket_body{
+    width: 1150px;
 }
 
 #link_to_modifications{
@@ -331,41 +318,41 @@ text-align: center;
 
 /*-------------- COMMENT FORM ----------------*/
 
-.comment_form{
-    margin-top:10px;
-    width: 90%;
+#comment_form{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+#comment_form #new_comment{
     margin: auto;
 }
-
-#cancel{
-    #border: solid;
+#comment_form #cancel{
     width: 200px;
     position: relative;
-    bottom: 26px;
-    left: 150px;
+    bottom: 30px;
+    left: 160px;
 }
-
-#comment_subject{
-    #float: left;
-}
-
-#comment_body{
-    #float: left;
-
-    #padding: 10px;
+#comment_form_body{
     margin: 10px auto 10px;
-
     height: 130px;
     border: 1px solid #990000;
-    color:#222222 !important;
-    display: block;
-    padding:20px;
-    width:90%;#600px;
-
+    width:100%;
 }
 
 
 
+
+.comment_form{
+    margin: auto;
+    width: 80%;
+}
+.comment_form #cancel{
+    width: 200px;
+    position: relative;
+    bottom: 30px;
+    left: 160px;
+
+}
 
 
 
@@ -383,65 +370,27 @@ text-align: center;
 
 .comment{
     margin: auto;
-    width: 95%;
-
+    margin-bottom: 10px;
+    border: 1px solid silver;
+    padding:20px;
 }
 
 .comment_father{
-    margin: 20px auto 20px;
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-    #width: 900px;
-    border:2px solid silver;
-    display: block;
-
+    background: #f9f9f9;
+    padding:20px;
 }
 
-.comment_item{
-   margin: 5px auto;
-   padding: 5px;
 
-}
-
-.comment_item#subject{
-    float: left;
-
-}
-
-.comment_item#date{
-    float: right;
-}
-
-.comment_father .comment_item#body{
-    border:2px solid silver;
-    background-color: white;
-    #display: table;
-    width: 650px;
-    overflow: auto;
-}
+/*------------------------childs---------------*/
 
 .childs{
-    margin:15px auto;
-    width: 95%;
 
 }
 
 
 .comment_child{
-    margin:15px auto;
-    width: 95%;
-    border: solid silver;
-
-    background:#E5E5E5 url(/images/gradient_panel.jpg) repeat-x scroll left top;
-}
-
-
-
-.comment_child .comment_item#body{
-    border:2px solid silver;
-    background-color: white;
-    width: 93%;
-    overflow: auto;
-
+    border-bottom: 1px solid silver;
+    margin-bottom: 20px;
 }
 
 

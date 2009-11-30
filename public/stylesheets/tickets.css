@@ -215,7 +215,6 @@ background:yellow;
     border:2px solid silver;
     background-color: white;
     display: table;
-    margin:auto;
     position: relative;
 }
 #ticket_form #cancel{
