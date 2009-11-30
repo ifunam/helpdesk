@@ -51,7 +51,6 @@ a.hilite { background:yellow; }
 }
 #main{
     display:table;
-    #width: 100px;
     margin:50px auto auto;
 
 }
@@ -113,11 +112,10 @@ a.hilite { background:yellow; }
 
 #versions_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    font-size:large;
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
-    width: 1510px;
+    width: 1600px;
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
@@ -131,20 +129,18 @@ a.hilite { background:yellow; }
     text-align: center;
 }
 
-.version_header_item#id{
-    width: 40px;
-}
+
 .version_header_item#version{
-    width: 100px;
+    width: 50px;
 }
 .version_header_item#category{
-    width: 100px;
+    width: 360px;
 }
 .version_header_item#status{
-    width: 100px;
+    width: 120px;
 }
 .version_header_item#priority{
-    width: 100px;
+    width: 120px;
 }
 .version_header_item#user{
     width: 180px;
@@ -172,12 +168,12 @@ a.hilite { background:yellow; }
 
 #versions_collection{
     margin: auto;
-    width:1510px
+    width:1600px
 }
 
 .version_row{
     display:inline-block;
-    width:1510px;
+    width:1600px;
     border-bottom: 1px solid silver;
 }
 
@@ -191,37 +187,33 @@ a.hilite { background:yellow; }
 .version_row_item{
     float: left;
     text-align: center;
-    height: 20px;
     margin: 10px auto 10px auto;
 }
-.version_row_item#id{
-    width: 40px;
-}
 .version_row_item#version{
-    width: 105px;
+    width: 50px;
 }
 .version_row_item#category{
     text-align: left;
-    width: 110px;
+    width: 370px;
 }
 .version_row_item#status{
-    width: 100px;
+    width: 120px;
 }
 .version_row_item#priority{
-    width: 100px;
+    width: 120px;
 }
 
 .version_row_item#user{
-text-align: left;
-    width: 180px;
+    text-align: left;
+    width: 190px;
 }
 .version_row_item#assigned_to{
     text-align: left;
     width: 190px;
 }
 .version_row_item#last_modified_by{
-text-align: left;
-    width: 180px;
+    text-align: left;
+    width: 190px;
 }
 .version_row_item#body{
 text-align: left;

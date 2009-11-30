@@ -1,6 +1,5 @@
 #versions_header
-  .version_header_item#id Id
-  .version_header_item#version Version
+  .version_header_item#version No.
   .version_header_item#category Categoría
   .version_header_item#status Estado
   .version_header_item#priority Prioridad
@@ -8,8 +7,7 @@
   .version_header_item#assigned_to Responsable
   .version_header_item#last_modified_by Ultimo Acceso
   .version_header_item#body Descripción
-  .version_header_item#date_created Fecha creación
-  .version_header_item#date_updated Fecha actualización
+  .version_header_item#date_updated Fecha modificacion
 #versions_collection
   - 1.upto(@ticket.version) do |n|
     - @ticket.revert_to(n)

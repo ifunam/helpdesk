@@ -17,4 +17,13 @@ class Ticket < ActiveRecord::Base
   def self.search_and_paginate(search = :all,page = 1, per_page = 10)
     Ticket.search(search).all.paginate(:page => page, :per_page => per_page)
   end
+
+  def self versions
+    @versions = []
+    1.upto(@ticket.version) do |n|
+      @ticket.revert_to(n)
+      @versions << @ticket
+    end
+    @versions
+  end
 end

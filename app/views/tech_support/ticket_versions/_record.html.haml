@@ -1,12 +1,10 @@
 .version_row{:id => "color#{record.version%2}" }
-  .version_row_item#id
-    = record.id
   .version_row_item#version
     = record.version
   .version_row_item#category
     = record.category.name
   .version_row_item#status
-    = record.status.name
+    = image_tag("#{record.status.name.gsub(" ","_").downcase}.png")+record.status.name
   .version_row_item#priority
     = record.priority.name
   .version_row_item#user
@@ -17,7 +15,5 @@
     = "#{record.user_last_modification_id.nil? ? "-" : record.user_last_modification.profile.fullname}"
   .version_row_item#body
     = truncate(record.body,:length =>20)
-  .version_row_item#date_created
-    = record.created_at_before_type_cast
   .version_row_item#date_updated
     = record.updated_at_before_type_cast
