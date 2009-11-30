@@ -103,7 +103,7 @@ a.hilite { background:yellow; }
 #tickets_index{
     margin: auto;
     display: inline-block;
-    width: 1450px;
+    width: 1620px;
     margin:auto;
 }
 
@@ -119,7 +119,7 @@ a.hilite { background:yellow; }
 
 #tickets_header{
     background:#E5E5E5 url(/images/gradient_panelsurround.jpg) repeat-x scroll left top;
-    font-size:large;
+    #font-size:large;
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
@@ -139,16 +139,16 @@ a.hilite { background:yellow; }
 }
 
 .ticket_header_item#category{
-    width: 210px;
+    width: 380px;
 }
 .ticket_header_item#date{
-    width: 150px;
+    width: 155px;
 }
 .ticket_header_item#user{
-    width: 180px;
+    width: 200px;
 }
 .ticket_header_item#assigned_to{
-    width: 180px;
+    width: 200px;
 }
 .ticket_header_item#body{
     width: 220px;
@@ -160,7 +160,7 @@ a.hilite { background:yellow; }
     width: 130px;
 }
 .ticket_header_item#actions{
-    width: 190px;
+    width: 180px;
     border: none;
 }
 
@@ -171,7 +171,7 @@ a.hilite { background:yellow; }
 
 .ticket_row{
     display:inline-block;
-    width:1450px;
+    width:1620px;
     border-bottom: 1px solid silver;
 }
 
@@ -189,7 +189,7 @@ a.hilite { background:yellow; }
 }
 
 .ticket_row_item#category{
-    width: 210px;
+    width: 380px;
     text-align: left;
     margin-left: 5px;
 }
@@ -197,16 +197,16 @@ a.hilite { background:yellow; }
     width: 130px;
 }
 .ticket_row_item#date{
-    width: 150px;
+    width: 155px;
 }
 .ticket_row_item#user{
-    width: 180px;
+    width: 200px;
 }
 .ticket_row_item#assigned_to{
-    width: 190px;
+    width: 210px;
 }
 .ticket_row_item#body{
-    width: 220px;
+    width: 230px;
     text-align:left;
 }
 .ticket_row_item#priority{
@@ -214,7 +214,7 @@ a.hilite { background:yellow; }
     width: 140px;
 }
 .ticket_row_item#actions{
-    width: 180px;
+    width: 160px;
     display:inline;
     float: left;
 }
