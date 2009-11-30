@@ -14,7 +14,7 @@
 
     %p
       = ticket_form.label "Reasignar a"
-      = ticket_form.select :user_incharge_id, User.all(:conditions => {:is_tech => true},:order => 'id ASC').collect { |record|[record.login, record.id] }
+      = ticket_form.select :user_incharge_id, User.all(:conditions => {:is_tech => true},:order => 'id ASC').collect { |record|[record.name, record.id] }
 
 
       = ticket_form.hidden_field :id, :value => @ticket.id
