@@ -82,11 +82,16 @@ background:yellow;
     font-size: 16px;
 }
 
-/*------------------------------------------------*/
+/*---------------------filter------------------------*/
 
+#filter_priority_id{
+    margin-left: 8px;
+}
+#filter_status_id{
+     margin-left: 25px;
+}
 
-
-
+/*----------------index----------------------*/
 #tickets_index{
     margin: auto;
     width: 1500px;
