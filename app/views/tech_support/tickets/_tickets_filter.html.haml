@@ -1,7 +1,15 @@
 #tickets_filter
   %p
-    = "Filtrar solicitudes: "
+    = "Filtrar solicitudes por prioridad: "
+    = collection_select :filter, :priority_id, Priority.all(:order => 'name ASC'), :id, :name, {:prompt => '-- Seleccionar --'}
+  %p
+    = "Filtrar solicitudes por status:   "
+    = collection_select :filter, :status_id, Status.all(:order => 'name ASC'), :id, :name, {:prompt => '-- Seleccionar --'}
+
+  %p
+    = "Filtrar solicitudes por categoría: "
     = collection_select :filter, :category_id, Category.all(:order => 'name ASC'), :id, :name, {:prompt => '-- Seleccionar --'}
+
   %p
     = link_to 'Solicitudes por fecha descendente',search_tech_support_tickets_url(:search => {:order => "descend_by_created_at"})
     = ' | '

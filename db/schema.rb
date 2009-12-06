@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
     t.integer  "user_incharge_id"
     t.integer  "user_last_modification_id"
     t.text     "body",                                     :null => false
+    t.text     "location_report"
+    t.text     "location_problem"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

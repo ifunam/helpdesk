@@ -16,10 +16,16 @@
     %b= "Estado:"
     = @ticket.status.name
     %br
+    %br
     %b="Descripción:"
     #ticket_body
       = textilize(@ticket.body)
-
+    %b= "Ubicación del reporte:"
+    #ticket_location_report
+      = textilize(@ticket.location_report)
+    %b= "Ubicación del equipo con problemas:"
+    #ticket_location_problem
+      = textilize(@ticket.location_problem)
     #actions
       #link_to_modifications
         = link_to 'Historial de cambios', tech_support_ticket_version_path(@ticket)

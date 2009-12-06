@@ -1,7 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :session
   map.logout '/logout', :controller => "sessions", :action => "destroy"
-  map.resources :tickets, :collection => { :search => :get, :my_list => :get }
+  map.resources :tickets, :collection => {:search => :get,:search_category => :get,
+    :search_priority => :get,:search_status => :get, :my_list => :get }
+
+  #map.connect ('/tickets/search/:property/:id',
+  #:controller => 'tickets',
+  #:action => 'search',
+  #:requeriments =>{:property => /category|status|priority/})
+
   map.resources :comments
 
   map.resources :tickets do |ticket|
@@ -13,7 +20,14 @@ ActionController::Routing::Routes.draw do |map|
     # (app/controllers/admin/products_controller.rb)
     tech_support.resource :session
     tech_support.logout '/logout', :controller => "sessions", :action => "destroy"
-    tech_support.resources :tickets, :collection => { :search => :get, :my_list => :get, :my_tickets => :get }
+    tech_support.resources :tickets, :collection => {:search => :get,:search_category => :get,
+      :search_priority => :get,:search_status => :get, :my_list => :get, :my_tickets => :get }
+
+    #tech_support.connect ('tech_support/tickets/search/:property/:id.:format',
+    #                      :controller => 'tech_support/tickets',
+    #                      :action => 'search',
+    #                      :requeriments =>{:property => /category|status|priority/})
+
     tech_support.resources :categories
     tech_support.resources :priorities
     tech_support.resources :statuses

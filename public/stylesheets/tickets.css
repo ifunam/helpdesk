@@ -217,6 +217,18 @@ background:yellow;
     display: table;
     position: relative;
 }
+#ticket_form #ticket_location_report{
+    border:2px solid silver;
+    background-color: white;
+    display: table;
+    position: relative;
+}
+#ticket_form #ticket_location_problem{
+    border:2px solid silver;
+    background-color: white;
+    display: table;
+    position: relative;
+}
 #ticket_form #cancel{
     position: relative;
     left: 150px;

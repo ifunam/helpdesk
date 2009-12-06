@@ -1,4 +1,5 @@
 class Notifier < ActionMailer::Base
+
   def order_request_from_user(ticket)
     @subject  =  '[Soporte Fisica]Nueva solicitud de soporte'
     @recipients = ticket.user.email

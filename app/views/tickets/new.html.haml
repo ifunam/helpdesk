@@ -2,11 +2,21 @@
   %h3 Solicitud de Soporte
   - form_for @ticket, :url => tickets_url do |f|
     %p
-      = f.label "Reportar problemas con :"
+      %b
+        = f.label "Reportar problemas con :"
       = f.select :category_id, Category.all(:order => 'name ASC').collect { |record|[record.name, record.id] }
     %p
-      = f.label "Descripción:"
+      %b
+        = f.label "Descripción:"
       = f.text_area :body, :size => "80x10"
+    %p
+      %b
+        = f.label "Ubicacion del reporte"
+      = f.text_area :location_report, :size => "80x2"
+    %p
+      %b
+        = f.label "Ubicacion del equipo"
+      = f.text_area :location_problem, :size => "80x2"
     #button_new
       = submit_tag "Enviar Solicitud"
   #cancel

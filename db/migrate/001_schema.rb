@@ -19,6 +19,8 @@ class Schema < ActiveRecord::Migration
       t.references :user_incharge, :class_name => 'User'
       t.references :user_last_modification, :class_name => 'User'
       t.text :body, :null => false
+      t.text :location_report
+      t.text :location_problem
       t.timestamps
     end
 

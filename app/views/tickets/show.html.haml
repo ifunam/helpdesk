@@ -16,10 +16,16 @@
     %b= "Estado:"
     = @ticket.status.name
     %br
-    %b="Descripción:"
+    %br
+    %b= "Descripción:"
     #ticket_body
       = textilize(@ticket.body)
-
+    %b= "Ubicación del reporte:"
+    #ticket_location_report
+      = textilize(@ticket.location_report)
+    %b= "Ubicación del equipo con problemas:"
+    #ticket_location_problem
+      = textilize(@ticket.location_problem)
     #actions
       = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
     %br
@@ -27,5 +33,4 @@
   %h4{:id => "h4_show"}= "Comentarios"
   #comment_collection
     = render :partial => 'comments/comment_father', :collection => @ticket.comments
-  %br
-  =button_to 'Regresar', tickets_url, :method => :get
+  = button_to 'Regresar', tickets_url, :method => :get

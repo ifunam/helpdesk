@@ -84,12 +84,13 @@ a.hilite { background:yellow; }
     font-size: 16px;
 }
 
-/*------------------------------------------------*/
+/*----------------catalogs--------------------------------*/
 #catalogs{
     display: inline-block;
     width: 100%;
     margin: auto;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 #catalogs a {
@@ -100,6 +101,19 @@ a.hilite { background:yellow; }
 
 }
 
+/*---------------------ticket filter------------------------*/
+
+#filter_priority_id{
+    margin-left: 8px;
+}
+#filter_status_id{
+     margin-left: 25px;
+}
+
+
+
+/*-----------------index-----------------*/
+
 #tickets_index{
     margin: auto;
     display: inline-block;
@@ -107,9 +121,6 @@ a.hilite { background:yellow; }
     margin:auto;
 }
 
-#catalogs{
-    height: 30px;
-}
 
 .catalog_item{
     float: left;
@@ -274,6 +285,18 @@ text-align: center;
     position: relative;
 }
 
+#ticket_form #ticket_location_report{
+    border:2px solid silver;
+    background-color: white;
+    display: table;
+    position: relative;
+}
+#ticket_form #ticket_location_problem{
+    border:2px solid silver;
+    background-color: white;
+    display: table;
+    position: relative;
+}
 
 /*-----------Ticket Show--------------*/
 
