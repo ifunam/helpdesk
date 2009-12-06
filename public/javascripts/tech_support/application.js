@@ -14,7 +14,7 @@ $(document).ready(function(){
         $("#filter_priority_id").change(function(){
               $.ajax({
 
-                      url: "/tech_support/tickets/search_priority/?search[:priority_id]=" + $("#filter_priority_id").val(),
+                      url: "/tech_support/tickets/search_priority/?search[priority_id]=" + $("#filter_priority_id").val(),
                       success: function(data){ $("#tickets_collection").html(data); }
               });
         });
@@ -22,7 +22,7 @@ $(document).ready(function(){
         $("#filter_status_id").change(function(){
               $.ajax({
 
-                      url: "/tech_support/tickets/search_status/?search[:status_id]=" + $("#filter_status_id").val(),
+                      url: "/tech_support/tickets/search_status/?search[status_id]=" + $("#filter_status_id").val(),
                       success: function(data){ $("#tickets_collection").html(data); }
               });
         });
@@ -30,7 +30,7 @@ $(document).ready(function(){
 
         $("a").hover(function () {
              $(this).addClass("hilite");}, function () {
-             $(this).removeClass("hilite");
+                $(this).removeClass("hilite");
         });
 
         $("#respond").click(function () {
