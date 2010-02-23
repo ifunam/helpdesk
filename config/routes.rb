@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tickets, :collection => {:search => :get,:search_category => :get,
     :search_priority => :get,:search_status => :get, :my_list => :get }
 
+
+
   #map.connect ('/tickets/search/:property/:id',
   #:controller => 'tickets',
   #:action => 'search',

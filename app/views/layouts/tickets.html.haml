@@ -16,7 +16,7 @@
         #login
           = current_user.profile.login
           = "|"
-          = link_to 'Salir', session_path, :method => :delete
+          = link_to 'Salir', logout_url
         #controller_title
           = controller_title
         #user_profile

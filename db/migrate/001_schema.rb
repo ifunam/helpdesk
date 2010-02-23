@@ -65,8 +65,9 @@ class Schema < ActiveRecord::Migration
     User.create!(:login => 'alex', :password => 'alex', :name =>"Alejandro Juárez Robles", :email => 'alex@fisica.unam.mx',:is_tech => true)
     User.create!(:login => 'natorro',:name =>"Carlos Ernesto López Natarén", :email => 'natorro@fisica.unam.mx',:is_tech => true)
 
+
     Category.create!(:name => "Correo electrónico")
-    Category.create!(:name => "Red inalmbrica")
+    Category.create!(:name => "Red inalambrica")
     Category.create!(:name => "Red cableada")
     Category.create!(:name => "Soporte para windows y sus paquetes")
     Category.create!(:name => "Virus")
@@ -83,6 +84,10 @@ class Schema < ActiveRecord::Migration
     Category.create!(:name => "Laboratorio de cómputo de Física Teórica")
     Category.create!(:name => "Laboratorio de cómputo general de estudiantes (VAX)")
     Category.create!(:name => "Otro")
+    Category.create!(:name => "Problemas con aula 123")
+    Category.create!(:name => "Clusters Imanya y Kiral")
+
+    #User.find(11).categories = [Category.find(12)]
 
     Priority.create!(:name => "Normal")
     Priority.create!(:name => "Alta" )

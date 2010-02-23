@@ -6,7 +6,6 @@ class TechSupport::TicketsController < TicketsController
  end
 
  def my_tickets
-     puts current_user.id
    @tickets = Ticket.search_and_paginate({ :user_incharge_id => current_user.id}, params[:page])
     session[:search] = {:user_incharge_id => current_user.id}
     render 'index'
