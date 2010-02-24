@@ -1,6 +1,3 @@
-# Don't change this file!
-# Configure your app in config/environment.rb and config/environments/*.rb
-
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
 
 module Rails
@@ -82,8 +79,8 @@ module Rails
       end
 
       def load_rubygems
+        min_version = '1.3.2'
         require 'rubygems'
-        min_version = '1.3.1'
         unless rubygems_version >= min_version
           $stderr.puts %Q(Rails requires RubyGems >= #{min_version} (you have #{rubygems_version}). Please `gem update --system` and try again.)
           exit 1
@@ -99,9 +96,27 @@ module Rails
       end
 
       private
-        def read_environment_rb
-          File.read("#{RAILS_ROOT}/config/environment.rb")
-        end
+      def read_environment_rb
+        File.read("#{RAILS_ROOT}/config/environment.rb")
+      end
+    end
+  end
+end
+
+class Rails::Boot
+  def run
+    load_initializer
+    extend_environment
+    Rails::Initializer.run(:set_load_path)
+  end
+
+  def extend_environment
+    Rails::Initializer.class_eval do
+      old_load = instance_method(:load_environment)
+      define_method(:load_environment) do
+        Bundler.require :default, Rails.env
+        old_load.bind(self).call
+      end
     end
   end
 end

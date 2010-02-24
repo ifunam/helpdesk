@@ -1,17 +1,17 @@
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
-# Bundler hacks for mod_passenger
-if RAILS_ENV == 'production'
-  Rails::Initializer.module_eval do
-    alias load_environment_without_bundler load_environment
-
-    def load_environment
-      Bundler.require_env configuration.environment
-      load_environment_without_bundler
-    end
-  end
-end
+# # Bundler hacks for mod_passenger
+# if RAILS_ENV == 'production'
+#   Rails::Initializer.module_eval do
+#     alias load_environment_without_bundler load_environment
+# 
+#     def load_environment
+#        Bundler.require_env configuration.environment
+#        load_environment_without_bundler
+#      end
+#    end
+# end
 
 Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/clients )
