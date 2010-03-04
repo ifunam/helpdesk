@@ -1,6 +1,5 @@
 User.create!(:login => 'carlos', :password => 'carlos', :name =>"Carlos Sánchez Perales" ,  :email => 'csanchez@fisica.unam.mx')
 User.create!(:login => 'memo' , :name =>"Guillermo Ramírez Santiago",:email => 'memo@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'salma' ,:name =>"Edith Ramírez Bermudez", :email => 'salma@fisica.unam.mx',:is_tech => true)
 User.create!(:login => 'goz',:name =>" Gustavo Gomez Macias", :email => 'goz@fisica.unam.mx',:is_tech => true)
 User.create!(:login => 'nglez',:name =>"Neptalí González Gómez", :email => 'nglez@fisica.unam.mx',:is_tech => true)
 User.create!(:login => 'javo',:name =>"Javier Martínez ", :email => 'javo@fisica.unam.mx',:is_tech => true)
@@ -48,3 +47,6 @@ UserCategory.create!(:user_id => 4,:category_id => 1)
 AuthType.create!(:name => 'salva')
 AuthType.create!(:name => 'db')
 AuthType.create!(:name => 'ssh')
+
+User.create!(:login => 'salma' ,:name =>"Edith Ramírez Bermudez", :email => 'salma@fisica.unam.mx',:is_tech => true, :auth_type_id => 3)
+User.create!(:login => 'norma' ,:name =>"Norma Sánchez Ortega", :email => 'norma@fisica.unam.mx',:is_tech => true, :auth_type_id => 3)

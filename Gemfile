@@ -14,7 +14,7 @@ gem 'vlad'
 gem 'vlad-git'
 gem "acts_as_tree"
 gem "ssl_requirement"
-gem "net/ssh", :require => 'net/ssh'
+gem "net-ssh", :require => 'net/ssh'
 
 group :development do
 	gem 'sqlite3-ruby'
