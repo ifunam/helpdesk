@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :tickets
   has_many :tickets_incharge, :class_name => 'Ticket', :foreign_key => 'user_incharge_id'
   has_one :ticket_modified, :class_name => 'Ticket',:foreign_key => 'user_last_modification_id'
-  belongs_to :auth_type_id
+  belongs_to :auth_type
 
   has_many :comments
 
