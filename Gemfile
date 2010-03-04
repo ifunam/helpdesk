@@ -8,12 +8,11 @@ gem 'will_paginate'
 gem 'searchlogic'
 gem 'authlogic'
 gem 'jrails'
-gem 'vestal_versions'
+gem 'vestal_versions', "1.0.2"
 gem 'RedCloth'
 gem 'vlad'
 gem 'vlad-git'
 gem "acts_as_tree"
-gem "authlogic"
 gem "ssl_requirement"
 
 group :development do
