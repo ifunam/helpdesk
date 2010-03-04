@@ -16,11 +16,23 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
-
+  # Fix it: Refactor this piece of crap
   def profile
-    UserProfileClient.find_by_login(login)
+    if self.auth_type_id == 1
+      UserProfileClient.find_by_login(login)
+    else
+      self
+    end
   end
 
+  def fullname
+    self.name
+  end 
+
+  def adscription
+     "Secretaría de Cómputo y Telecomunicaciones"
+  end
+  
   # Fix it: Refactor this method
   def self.authenticate?(login, password)
     if User.exists?(:login => login, :auth_type_id => 1)
