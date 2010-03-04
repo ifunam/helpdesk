@@ -1,7 +1,7 @@
 class CreateAuthTypes < ActiveRecord::Migration
   def self.up
     create_table :auth_types do |t|
-      t.name :string
+      t.string :name
       t.timestamps
     end
   end
