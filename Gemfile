@@ -1,6 +1,6 @@
 source :gemcutter
 source :rubyforge
-gem 'test-unit', '1.2.3'
+gem 'test-unit', '1.2.3', :require => 'test/unit'
 gem "rails", '2.3.5'
 
 gem 'haml'
@@ -14,6 +14,7 @@ gem 'vlad'
 gem 'vlad-git'
 gem "acts_as_tree"
 gem "ssl_requirement"
+gem "net/ssh", :require => 'net/ssh'
 
 group :development do
 	gem 'sqlite3-ruby'
