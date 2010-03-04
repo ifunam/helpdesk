@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-     if  AuthenticationClient.authenticate?(params[:user_session][:login],params[:user_session][:password]) and User.exists?(:login => params[:user_session][:login])
+    if User.authenticate?(params[:user_session][:login],params[:user_session][:password])
       session[:user] = User.find_by_login(params[:user_session][:login])
       return_to tickets_url
     else
