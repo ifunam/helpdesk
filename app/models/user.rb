@@ -23,11 +23,11 @@ class User < ActiveRecord::Base
 
   # Fix it: Refactor this method
   def self.authenticate?(login, password)
-    if User.exist?(:login => login, :auth_type_id => 1)
+    if User.exists?(:login => login, :auth_type_id => 1)
       return AuthenticationClient.authenticate?(login, password)
-    elsif User.exist?(:login => login, :auth_type_id => 2)
+    elsif User.exists?(:login => login, :auth_type_id => 2)
       return true unless self.find(:login => login, :password => password).nil?
-    elsif User.exist?(:login => login, :auth_type_id => 3)
+    elsif User.exists?(:login => login, :auth_type_id => 3)
       return ssh_authenticate?(login, password)
     end
     return false
