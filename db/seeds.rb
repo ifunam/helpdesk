@@ -1,34 +1,56 @@
-User.create!(:login => 'carlos', :password => 'carlos', :name =>"Carlos Sánchez Perales" ,  :email => 'csanchez@fisica.unam.mx')
 User.create!(:login => 'memo' , :name =>"Guillermo Ramírez Santiago",:email => 'memo@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'goz',:name =>" Gustavo Gomez Macias", :email => 'goz@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'nglez',:name =>"Neptalí González Gómez", :email => 'nglez@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'javo',:name =>"Javier Martínez ", :email => 'javo@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'javier',:name =>"Javier Martínez ", :email => 'javier@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'dulce', :name =>"Dulce Maria Aguilar Tellez", :email => 'dulce@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'garciag',:name =>"Alberto García", :email => 'garciag@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'alex', :password => 'alex', :name =>"Alejandro Juárez Robles", :email => 'alex@fisica.unam.mx',:is_tech => true)
-User.create!(:login => 'natorro',:name =>"Carlos Ernesto López Natarén", :email => 'natorro@fisica.unam.mx',:is_tech => true)
 
-Category.create!(:name => "Correo electrónico")
-Category.create!(:name => "Red inalambrica")
-Category.create!(:name => "Red cableada")
-Category.create!(:name => "Soporte para windows y sus paquetes")
-Category.create!(:name => "Virus")
-Category.create!(:name => "Telefonía")
-Category.create!(:name => "Paginas web del instituto")
-Category.create!(:name => "Fotografía y carteles")
-Category.create!(:name => "Plataforma de Información Curricular - SALVA")
-Category.create!(:name => "Sistema de Estudiantes Asociados - SIESTA")
-Category.create!(:name => "Sistema de Solicitudes de Servicio Técnico - HelpDesk")
-Category.create!(:name => "Cluster brodix")
-Category.create!(:name => "Cluster Ollin")
-Category.create!(:name => "Supercómputo")
-Category.create!(:name => "Laboratorio de cómputo de Sistemas Complejos")
-Category.create!(:name => "Laboratorio de cómputo de Física Teórica")
-Category.create!(:name => "Laboratorio de cómputo general de estudiantes (VAX)")
-Category.create!(:name => "Otro")
-Category.create!(:name => "Problemas con aula 123")
-Category.create!(:name => "Clusters Imanya y Kiral")
+@user = User.create!(:login => 'goz',:name =>" Gustavo Gomez Macias", :email => 'goz@fisica.unam.mx',:is_tech => true)
+["Paginas web del instituto", "Otro"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = User.create!(:login => 'nglez',:name =>"Neptalí González Gómez", :email => 'nglez@fisica.unam.mx',:is_tech => true)
+["Red inalámbrica", "Red cableada", "Soporte para windows y sus paquetes", "Telefonía"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = User.create!(:login => 'javo',:name =>"Javier Martínez ", :email => 'javo@fisica.unam.mx',:is_tech => true)
+["Correo electrónico", "Virus", "Otro", "Soporte para windows y sus paquetes" ].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = user User.create!(:login => 'javier',:name =>"Javier Martínez ", :email => 'javier@fisica.unam.mx',:is_tech => true)
+["Correo electrónico", "Virus", "Otro", "Soporte para windows y sus paquetes"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = User.create!(:login => 'dulce', :name =>"Dulce Maria Aguilar Tellez", :email => 'dulce@fisica.unam.mx',:is_tech => true)
+["Fotografía y carteles", "Otro", "Soporte para windows y sus paquetes"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = User.create!(:login => 'garciag',:name =>"Alberto García", :email => 'garciag@fisica.unam.mx',:is_tech => true)
+["Soporte para windows y sus paquetes", "Otro"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+@user = User.create!(:login => 'alex', :password => 'alex', :name =>"Alejandro Juárez Robles", :email => 'alex@fisica.unam.mx',:is_tech => true)
+["Plataforma de Información Curricular - SALVA", "Sistema de Estudiantes Asociados - SIESTA", "Otro", "Soporte para windows y sus paquetes" ].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+
+@user = User.create!(:login => 'natorro',:name =>"Carlos Ernesto López Natarén", :email => 'natorro@fisica.unam.mx',:is_tech => true)
+["Sistema de Solicitudes de Servicio Técnico - HelpDesk", "Cluster brodix", "Cluster Ollin", "Supercómputo", "Laboratorio de cómputo de Sistemas Complejos",
+ "Laboratorio de cómputo de Física Teórica", "Laboratorio de cómputo general de estudiantes (VAX)", "Problemas con aula 123", "Clusters Imanya y Kiral"].each do |category_name|
+  @user.categories << Category.new(:name => category_name)
+end
+@user.save
+
+
 
 #User.find(11).categories = [Category.find(12)]
 
