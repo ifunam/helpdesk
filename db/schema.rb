@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090918204302) do
+ActiveRecord::Schema.define(:version => 20100304195054) do
+
+  create_table "auth_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.text     "name",       :null => false
@@ -61,14 +67,15 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
   end
 
   create_table "users", :force => true do |t|
-    t.boolean  "status",     :default => true,  :null => false
-    t.boolean  "is_tech",    :default => false, :null => false
-    t.string   "login",                         :null => false
+    t.boolean  "status",       :default => true,  :null => false
+    t.boolean  "is_tech",      :default => false, :null => false
+    t.string   "login",                           :null => false
     t.string   "email"
     t.string   "password"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "auth_type_id", :default => 1
   end
 
   create_table "versions", :force => true do |t|
@@ -76,11 +83,18 @@ ActiveRecord::Schema.define(:version => 20090918204302) do
     t.string   "versioned_type"
     t.text     "changes"
     t.integer  "number"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "user_name"
+    t.string   "tag"
     t.datetime "created_at"
   end
 
   add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
   add_index "versions", ["number"], :name => "index_versions_on_number"
+  add_index "versions", ["tag"], :name => "index_versions_on_tag"
+  add_index "versions", ["user_id", "user_type"], :name => "index_versions_on_user_id_and_user_type"
+  add_index "versions", ["user_name"], :name => "index_versions_on_user_name"
   add_index "versions", ["versioned_type", "versioned_id"], :name => "index_versions_on_versioned_type_and_versioned_id"
 
 end

@@ -40,14 +40,14 @@ class User < ActiveRecord::Base
     elsif User.exists?(:login => login, :auth_type_id => 2)
       return true unless self.find(:login => login, :password => password).nil?
     elsif User.exists?(:login => login, :auth_type_id => 3)
-      return ssh_authenticate?(login, password)
+      return User.ssh_authenticate?(login, password)
     end
     return false
   end
 
   private
   
-  def ssh_authenticate?(login, password)
+  def self.ssh_authenticate?(login, password)
     begin
       return true if Net::SSH.start("fenix.fisica.unam.mx", login, :password => password) 
     rescue StandardError => bang

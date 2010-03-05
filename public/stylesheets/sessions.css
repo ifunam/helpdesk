@@ -50,6 +50,7 @@ a{
 
 #sign_in{
     width: 400px;
+    color: red;
     border: 2px double silver;
     padding: 10px;
     margin: auto;
