@@ -2,6 +2,7 @@ body {
   padding: 0 0 18px 0;
   background: #fff url(/images/bg.jpg)  repeat-x;
   display: block;
+  width: 800px;	
   font-family: Arial, Helvetica,sans-serif;
   font-size: 90%;
 }
@@ -43,14 +44,17 @@ background:yellow;
     font-size: 24px;
     margin-top: 0px;
     margin-bottom: 0px;
+	width: 1100px;
 }
 
 #layout_header h3{
     font-size: 20px;
+	width: 1100px;
     margin-top: 0px;
 }
 #main{
     display:table;
+	width: 1100px;
     margin: 50px auto auto;
 }
 
@@ -61,6 +65,7 @@ background:yellow;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+	width: 1100px;
     color: green;
 }
 
@@ -68,11 +73,13 @@ background:yellow;
     margin: 5px auto 15px;
     border-bottom: 1px solid silver;
     padding-bottom: 0px;
+	width: 1100px;
 }
 
 #user_profile_item{
     margin: 10px 40px 0px auto;
     display:inline-block;
+	width: 800px;
 }
 
 #login{
@@ -80,6 +87,7 @@ background:yellow;
     margin: auto;
     color: green;
     font-size: 16px;
+	width: 1100px;
 }
 
 /*---------------------filter------------------------*/
@@ -94,7 +102,7 @@ background:yellow;
 /*----------------index----------------------*/
 #tickets_index{
     margin: auto;
-    width: 1500px;
+    width: 1100px;
     display: inline-block;
     #position: relative;
 }
@@ -106,6 +114,7 @@ background:yellow;
     font-variant:small-caps;
     font-weight:bold;
     height:50px;
+	width: 1000px;
     border-bottom: 1px solid silver;
     border-top: 1px solid silver;
 }
@@ -149,7 +158,7 @@ background:yellow;
 
 .ticket_row{
     display:inline-block;
-    width:1500px;
+    width:1000px;
     border-bottom: 1px solid silver;
 }
 
@@ -219,6 +228,7 @@ background:yellow;
 #ticket_form #ticket_body{
     border:2px solid silver;
     background-color: white;
+	width: 1100px;
     display: table;
     position: relative;
 }
@@ -244,7 +254,7 @@ background:yellow;
 /*-----------Ticket Show--------------*/
 
 #ticket_show{
-    width: 1200px;
+    width: 1000px;
 }
 #h4_show{
     text-align: center;
@@ -259,7 +269,7 @@ background:yellow;
 }
 
 #ticket_profile #ticket_body{
-    width: 1150px;
+    width: 1100px;
 }
 
 

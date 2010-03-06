@@ -51,7 +51,7 @@ a.hilite { background:yellow; }
 }
 #main{
     display:table;
-    #width: 100px;
+    width: 1100px;
     margin:50px auto auto;
 
 }
@@ -75,6 +75,7 @@ a.hilite { background:yellow; }
 #user_profile_item{
     margin: 10px 40px 0px auto;
     display:inline-block;
+	width: 1000px;
 }
 
 #login{

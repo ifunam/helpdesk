@@ -37,12 +37,14 @@ a.hilite { background:yellow; }
 #layout_header h1{
     font-size: 28px;
     margin-bottom: 0px;
+	width: 1100px;
 }
 
 #layout_header h2{
     font-size: 24px;
     margin-top: 0px;
     margin-bottom: 0px;
+	width: 1100px;
 }
 
 #layout_header h3{
@@ -73,6 +75,7 @@ a.hilite { background:yellow; }
 
 #user_profile_item{
     margin: 10px 40px 0px auto;
+	width: 1100px;
     display:inline-block;
 }
 

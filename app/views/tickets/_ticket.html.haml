@@ -1,15 +1,19 @@
 .ticket_row{:id => "color#{ticket.id%2}" }
   .ticket_row_item#category
+    %b= 'Tipo de problema: '
     = ticket.category.name
+    %br
+    %b= 'Reportado por: '
+    = ticket.user.profile.fullname
+    %br
+    %b= 'Descripción: ' 
+    %br
+    = truncate(ticket.body,:length => 255)
+    %br
+    = link_to("Detalles", ticket_path(ticket) , :class => "link_details")
   .ticket_row_item#status
     = image_tag("#{ticket.status.name.gsub(" ","_").downcase}.png")+ticket.status.name
   .ticket_row_item#date
     = ticket.created_at_before_type_cast
-  .ticket_row_item#user
-    = ticket.user.profile.fullname
   .ticket_row_item#assigned_to
     = "#{ticket.status_id == 1 ? "-" : ticket.user_incharge.profile.fullname}"
-  .ticket_row_item#body
-    = truncate(ticket.body,:length => 30)
-  .ticket_row_item#actions
-    = link_to("Detalles", ticket_path(ticket) , :class => "link_details")
