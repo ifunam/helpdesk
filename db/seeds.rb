@@ -50,3 +50,10 @@ Status.create!(:name => "En Proceso")
 AuthType.create!(:name => 'salva')
 AuthType.create!(:name => 'db')
 AuthType.create!(:name => 'ssh')
+
+if RAILS_ENV == 'development'
+  %w(natorro alex).each do |login|
+    @user = User.find_by_login(login)
+    @user.update_attributes(:password => login, :auth_type_id =>  2)
+  end
+end

@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
     if User.exists?(:login => login, :auth_type_id => 1)
       return AuthenticationClient.authenticate?(login, password)
     elsif User.exists?(:login => login, :auth_type_id => 2)
-      return true unless self.find(:login => login, :password => password).nil?
+      return true unless self.find_by_login_and_password(login,password).nil?
     elsif User.exists?(:login => login, :auth_type_id => 3)
       return User.ssh_authenticate?(login, password)
     end
