@@ -10,7 +10,7 @@ class Notifier < ActionMailer::Base
 
   def ticket_updated(ticket)
     @subject  =  '[Soporte Fisica] Solicitud actualizada'
-    @recipients = ticket.user.email
+    @recipients = [ticket.user.email, ticket.user_incharge.email]
     @from      = 'soporte@fisica.unam.mx'
     @sent_on  =  Time.now
     @body      = {:ticket => ticket}
