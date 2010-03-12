@@ -4,9 +4,6 @@
     %b= "De: "
     = @ticket.user.profile.fullname + " &lt;#{@ticket.user.profile.email}&gt;"
     %br
-    %b= "Teléfono:"
-    = @ticket.user.profile.phone
-    %br
     %b= "Fecha de envío:"
     = @ticket.created_at_before_type_cast
     %br
