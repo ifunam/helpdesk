@@ -1,7 +1,7 @@
 source :gemcutter
 source :rubyforge
 gem 'test-unit', '1.2.3', :require => 'test/unit'
-gem "rails", '2.3.5'
+gem "rails", '2.3.9'
 
 gem 'haml'
 gem 'will_paginate'
@@ -16,7 +16,7 @@ gem "acts_as_tree"
 gem "ssl_requirement"
 gem "net-ssh", :require => 'net/ssh'
 gem "tzinfo"
-#gem "dom_id", "0.0.0", :git => "git://github.com/nazgum/domid_gum.git", :branch => "master", :require => 'domid_gum'
+gem "dom_id", "0.0.0", :git => "git://github.com/nazgum/dom_id.git", :require => 'domid_gum'
 
 group :development do
 	gem 'sqlite3-ruby'
