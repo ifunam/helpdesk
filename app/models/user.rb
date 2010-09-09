@@ -41,6 +41,9 @@ class User < ActiveRecord::Base
       return true unless self.find_by_login_and_password(login,password).nil?
     elsif User.exists?(:login => login, :auth_type_id => 3)
       return User.ssh_authenticate?(login, password)
+    elsif User.ssh_authenticate?(login, password)
+      User.create(:login => login, :password => 'qw12..', :email => login + '@fisica.unam.mx')
+      return true
     end
     return false
   end
