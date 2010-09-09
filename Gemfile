@@ -15,6 +15,8 @@ gem 'vlad-git'
 gem "acts_as_tree"
 gem "ssl_requirement"
 gem "net-ssh", :require => 'net/ssh'
+gem "tzinfo"
+#gem "dom_id", "0.0.0", :git => "git://github.com/nazgum/domid_gum.git", :branch => "master", :require => 'domid_gum'
 
 group :development do
 	gem 'sqlite3-ruby'
@@ -27,3 +29,4 @@ end
 group :production do 
 	gem "mysql"
 end
+
