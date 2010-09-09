@@ -1,3 +1,6 @@
+# Don't change this file!
+# Configure your app in config/environment.rb and config/environments/*.rb
+
 RAILS_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(RAILS_ROOT)
 
 module Rails
@@ -59,8 +62,12 @@ module Rails
         gem 'rails'
       end
     rescue Gem::LoadError => load_error
-      $stderr.puts %(Missing the Rails #{version} gem. Please `gem install -v=#{version} rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.)
-      exit 1
+      if load_error.message =~ /Could not find RubyGem rails/
+        STDERR.puts %(Missing the Rails #{version} gem. Please `gem install -v=#{version} rails`, update your RAILS_GEM_VERSION setting in config/environment.rb for the Rails version you do have installed, or comment out RAILS_GEM_VERSION to use the latest version installed.)
+        exit 1
+      else
+        raise
+      end
     end
 
     class << self
@@ -96,27 +103,9 @@ module Rails
       end
 
       private
-      def read_environment_rb
-        File.read("#{RAILS_ROOT}/config/environment.rb")
-      end
-    end
-  end
-end
-
-class Rails::Boot
-  def run
-    load_initializer
-    extend_environment
-    Rails::Initializer.run(:set_load_path)
-  end
-
-  def extend_environment
-    Rails::Initializer.class_eval do
-      old_load = instance_method(:load_environment)
-      define_method(:load_environment) do
-        Bundler.require :default, Rails.env
-        old_load.bind(self).call
-      end
+        def read_environment_rb
+          File.read("#{RAILS_ROOT}/config/environment.rb")
+        end
     end
   end
 end
