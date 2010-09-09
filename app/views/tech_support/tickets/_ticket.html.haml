@@ -6,12 +6,13 @@
   .ticket_row_item#priority
     = ticket.priority.name
   .ticket_row_item#date
-    = ticket.created_at_before_type_cast
+    = ticket.created_at
 
   .ticket_row_item#user
-    = ticket.user.profile.fullname
+    = ticket.user.profile.email
+
   .ticket_row_item#assigned_to
-    = "#{ticket.status_id == 1 ? "-" : ticket.user_incharge.profile.fullname}"
+    = "#{ticket.status_id == 1 ? "-" : ticket.user_incharge.profile.email}"
   .ticket_row_item#body
     = truncate(ticket.body, :length => 30)
 

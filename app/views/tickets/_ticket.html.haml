@@ -14,6 +14,6 @@
   .ticket_row_item#status
     = image_tag("#{ticket.status.name.gsub(" ","_").downcase}.png")+ticket.status.name
   .ticket_row_item#date
-    = ticket.created_at_before_type_cast
+    = ticket.created_at
   .ticket_row_item#assigned_to
     = "#{ticket.status_id == 1 ? "-" : ticket.user_incharge.profile.fullname}"
