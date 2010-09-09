@@ -16,9 +16,6 @@ end
  { :user => { :login => 'javo',:name =>"Javier Martínez ", :email => 'javo@fisica.unam.mx', :is_tech => true },
    :categories => ["Correo electrónico", "Virus", "Otro", "Soporte para windows y sus paquetes", "Seguridad" ]
  },
- { :user => { :login => 'javier',:name =>"Javier Martínez ", :email => 'javier@fisica.unam.mx', :is_tech => true },
-   :categories => ["Correo electrónico", "Virus", "Otro", "Soporte para windows y sus paquetes", "Seguridad" ]
- },
  { :user => { :login => 'dulce', :name =>"Dulce Maria Aguilar Tellez", :email => 'dulce@fisica.unam.mx', :is_tech => true },
    :categories => ["Fotografía y carteles", "Otro", "Soporte para windows y sus paquetes"]
  },
