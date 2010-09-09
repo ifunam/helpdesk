@@ -17,7 +17,7 @@ gem "tzinfo"
 gem "dom_id", "0.0.0", :git => "git://github.com/nazgum/dom_id.git", :require => 'domid_gum'
 
 group :development do
-  gem 'sqlite3-ruby'
+  gem 'mysql'
 end
 
 group :test do 
