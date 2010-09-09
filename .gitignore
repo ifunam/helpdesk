@@ -6,7 +6,10 @@ tmp/*
 *~
 #*#
 .#*
+#*
 *.swp
 *.swo
 bin/
 vendor/bundler_gems
+.bundle
+Gemfile.lock
