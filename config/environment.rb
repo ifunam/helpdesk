@@ -23,3 +23,11 @@ Rails::Initializer.run do |config|
   sendmail_config = YAML.load_file(RAILS_ROOT + "/config/mail.yml")
   config.action_mailer.sendmail_settings = sendmail_config['settings']
 end
+
+
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!({ 
+  :default => '%m/%d/%Y %H:%M:%S',  
+  :date_time12  => "%m/%d/%Y %I:%M%p", 
+  :date_time24  => "%m/%d/%Y %I:%M%p" 
+})
+
