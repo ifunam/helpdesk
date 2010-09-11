@@ -14,7 +14,7 @@ set :deploy_to, "/var/rails/#{application}"
 set :doc_dir, "/var/www/rails/#{application}_doc"
 default_run_options[:pty] = true
 set :use_sudo, true
-set :user, "helpdesk"
+set :user, "deployer"
 
 ##
 # Git
@@ -65,7 +65,7 @@ namespace :bundler do
  
   task :bundle_new_release, :roles => :app do
     bundler.create_symlink
-    run "cd #{release_path} && rvm use 1.8.7 && bundle install --without test"
+    run "cd #{release_path} && rvm use 1.8.7@helpdesk_rails_2.3.9 --passenger && bundle install"
   end
 end
  

@@ -1,8 +1,6 @@
 source :gemcutter
-source :rubyforge
-gem 'test-unit', '1.2.3', :require => 'test/unit'
-gem "rails", '2.3.9'
 
+gem "rails", '2.3.9'
 gem 'haml'
 gem 'will_paginate'
 gem 'searchlogic'
