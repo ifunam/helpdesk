@@ -1,5 +1,6 @@
 log/*
 db/*
+config/database.yml
 !db/seeds.rb
 !db/migrate
 tmp/*
