@@ -39,6 +39,8 @@ namespace :deploy do
   
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
+    run "RAILS_ENV=production script/delayed_job stop"
+    run "RAILS_ENV=production script/delayed_job start"
     run "touch #{current_path}/tmp/restart.txt"
   end
   
