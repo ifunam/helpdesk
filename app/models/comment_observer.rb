@@ -24,10 +24,5 @@ class CommentObserver < ActiveRecord::Observer
     @users
   end
 
-
-  
-
-  
-
+  handle_asynchronously :after_create
 end
-

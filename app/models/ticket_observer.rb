@@ -10,4 +10,7 @@ class TicketObserver < ActiveRecord::Observer
   def after_update(ticket)
      Notifier.deliver_ticket_updated(ticket)
   end
+
+  handle_asynchronously :after_create
+  handle_asynchronously :after_update
 end

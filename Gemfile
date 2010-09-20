@@ -13,6 +13,7 @@ gem "ssl_requirement"
 gem "net-ssh", :require => 'net/ssh'
 gem "tzinfo"
 gem "dom_id", "0.0.0", :git => "git://github.com/nazgum/dom_id.git", :require => 'domid_gum'
+gem "delayed_job", "2.0.3"
 
 group :development do
   gem 'mysql'
@@ -20,6 +21,7 @@ end
 
 group :test do 
   gem 'sqlite3-ruby'
+  gem 'rspec'
 end
 
 group :production do 
