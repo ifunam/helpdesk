@@ -12,7 +12,7 @@ gem "acts_as_tree"
 gem "ssl_requirement"
 gem "net-ssh", :require => 'net/ssh'
 gem "tzinfo"
-gem "dom_id", "1.0.0", :git => "git://github.com/nazgum/dom_id.git", :require => 'domid_gum'
+gem "dom_id", "1.0.0", :git => "git://github.com/nazgum/dom_id.git"
 gem "delayed_job", "2.0.3"
 
 group :development do
