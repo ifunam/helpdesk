@@ -40,8 +40,8 @@ namespace :deploy do
   
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "RAILS_ENV=production script/delayed_job stop"
-    run "RAILS_ENV=production script/delayed_job start"
+    run "RAILS_ENV=production #{current_path}/script/delayed_job stop"
+    run "RAILS_ENV=production #{current_path}/script/delayed_job start"
     run "touch #{current_path}/tmp/restart.txt"
   end
   
@@ -72,4 +72,5 @@ namespace :bundler do
   end
 end
 
-after 'deploy:setup', 'deploy:create_symbolic_links', 'bundler:bundle_new_release' 
+before 'deploy:restart', 'bundler:bundle_new_release' 
+after 'deploy:setup', 'deploy:create_symbolic_links'
