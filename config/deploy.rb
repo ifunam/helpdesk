@@ -32,7 +32,8 @@ role :web, domain
 role :app, domain
 
 namespace :deploy do
-  task :after_update_code, :roles => :app do
+  task :create_symbolic_links, :roles => :app do
+
     run "ln -nfs #{deploy_to}/shared/system/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{doc_dir} #{release_path}/public/documentation"
   end
@@ -70,5 +71,5 @@ namespace :bundler do
     run "cd #{release_path} && rvm use 1.8.7@helpdesk_rails_2.3.9 --passenger && bundle install"
   end
 end
- 
-after 'deploy:update_code', 'bundler:bundle_new_release'
+
+after 'deploy:setup', 'deploy:create_symbolic_links', 'bundler:bundle_new_release' 
