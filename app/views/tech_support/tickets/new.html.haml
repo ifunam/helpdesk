@@ -17,6 +17,11 @@
       %b
         = f.label "Ubicacion del equipo"
       = f.text_area :location_problem, :size => "80x2"
+    %p
+      %b
+        = f.label "Número de inventario"
+      = f.text_field :inventory_number, :size => 15
+
     #button_new
       = submit_tag('Enviar Solicitud')
   #new_cancel

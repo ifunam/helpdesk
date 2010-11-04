@@ -23,6 +23,10 @@
     %b= "Ubicación del equipo con problemas:"
     #ticket_location_problem
       = textilize(@ticket.location_problem)
+    %br
+    %b= "Número de inventario:"
+    = @ticket.inventory_number
+
     #actions
       = link_to_remote image_tag("reply.gif", :border => 0, :style => 'margin-right: 3px;')+"Responder", :url => new_comment_path(:ticket_id => @ticket.id), :update => {:success => "comment_form"}, :method => :get
     %br

@@ -23,6 +23,10 @@
     %b= "Ubicación del equipo con problemas:"
     #ticket_location_problem
       = textilize(@ticket.location_problem)
+    %br
+    %b= "Número de inventario:"
+    = @ticket.inventory_number
+
     #actions
       #link_to_modifications
         = link_to 'Historial de cambios', tech_support_ticket_version_path(@ticket)

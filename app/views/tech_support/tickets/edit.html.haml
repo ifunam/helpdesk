@@ -34,7 +34,12 @@
       %b
         = ticket_form.label "Ubicación del equipo con problemas:"
       = ticket_form.text_area :location_problem, :size => "80x2",:value => @ticket.location_problem
-    #send_comment_form
+    %p
+      %b
+        = f.label "Número de inventario"
+      = f.text_field :inventory_number, :size => 15
+
+    #senda_comment_form
       = submit_tag 'Modificar'
   #edit_cancel
     = button_to "Cancelar", tech_support_tickets_url, :method => :get
