@@ -1,6 +1,7 @@
 log/*
 db/*
 config/database.yml
+config/ldap.yml
 !db/seeds.rb
 !db/migrate
 tmp/*
@@ -14,3 +15,6 @@ bin/
 vendor/bundler_gems
 .bundle
 Gemfile.lock
+log
+public/system
+REVISION

@@ -10,10 +10,11 @@ gem 'vestal_versions', "1.0.2"
 gem 'RedCloth'
 gem "acts_as_tree"
 gem "ssl_requirement"
-gem "net-ssh", :require => 'net/ssh'
+#gem "net-ssh", :require => 'net/ssh'
 gem "tzinfo"
 gem "dom_id", "1.0.0", :git => "git://github.com/nazgum/dom_id.git"
 gem "delayed_job", "2.0.3"
+gem "net-ldap", "0.1.1"
 
 group :development do
   gem 'mysql'

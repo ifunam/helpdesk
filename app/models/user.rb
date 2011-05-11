@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+require RAILS_ROOT + "/lib/ldap" 
+
 class User < ActiveRecord::Base
   validates_length_of :login, :within => 3..30
   validates_format_of :login, :with => /\A[-a-z0-9\.]*\Z/
@@ -31,26 +34,13 @@ class User < ActiveRecord::Base
   
   # Fix it: Refactor this method
   def self.authenticate?(login, password)
-    if User.exists?(:login => login, :auth_type_id => 1)
-      return AuthenticationClient.authenticate?(login, password)
-    elsif User.exists?(:login => login, :auth_type_id => 2)
-      return true unless self.find_by_login_and_password(login,password).nil?
-    elsif User.exists?(:login => login, :auth_type_id => 3)
-      return User.ssh_authenticate?(login, password)
-    elsif User.ssh_authenticate?(login, password)
-      User.create(:login => login, :password => 'qw12..', :email => login + '@fisica.unam.mx')
-      return true
+    if User.exists?(:login => login)
+	return authenticate_ldap?(login, password)
+    elsif authenticate_ldap?(login, password)
+        User.create(:login => login, :password => 'qw12..', :email => login + '@fisica.unam.mx')
+        return true 
     end
     return false
   end
 
-  private
-  
-  def self.ssh_authenticate?(login, password)
-    begin
-      return true if Net::SSH.start("fenix.fisica.unam.mx", login, :password => password) 
-    rescue StandardError => bang
-      return false
-    end
-  end  
 end

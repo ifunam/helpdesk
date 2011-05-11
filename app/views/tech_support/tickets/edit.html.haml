@@ -36,8 +36,8 @@
       = ticket_form.text_area :location_problem, :size => "80x2",:value => @ticket.location_problem
     %p
       %b
-        = f.label "Número de inventario"
-      = f.text_field :inventory_number, :size => 15
+        = ticket_form.label "Número de inventario"
+      = ticket_form.text_field :inventory_number, :size => 15
 
     #senda_comment_form
       = submit_tag 'Modificar'
