@@ -26,7 +26,17 @@ class UserProfileClient < ActiveResource::Base
     end
     @object
   end
-
+  
+  def self.login_exists?(login)
+    @object = new
+    @object.prefix_options = {}
+    begin
+      return true if  self.get("show_by_login/#{login}")
+    rescue StandardError => bang 
+      return false 
+    end 
+  end
+  
   def self.find_by_user_id(id)
      self.find(id)
   end

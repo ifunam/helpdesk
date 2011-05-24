@@ -37,7 +37,9 @@ class User < ActiveRecord::Base
     if User.exists?(:login => login)
 	return authenticate_ldap?(login, password)
     elsif authenticate_ldap?(login, password)
-        User.create(:login => login, :password => 'qw12..', :email => login + '@fisica.unam.mx')
+        auth_type_id = UserProfileClient.login_exists?(login) ? 1 : 3
+        User.create(:login => login, :password => 'qw12..', :email => login + '@fisica.unam.mx', 
+                    :auth_type_id => auth_type_id, :name => login)
         return true 
     end
     return false
